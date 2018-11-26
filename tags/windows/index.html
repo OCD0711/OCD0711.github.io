@@ -1004,15 +1004,15 @@
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "ynhKM25QIK8IHpxG0qpp5q7J-gzGzoHsz")
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "bmPWwzOqNpyH4Vmog1IWlp7f-gzGzoHsz")
         .done(function ({ api_server }) {
           var Counter = function (method, url, data) {
             return $.ajax({
               method: method,
               url: `https://${api_server}/1.1${url}`,
               headers: {
-                'X-LC-Id': "ynhKM25QIK8IHpxG0qpp5q7J-gzGzoHsz",
-                'X-LC-Key': "aFyjshrlpr9ydAnTFeGG1b8X",
+                'X-LC-Id': "bmPWwzOqNpyH4Vmog1IWlp7f-gzGzoHsz",
+                'X-LC-Key': "aJpzUjVhXN23WfLdyWrSfQJe",
                 'Content-Type': 'application/json',
               },
               data: data,

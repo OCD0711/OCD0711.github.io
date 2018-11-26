@@ -85,8 +85,8 @@ deploy:
 # hexo-admin authentification
 admin:
   username: OCD0711
-  password_hash: $2a$10$Wp/oqxgzb9yOg8ZswjCFaenL7IJ39r4GqFbgzG17KJwcLa6cO5J4u
-  secret: Aa2199388
+  password_hash: $2a$10$KZP4QAS7UNKKR6vrI6beOerVNuz55znVRj7P8Ub0IQxZrinwjNRnW
+  secret: hello ocd!
 
 symbols_count_time:
   symbols: true # 文章字数

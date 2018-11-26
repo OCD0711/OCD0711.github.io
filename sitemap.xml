@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/about/index.html</loc>
+    <loc>https://ocd.ooo/categories/index.html</loc>
     
     <lastmod>2018-11-26T03:32:37.623Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/categories/index.html</loc>
+    <loc>https://ocd.ooo/about/index.html</loc>
     
     <lastmod>2018-11-26T03:32:37.623Z</lastmod>
     
@@ -86,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-12-08-Trees/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
@@ -100,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2018-06-08-Install-Arch-Linux-Macbook-13/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-12-08-Trees/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
@@ -114,9 +107,23 @@
   </url>
   
   <url>
+    <loc>https://ocd.ooo/2018/11/26/2018-06-08-Install-Arch-Linux-Macbook-13/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ocd.ooo/2018/09/19/2017-11-30-Lists-Stacks-and-Queues/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-23-User-input-and-while-loop/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     
   </url>
   
@@ -129,13 +136,6 @@
   
   <url>
     <loc>https://ocd.ooo/2017/11/19/2017-11-19-Python-Dictionary/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-23-User-input-and-while-loop/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     

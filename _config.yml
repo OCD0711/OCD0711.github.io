@@ -95,7 +95,7 @@ symbols_count_time:
   total_time: true # 所有文章阅读中时长
 
 algolia:
-  applicationID: 'DY0G50H99R'
-  apiKey: '3ad7f696dc7901f700f2391d485396bb'
-  indexName: 'hexo'
+  applicationID: DY0G50H99R
+  apiKey: 3ad7f696dc7901f700f2391d485396bb
+  indexName: hexo
   chunkSize: 5000

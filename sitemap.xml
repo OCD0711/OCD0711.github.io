@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/categories/index.html</loc>
-    
-    <lastmod>2018-11-26T03:32:37.623Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/about/index.html</loc>
     
     <lastmod>2018-11-26T03:32:37.623Z</lastmod>
@@ -30,9 +23,9 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/02/sony-aosp-build/</loc>
+    <loc>https://ocd.ooo/categories/index.html</loc>
     
-    <lastmod>2018-11-26T03:32:37.622Z</lastmod>
+    <lastmod>2018-11-26T03:32:37.623Z</lastmod>
     
   </url>
   
@@ -45,6 +38,13 @@
   
   <url>
     <loc>https://ocd.ooo/2018/09/29/change-background/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.622Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/11/02/sony-aosp-build/</loc>
     
     <lastmod>2018-11-26T03:32:37.622Z</lastmod>
     
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/</loc>
+    <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
+    <loc>https://ocd.ooo/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
@@ -86,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2018/11/26/2017-12-08-Trees/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
@@ -100,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/10/17/2018-10-17-OpenWRT-update-sh/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
@@ -114,16 +107,16 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/19/2017-11-30-Lists-Stacks-and-Queues/</loc>
+    <loc>https://ocd.ooo/2018/10/17/2018-10-17-OpenWRT-update-sh/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2017/11/19/2017-11-19-Python-Dictionary/</loc>
+    <loc>https://ocd.ooo/2018/09/19/2017-11-30-Lists-Stacks-and-Queues/</loc>
     
-    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
+    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
   </url>
   
@@ -135,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-26-Algorithm-Analysis/</loc>
+    <loc>https://ocd.ooo/2017/11/19/2017-11-19-Python-Dictionary/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     
@@ -143,6 +136,13 @@
   
   <url>
     <loc>https://ocd.ooo/2018/11/26/2017-11-23-User-input-and-while-loop/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-26-Algorithm-Analysis/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     
@@ -163,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-11-new-to-python/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-11-python-list/</loc>
     
     <lastmod>2018-11-26T03:32:37.618Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-11-python-list/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-11-new-to-python/</loc>
     
     <lastmod>2018-11-26T03:32:37.618Z</lastmod>
     

@@ -156,9 +156,9 @@ menu_settings:
 
 # Schemes
 #scheme: Muse
-#scheme: Mist
+scheme: Mist
 #scheme: Pisces
-scheme: Gemini
+#scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -567,7 +567,7 @@ gitment:
 #    button | slide
 # Warning: Baidu Share does not support https.
 baidushare: 
-  enable: true
+  enable: false
   type: slide
 
 # addthis Share, see: https://www.addthis.com
@@ -1047,7 +1047,7 @@ images: images
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
 live2d:
-  enable: true
+  enable: false
   # enable: false
   scriptFrom: local # 默认
   pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)

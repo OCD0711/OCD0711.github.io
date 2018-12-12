@@ -1043,3 +1043,7 @@ vendors:
 css: css
 js: js
 images: images
+
+# Online contact
+daovoice: true
+daovoice_app_id: 520cff11

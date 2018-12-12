@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/about/index.html</loc>
+    <loc>https://ocd.ooo/categories/index.html</loc>
     
     <lastmod>2018-11-26T03:32:37.623Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/categories/index.html</loc>
+    <loc>https://ocd.ooo/about/index.html</loc>
     
     <lastmod>2018-11-26T03:32:37.623Z</lastmod>
     
@@ -37,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/29/change-background/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.622Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2018/11/02/sony-aosp-build/</loc>
     
     <lastmod>2018-11-26T03:32:37.622Z</lastmod>
@@ -51,21 +44,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/21/2018-9-21-clover-UUID/</loc>
+    <loc>https://ocd.ooo/2018/09/29/change-background/</loc>
     
-    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
+    <lastmod>2018-11-26T03:32:37.622Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://ocd.ooo/2018/09/20/2018-9-20-Build-Android-on-MacOS-preparation/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ocd.ooo/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
@@ -79,6 +65,13 @@
   </url>
   
   <url>
+    <loc>https://ocd.ooo/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
@@ -86,14 +79,21 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
+    <loc>https://ocd.ooo/2018/09/21/2018-9-21-clover-UUID/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/11/26/2017-12-08-Trees/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-12-08-Trees/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
@@ -121,13 +121,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-15-Build-Android-on-MacOS/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2017/11/19/2017-11-19-Python-Dictionary/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
@@ -142,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-26-Function/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-15-Build-Android-on-MacOS/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     
@@ -150,6 +143,13 @@
   
   <url>
     <loc>https://ocd.ooo/2018/11/26/2017-11-26-Algorithm-Analysis/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-26-Function/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     

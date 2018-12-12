@@ -156,9 +156,9 @@ menu_settings:
 
 # Schemes
 #scheme: Muse
-scheme: Mist
+#scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -544,7 +544,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: MTAyMC8zOTgzNS8xNjM2Mg
+# livere_uid: MTAyMC8zOTgzNS8xNjM2Mg
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction
@@ -1047,3 +1047,12 @@ images: images
 # Online contact
 daovoice: true
 daovoice_app_id: 520cff11
+
+gitalk:
+  enable: true
+  githubID: 'OCD0711'
+  repo: 'ocd0711.github.io'
+  ClientID: '4dc5af3af4cbaf3256e3'
+  ClientSecret: 'ba0af07deb8b413c08a37d4f8f031077b43b3ed2'
+  adminUser: 'OCD0711'
+  distractionFreeMode: true

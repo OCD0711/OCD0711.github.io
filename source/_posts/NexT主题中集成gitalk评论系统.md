@@ -22,9 +22,9 @@ gitalk：一个基于 Github Issue 和 Preact 开发的评论插件
 
 参数说明：
 Application name： # 应用名称，随意
-Homepage URL： # 网站URL，如https://asdfv1929.github.io
+Homepage URL： # 网站URL，如https://ocd0711.github.io
 Application description # 描述，随意
-Authorization callback URL：# 网站URL，https://asdfv1929.github.io
+Authorization callback URL：# 网站URL，https://ocd0711.github.io
 
 点击注册后，页面跳转如下，其中Client ID和Client Secret在后面的配置中需要用到，到时复制粘贴即可:
 ![](https://ws4.sinaimg.cn/large/006tNbRwgy1fy4087vmjmj31rl0u0wjr.jpg)

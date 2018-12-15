@@ -72,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2018/09/21/2018-9-21-clover-UUID/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
@@ -86,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
+    <loc>https://ocd.ooo/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
@@ -100,14 +93,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-12-08-Trees/</loc>
+    <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
     
-    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-12-08-Trees/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
@@ -128,9 +121,23 @@
   </url>
   
   <url>
+    <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ocd.ooo/2018/09/19/2017-11-30-Lists-Stacks-and-Queues/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-15-Build-Android-on-MacOS/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     
   </url>
   
@@ -149,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-15-Build-Android-on-MacOS/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-26-Function/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     
@@ -163,21 +170,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-26-Function/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-11-if-statements/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-11-new-to-python/</loc>
     
     <lastmod>2018-11-26T03:32:37.618Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-11-new-to-python/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-11-if-statements/</loc>
     
     <lastmod>2018-11-26T03:32:37.618Z</lastmod>
     

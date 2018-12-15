@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ocd.ooo/2018/12/15/2018-2019/</loc>
+    
+    <lastmod>2018-12-15T07:24:39.318Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ocd.ooo/2018/12/12/NexT%E4%B8%BB%E9%A2%98%E4%B8%AD%E9%9B%86%E6%88%90gitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</loc>
     
     <lastmod>2018-12-13T09:26:36.510Z</lastmod>
@@ -44,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/29/change-background/</loc>
+    <loc>https://ocd.ooo/2018/11/02/sony-aosp-build/</loc>
     
     <lastmod>2018-11-26T03:32:37.622Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/02/sony-aosp-build/</loc>
+    <loc>https://ocd.ooo/2018/09/29/change-background/</loc>
     
     <lastmod>2018-11-26T03:32:37.622Z</lastmod>
     
@@ -79,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
@@ -93,9 +93,9 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2018-06-08-Install-Arch-Linux-Macbook-13/</loc>
+    <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
     
-    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
   </url>
   
@@ -108,6 +108,13 @@
   
   <url>
     <loc>https://ocd.ooo/2018/11/26/2017-12-08-Trees/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/11/26/2018-06-08-Install-Arch-Linux-Macbook-13/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
@@ -163,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-11-if-statements/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-11-new-to-python/</loc>
     
     <lastmod>2018-11-26T03:32:37.618Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-11-new-to-python/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-11-if-statements/</loc>
     
     <lastmod>2018-11-26T03:32:37.618Z</lastmod>
     

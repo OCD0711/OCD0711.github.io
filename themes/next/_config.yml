@@ -45,10 +45,10 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: https://q2.qlogo.cn/headimg_dl?bs=870321017&dst_uin=870321017&dst_uin=870321017&;dst_uin=870321017&spec=100&url_enc=0&referer=bu_interface&term_type=PC
-  medium: https://q2.qlogo.cn/headimg_dl?bs=870321017&dst_uin=870321017&dst_uin=870321017&;dst_uin=870321017&spec=100&url_enc=0&referer=bu_interface&term_type=PC
-  apple_touch_icon: https://q2.qlogo.cn/headimg_dl?bs=870321017&dst_uin=870321017&dst_uin=870321017&;dst_uin=870321017&spec=100&url_enc=0&referer=bu_interface&term_type=PC
-  safari_pinned_tab: https://q2.qlogo.cn/headimg_dl?bs=870321017&dst_uin=870321017&dst_uin=870321017&;dst_uin=870321017&spec=100&url_enc=0&referer=bu_interface&term_type=PC
+  small: ./images/2.ico
+  medium: ./images/2.ico
+  apple_touch_icon: ./images/2.ico
+  safari_pinned_tab: ./images/2.ico
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 

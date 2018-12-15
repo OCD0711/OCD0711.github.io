@@ -121,7 +121,7 @@ live2d:
       # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url
     display: # 模型位置，根据不同的模型自行调整
       position: left
-      width: 150
-      height: 300
+      width: 125
+      height: 250
     mobile: # 是否适用于移动端
       show: false

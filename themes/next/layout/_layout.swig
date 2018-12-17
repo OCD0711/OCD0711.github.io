@@ -30,6 +30,10 @@
     {% set container_class = container_class + 'sidebar-position-' + theme.sidebar.position %}
   {% endif %}
 
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
   <div class="{{ container_class }} {% block page_class %}{% endblock %}">
     <div class="headband"></div>
 
@@ -127,3 +131,6 @@
 
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+
+<script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+

@@ -127,18 +127,24 @@
 
 
 
-  <meta name="description" content="前阵子 jd 入了个大法的 WH-1000XM2, 国行缺少了 google assistant,外加大妈的中文提示语音…实在是难受, 然后找刷成国际版的方法. google 一圈貌似已经发布了 2.0.1 的固件, 但配套的程序没提示更新. 警告这篇讲的内容并不受 Sony 官方支持, 本人也并不对此造成的保修作废、耳机变砖、耳机电池爆炸等等问题负责. 尝试此方法带来的任何后果自负. 本文内容仅">
-<meta name="keywords" content="sony,sony headphone connect,android app 反编译修改">
+  <meta name="description" content="ConcurrentLinkedQueue 笔记 定义一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择.">
+<meta name="keywords" content="java,android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sony_Headphone_Connect_update_google_assistant">
-<meta property="og:url" content="https://ocd.ooo/2018/11/09/Sony-Headphone-Connect-update-google-assistant/index.html">
+<meta property="og:title" content="ConcurrentLinkedQueue使用">
+<meta property="og:url" content="https://ocd.ooo/2018/12/21/ConcurrentLinkedQueue使用/index.html">
 <meta property="og:site_name" content="OCD Blog">
-<meta property="og:description" content="前阵子 jd 入了个大法的 WH-1000XM2, 国行缺少了 google assistant,外加大妈的中文提示语音…实在是难受, 然后找刷成国际版的方法. google 一圈貌似已经发布了 2.0.1 的固件, 但配套的程序没提示更新. 警告这篇讲的内容并不受 Sony 官方支持, 本人也并不对此造成的保修作废、耳机变砖、耳机电池爆炸等等问题负责. 尝试此方法带来的任何后果自负. 本文内容仅">
+<meta property="og:description" content="ConcurrentLinkedQueue 笔记 定义一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T03:32:37.622Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyepmvpgvdj30iw049dg5.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fyeprtdib4j306z01at8h.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyepuyo52ej305e01kjr6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fyepyiyx30j305601f3ya.jpg">
+<meta property="og:updated_time" content="2018-12-21T14:08:18.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sony_Headphone_Connect_update_google_assistant">
-<meta name="twitter:description" content="前阵子 jd 入了个大法的 WH-1000XM2, 国行缺少了 google assistant,外加大妈的中文提示语音…实在是难受, 然后找刷成国际版的方法. google 一圈貌似已经发布了 2.0.1 的固件, 但配套的程序没提示更新. 警告这篇讲的内容并不受 Sony 官方支持, 本人也并不对此造成的保修作废、耳机变砖、耳机电池爆炸等等问题负责. 尝试此方法带来的任何后果自负. 本文内容仅">
+<meta name="twitter:title" content="ConcurrentLinkedQueue使用">
+<meta name="twitter:description" content="ConcurrentLinkedQueue 笔记 定义一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择.">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg">
 
 
 
@@ -147,7 +153,7 @@
 
 
 
-  <link rel="canonical" href="https://ocd.ooo/2018/11/09/Sony-Headphone-Connect-update-google-assistant/">
+  <link rel="canonical" href="https://ocd.ooo/2018/12/21/ConcurrentLinkedQueue使用/">
 
 
 
@@ -157,7 +163,7 @@
   };
 </script>
 
-  <title>Sony_Headphone_Connect_update_google_assistant | OCD Blog</title>
+  <title>ConcurrentLinkedQueue使用 | OCD Blog</title>
   
 
 
@@ -448,7 +454,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ocd.ooo/2018/11/09/Sony-Headphone-Connect-update-google-assistant/">
+    <link itemprop="mainEntityOfPage" href="https://ocd.ooo/2018/12/21/ConcurrentLinkedQueue使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
@@ -465,7 +471,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Sony_Headphone_Connect_update_google_assistant
+          <h1 class="post-title" itemprop="name headline">ConcurrentLinkedQueue使用
               
             
           </h1>
@@ -490,24 +496,12 @@
                 
               
 
-              <time title="创建时间：2018-11-09 14:53:03" itemprop="dateCreated datePublished" datetime="2018-11-09T14:53:03+08:00">2018-11-09</time>
+              <time title="创建时间：2018-12-21 21:01:34 / 修改时间：22:08:18" itemprop="dateCreated datePublished" datetime="2018-12-21T21:01:34+08:00">2018-12-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-26 11:32:37" itemprop="dateModified" datetime="2018-11-26T11:32:37+08:00">2018-11-26</time>
               
             
           </span>
@@ -524,7 +518,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android-App/" itemprop="url" rel="index"><span itemprop="name">Android App</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
@@ -538,7 +532,7 @@
 
           
           
-             <span id="/2018/11/09/Sony-Headphone-Connect-update-google-assistant/" class="leancloud_visitors" data-flag-title="Sony_Headphone_Connect_update_google_assistant">
+             <span id="/2018/12/21/ConcurrentLinkedQueue使用/" class="leancloud_visitors" data-flag-title="ConcurrentLinkedQueue使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -563,7 +557,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.5k</span>
+                <span title="本文字数">5.6k</span>
               
 
               
@@ -577,7 +571,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">8 分钟</span>
+                <span title="阅读时长">10 分钟</span>
               
             </div>
           
@@ -597,37 +591,57 @@
       
 
       
-        <p>前阵子 jd 入了个大法的 WH-1000XM2, 国行缺少了 google assistant,外加大妈的中文提示语音…实在是难受, 然后找刷成国际版的方法. google 一圈貌似已经发布了 2.0.1 的固件, 但配套的程序没提示更新.</p>
-<h2 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h2><p>这篇讲的内容并不受 Sony 官方支持, 本人也并不对此造成的保修作废、耳机变砖、耳机电池爆炸等等问题负责. 尝试此方法带来的任何后果自负. 本文内容仅适用于 WH-1000XM2, 其余型号请自行研究. 本文所提供的内容针对 Sony Headphone Connect 3.2.0 版本.</p>
-<h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><ul>
-<li>apktool</li>
-<li>一个靠谱的文本编辑器</li>
-</ul>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><blockquote>
-<p>提醒: 你用别的方法反编译后类、方法、命名空间等的命名方式不一定与我的相同, 建议善用文本搜索</p>
+        <p>ConcurrentLinkedQueue 笔记</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.<br>新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择. 此队列不允许使用 null 元素.</p>
+<h2 id="offer-和-poll"><a href="#offer-和-poll" class="headerlink" title="offer 和 poll"></a>offer 和 poll</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#offer(E" target="_blank" rel="noopener">offer</a>)(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html" target="_blank" rel="noopener">E</a> e)<br>将指定元素插入此队列的尾部.</p>
+<p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#poll(" target="_blank" rel="noopener">poll</a>)<br>获取并移除此队列的头, 如果此队列为空, 则返回null.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"嘤嘤嘤"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后，队列是否空？"</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 poll："</span> + queue.poll());</span><br><span class="line">    System.out.println(<span class="string">"pool 后，队列是否空？"</span> + queue.isEmpty());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>offer 是往队列添加元素, poll是从队列取出元素并且删除该元素.</p>
+<p>执行结果:</p>
+<blockquote>
+<p>offer 后, 队列是否为空? false<br>从队列 poll: 嘤嘤嘤<br>pool 后, 队列是否为空? true</p>
 </blockquote>
-<p>手机上抓包,发现软件启动的时候请求 <code>https://info.update.sony.net/HP001/MDRID289202/info/info.xml</code>, 居然返回的是404. 不负责的猜测了一下 MDRID289202 是机身的内部型号(包括版本号). 全局搜索了下源码发现<code>MDRID289202</code> 在 <code>com.sony.songpal.mdr.automagic.AutoMagicManager</code> 里面.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> URL <span class="title">m9721d</span><span class="params">(String str, String str2)</span> </span>&#123;</span><br><span class="line">    String str3 = <span class="string">"info.update.sony.net"</span>;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(String.format(Locale.getDefault(), <span class="string">"%s:code=%d"</span>, <span class="keyword">new</span> Object[]&#123;<span class="string">"AutoMagicManagerErrorDomain"</span>, Integer.valueOf(AutoMagicError.NoCategoryID.ordinal())&#125;));</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str2 == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(String.format(Locale.getDefault(), <span class="string">"%s:code=%d"</span>, <span class="keyword">new</span> Object[]&#123;<span class="string">"AutoMagicManagerErrorDomain"</span>, Integer.valueOf(AutoMagicError.NoServiceID.ordinal())&#125;));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> URL(String.format(Locale.getDefault(), <span class="string">"http://%s/%s/%s/info/%s"</span>, <span class="keyword">new</span> Object[]&#123;str3, str, str2, <span class="string">"info.xml"</span>&#125;));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable e) &#123;</span><br><span class="line">            SpLog.m12039a(f5487a, e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这玩意用了两个字符串类的参数, 然后在 URL 里面就是 HP001 和 MDRID289202, 于是猜测假如我篡改这个参数的获取程序使其获取成国外行货的代码, 大概就能强制更新了(前提是硬件完全一样). 顺藤摸瓜检查 m9271d 这方法的调用, 查到了保存这个参数的类 com.sony.songpal.mdr.application.p061b.C1702a.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">m7942a</span><span class="params">(C2503b c2503b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Command.fromByteCode(c2503b.m11224a()) == Command.UPDT_RET_PARAM) &#123;</span><br><span class="line">        cm cmVar = (cm) c2503b;</span><br><span class="line">        <span class="keyword">if</span> (cmVar.m11579e() != <span class="keyword">this</span>.f4438n) &#123;</span><br><span class="line">            SpLog.m12040b(f4425a, <span class="keyword">this</span>.f4438n + <span class="string">" expected, but received "</span> + cmVar.m11579e());</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        af f = cmVar.m11580f();</span><br><span class="line">        <span class="keyword">switch</span> (cmVar.m11579e()) &#123;</span><br><span class="line">            <span class="keyword">case</span> CATEGORY_ID:</span><br><span class="line">                <span class="keyword">this</span>.f4429e = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> SERVICE_ID:</span><br><span class="line">                <span class="keyword">this</span>.f4430f = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> NATION_CODE:</span><br><span class="line">                <span class="keyword">this</span>.f4431g = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> LANGUAGE:</span><br><span class="line">                <span class="keyword">this</span>.f4432h = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> SERIAL_NUMBER:</span><br><span class="line">                <span class="keyword">this</span>.f4433i = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> BATTERY_POWER_THRESHOLD:</span><br><span class="line">                <span class="keyword">this</span>.f4434j = ((ae) f).m11711a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Invalid inquired type "</span> + cmVar.m11579e() + <span class="string">" was expected"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.f4437m != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.f4437m.countDown();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>SMALI 指令码对应如下(com.sony.songpal.mdr.application.b.a)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.line 156</span><br><span class="line">    :pswitch_1</span><br><span class="line">    check-cast v0, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;</span><br><span class="line"> </span><br><span class="line">    invoke-virtual &#123;v0&#125;, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;-&gt;a()Ljava/lang/String;</span><br><span class="line"> </span><br><span class="line">    move-result-object v0</span><br><span class="line"> </span><br><span class="line">    iput-object v0, p0, Lcom/sony/songpal/mdr/application/b/a;-&gt;f:Ljava/lang/String;</span><br><span class="line"> </span><br><span class="line">    goto :goto_1</span><br></pre></td></tr></table></figure>
-<p>把这玩意的SERVICE_ID那改成外国行货的ID就好了. 比如</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> SERVICE_ID:</span><br><span class="line">    <span class="keyword">this</span>.f4430f = <span class="string">"MDRID123456"</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
-<p>但问题来了, 不知道外国行货的 ID 是多少, 可能ID是连着的, 于是我试了试 MDRID289200, 确认有这个型号. 于是修改 Apktool 解包的 SMALI 为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.line 156</span><br><span class="line">    :pswitch_1</span><br><span class="line">    #check-cast v0, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;</span><br><span class="line"> </span><br><span class="line">    #invoke-virtual &#123;v0&#125;, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;-&gt;a()Ljava/lang/String;</span><br><span class="line"> </span><br><span class="line">    #move-result-object v0</span><br><span class="line"> </span><br><span class="line">    const-string v0, &quot;MDRID289200&quot;</span><br><span class="line"> </span><br><span class="line">    iput-object v0, p0, Lcom/sony/songpal/mdr/application/b/a;-&gt;f:Ljava/lang/String;</span><br><span class="line"> </span><br><span class="line">    goto :goto_1</span><br></pre></td></tr></table></figure>
-<p>重新用 Apktool 打包, 然后用自己的证书签名. 传到手机那, 成功检测到更新. 实测貌似没啥毛病，更新成了国外版本的 2.0.1 固件并且语音变成了英文. 于是自己也试了一下, 更新后貌似确实没啥毛病.</p>
-<p>装回原版程序后再次用抓包抓了一下, 发现请求的 service id 已经变成了 MDRID289200. 大概不用担心以后又变回国行固件的问题.</p>
-<h2 id="简要教程"><a href="#简要教程" class="headerlink" title="简要教程"></a>简要教程</h2><ol>
-<li>用Apktool解包: <code>apktool d a.apk</code> (我为了方便文件名改成了a.apk), 这一步会创建一个名为a的文件夹</li>
-<li>进入文件夹, 全局搜索<code>invoke-virtual {v0}, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;-&gt;a()Ljava/lang/String;</code>, 打开包含这一行的文件.</li>
-<li>跳至 <code>.line 156</code>, 把里面的内容修改成我上面所述的内容.</li>
-<li>重新打包: <code>apktool b a -o b.apk</code>, 这会生成b.apk</li>
-<li>给b.apk签名, 这个网上都有教程我就不写了</li>
-<li>把原本的App卸掉, 安装这个APK, 然后连接耳机, 如果没毛病的话应该会见到底部的更新提示, 按部就班更新就行</li>
-<li>把原本的App卸掉, 安装这个APK, 然后连接耳机, 如果没毛病的话应该会见到底部的更新提示, 按部就班更新就行</li>
-</ol>
-<hr>
+<p>ConcurrentLinkedQueue 中的 add() 和 offer() 完全一样, 都是往队列尾部添加元素.</p>
+<h2 id="还有个取出元素方法-peek"><a href="#还有个取出元素方法-peek" class="headerlink" title="还有个取出元素方法 peek"></a>还有个取出元素方法 peek</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#peek(" target="_blank" rel="noopener">peek</a>)<br>获取但不移除此队列的头; 如果此队列为空, 则返回null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"emmm"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后, 队列是否空?"</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"pool 后. 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果:</p>
+<blockquote>
+<p>offer 后，队列是否空? false<br>从队列中 peek: emmm<br>从队列中 peek: emmm<br>从队列中 peek: emmm<br>pool 后, 队列是否空? false</p>
+</blockquote>
+<h2 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#remove(java.lang.Object" target="_blank" rel="noopener">remove</a>)(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/lang/Object.html" target="_blank" rel="noopener">Object</a> o)<br>从队列中移除指定元素的单个实例(如果存在)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"hhh"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后, 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 remove 已存在元素: "</span> + queue.remove(<span class="string">"xxx"</span>));</span><br><span class="line">    System.out.println(<span class="string">"从队列中 remove 不存在元素: "</span> + queue.remove(<span class="string">"123"</span>));</span><br><span class="line">    System.out.println(<span class="string">"remove 后, 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>remove 一个元素, 会返回 true, remove 不存在元素, 返回 false.</p>
+<p>执行结果:</p>
+<blockquote>
+<p>offer 后, 队列是否空? false<br>从队列中 remove 已存在元素: true<br>从队列中 remove 不存在元素: false<br>remove 后, 队列是否空? true</p>
+</blockquote>
+<h2 id="size-or-isEmpty"><a href="#size-or-isEmpty" class="headerlink" title="size or isEmpty"></a>size or isEmpty</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#size(" target="_blank" rel="noopener">size</a>)()<br>返回此队列中的元素数量</p>
+<p><strong>注意:</strong></p>
+<blockquote>
+<p>如果此队列包含的元素大于 Integer.MAX_VALUE, 则返回 Integer.MAX_VALUE. 需要小心的是, 与大多数 collection 不同, 此方法不是一个固定时间操作. 由于这些队列的异步特性, 确定当前的元素数需要进行一次花费 O(n) 时间的遍历.<br>所以在需要判断队列是否为空时, 尽量不要用 queue.size()&gt;0, 而是用 !queue.isEmpty()</p>
+</blockquote>
+<p>比较 size() 和 isEmpty() 效率的实例:<br>场景: 10000个人去饭店吃饭, 10张桌子, 分别比较 size() 和 isEmpty() 的耗时</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01ConcurrentLinkedQueue</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> peopleNum = <span class="number">10000</span>;<span class="comment">//吃饭人数</span></span><br><span class="line">        <span class="keyword">int</span> tableNum = <span class="number">10</span>;<span class="comment">//饭桌数量</span></span><br><span class="line"></span><br><span class="line">        ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;&gt;();</span><br><span class="line">        CountDownLatch count = <span class="keyword">new</span> CountDownLatch(tableNum);<span class="comment">//计数器</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//将吃饭人数放入队列（吃饭的人进行排队）</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=peopleNum;i++)&#123;</span><br><span class="line">            queue.offer(<span class="string">"消费者_"</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//执行10个线程从队列取出元素（10个桌子开始供饭）</span></span><br><span class="line">        System.out.println(<span class="string">"-----------------------------------开饭了-----------------------------------"</span>);</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(tableNum);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tableNum;i++) &#123;</span><br><span class="line">            executorService.submit(<span class="keyword">new</span> Dinner(<span class="string">"00"</span> + (i+<span class="number">1</span>), queue, count));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//计数器等待，知道队列为空（所有人吃完）</span></span><br><span class="line">        count.await();</span><br><span class="line">        <span class="keyword">long</span> time = System.currentTimeMillis() - start;</span><br><span class="line">        System.out.println(<span class="string">"-----------------------------------所有人已经吃完-----------------------------------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"共耗时："</span> + time);</span><br><span class="line">        <span class="comment">//停止线程池</span></span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Dinner</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name;</span><br><span class="line">        <span class="keyword">private</span> ConcurrentLinkedQueue&lt;String&gt; queue;</span><br><span class="line">        <span class="keyword">private</span> CountDownLatch count;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Dinner</span><span class="params">(String name, ConcurrentLinkedQueue&lt;String&gt; queue, CountDownLatch count)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">            <span class="keyword">this</span>.queue = queue;</span><br><span class="line">            <span class="keyword">this</span>.count = count;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">//while (queue.size() &gt; 0)&#123;</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.isEmpty())&#123;</span><br><span class="line">                <span class="comment">//从队列取出一个元素 排队的人少一个</span></span><br><span class="line">                System.out.println(<span class="string">"【"</span> +queue.poll() + <span class="string">"】----已吃完...， 饭桌编号："</span> + name);</span><br><span class="line">            &#125;</span><br><span class="line">            count.countDown();<span class="comment">//计数器-1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果:</p>
+<blockquote>
+<p>使用 size 耗时: 757ms<br><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg" alt=""><br>使用 isEmpty 耗时: 210ms<br><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyepmvpgvdj30iw049dg5.jpg" alt=""></p>
+</blockquote>
+<p>当数据越大, 这种耗时差距越明显. 所以这种判断用 isEmpty 更加合理.</p>
+<h2 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#contains(java.lang.Object" target="_blank" rel="noopener">contains</a>)(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/lang/Object.html" target="_blank" rel="noopener">Object</a> o)<br>如果此列队包含指定元素, 则返回 true</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    System.out.println(queue.contains(<span class="string">"123"</span>));</span><br><span class="line">    System.out.println(queue.contains(<span class="string">"234"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果:</p>
+<blockquote>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fyeprtdib4j306z01at8h.jpg" alt=""></p>
+</blockquote>
+<h2 id="toArray"><a href="#toArray" class="headerlink" title="toArray"></a>toArray</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#toArray(" target="_blank" rel="noopener">toArray</a>)<br>返回以恰当顺序包含此队列所有元素的数组</p>
+<p><a href="T[] a">toArray</a><br>返回以恰当顺序包含此队列所有元素的数组, 返回数组的运行时类型是指数组的运行时类型<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;String&gt;();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    queue.offer(<span class="string">"234"</span>);</span><br><span class="line">    Object[] objects = queue.toArray();</span><br><span class="line">    System.out.println(objects[<span class="number">0</span>] + <span class="string">", "</span> + objects[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将数据存储到指定数组</span></span><br><span class="line">    String[] strs = <span class="keyword">new</span> String[<span class="number">2</span>];</span><br><span class="line">    queue.toArray(strs);</span><br><span class="line">    System.out.println(strs[<span class="number">0</span>] + <span class="string">", "</span> + strs[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>执行结果:</p>
+<blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyepuyo52ej305e01kjr6.jpg" alt=""></p>
+</blockquote>
+<h2 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#iterator(" target="_blank" rel="noopener">ierator</a>)()<br>返回在此队列元素上以恰当顺序进行迭代的迭代器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;String&gt;();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    queue.offer(<span class="string">"234"</span>);</span><br><span class="line">    Iterator&lt;String&gt; iterator = queue.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fyepyiyx30j305601f3ya.jpg" alt=""></p>
 
       
     </div>
@@ -690,7 +704,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://ocd.ooo/2018/11/09/Sony-Headphone-Connect-update-google-assistant/" title="Sony_Headphone_Connect_update_google_assistant">https://ocd.ooo/2018/11/09/Sony-Headphone-Connect-update-google-assistant/</a>
+    <a href="https://ocd.ooo/2018/12/21/ConcurrentLinkedQueue使用/" title="ConcurrentLinkedQueue使用">https://ocd.ooo/2018/12/21/ConcurrentLinkedQueue使用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -703,11 +717,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sony/" rel="tag"># sony</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/sony-headphone-connect/" rel="tag"># sony headphone connect</a>
-          
-            <a href="/tags/android-app-反编译修改/" rel="tag"># android app 反编译修改</a>
+            <a href="/tags/android/" rel="tag"># android</a>
           
         </div>
       
@@ -720,8 +732,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/02/sony-aosp-build/" rel="next" title="自编译 AOSP 下载地址">
-                <i class="fa fa-chevron-left"></i> 自编译 AOSP 下载地址
+              <a href="/2018/12/15/2018-2019/" rel="next" title="2018-2019杂记">
+                <i class="fa fa-chevron-left"></i> 2018-2019杂记
               </a>
             
           </div>
@@ -729,10 +741,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/26/2017-11-15-Build-Android-on-MacOS/" rel="prev" title="在 macOS 编译 Android 的尝试">
-                在 macOS 编译 Android 的尝试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1024,7 +1032,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#警告"><span class="nav-number">1.</span> <span class="nav-text">警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工具"><span class="nav-number">2.</span> <span class="nav-text">准备工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">3.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简要教程"><span class="nav-number">4.</span> <span class="nav-text">简要教程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#offer-和-poll"><span class="nav-number">2.</span> <span class="nav-text">offer 和 poll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还有个取出元素方法-peek"><span class="nav-number">3.</span> <span class="nav-text">还有个取出元素方法 peek</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove"><span class="nav-number">4.</span> <span class="nav-text">remove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#size-or-isEmpty"><span class="nav-number">5.</span> <span class="nav-text">size or isEmpty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contains"><span class="nav-number">6.</span> <span class="nav-text">contains</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toArray"><span class="nav-number">7.</span> <span class="nav-text">toArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterator"><span class="nav-number">8.</span> <span class="nav-text">iterator</span></a></li></ol></div>
             
 
           </div>

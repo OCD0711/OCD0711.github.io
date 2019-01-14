@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ocd.ooo/2019/01/14/raspi%E4%B8%8ACP2102%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2019-01-14T03:46:24.882Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ocd.ooo/2018/12/21/ConcurrentLinkedQueue%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-12-21T14:08:18.699Z</lastmod>
@@ -51,13 +58,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/02/sony-aosp-build/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.622Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2018/11/09/Sony-Headphone-Connect-update-google-assistant/</loc>
     
     <lastmod>2018-11-26T03:32:37.622Z</lastmod>
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/20/2018-9-20-Build-Android-on-MacOS-preparation/</loc>
+    <loc>https://ocd.ooo/2018/11/02/sony-aosp-build/</loc>
     
-    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
+    <lastmod>2018-11-26T03:32:37.622Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/</loc>
+    <loc>https://ocd.ooo/2018/09/20/2018-9-20-Build-Android-on-MacOS-preparation/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
@@ -100,16 +100,16 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
+    <loc>https://ocd.ooo/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
+    <loc>https://ocd.ooo/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</loc>
     
-    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
   </url>
   
@@ -121,7 +121,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2018-06-08-Install-Arch-Linux-Macbook-13/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
     
@@ -135,6 +135,13 @@
   </url>
   
   <url>
+    <loc>https://ocd.ooo/2018/11/26/2018-06-08-Install-Arch-Linux-Macbook-13/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.620Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ocd.ooo/2018/09/19/2017-11-30-Lists-Stacks-and-Queues/</loc>
     
     <lastmod>2018-11-26T03:32:37.620Z</lastmod>
@@ -142,7 +149,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2017/11/19/2017-11-19-Python-Dictionary/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-23-User-input-and-while-loop/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     
@@ -156,7 +163,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-23-User-input-and-while-loop/</loc>
+    <loc>https://ocd.ooo/2017/11/19/2017-11-19-Python-Dictionary/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     

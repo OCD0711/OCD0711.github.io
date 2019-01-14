@@ -15,6 +15,8 @@ tags:
 
 2. 用一个母口的杜邦线, 短接 cp2102 模块引出来的 txd 与 rxd.
 
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fz5yxib2ncj30ts06qwkz.jpg)
+
 3. 在 raspi 上安装 minicom, 并进行配置, sudo minicom -s (不能直接 minicom，权限不够), 注意设置的一处为 serial port setup 
 
 ![](https://ws1.sinaimg.cn/large/006tNc79gy1fz5yokj59tj30oa0l6wsk.jpg)

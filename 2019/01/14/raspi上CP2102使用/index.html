@@ -127,22 +127,23 @@
 
 
 
-  <meta name="description" content="测试 usb hub 接 cp2102 模块的 usb 转串口在 raspi 上的数据收发 将 hub 的一个 usb 口的4个引脚与 cp2102 模块的 usb 口的4个引脚进行焊接(注意线的对应, 红、白、绿、黑，vcc、d-、d+、gnd)  用一个母口的杜邦线, 短接 cp2102 模块引出来的 txd 与 rxd.  在 raspi 上安装 minicom, 并进行配置, sudo m">
+  <meta name="description" content="测试 usb hub 接 cp2102 模块的 usb 转串口在 raspi 上的数据收发 将 hub 的一个 usb 口的4个引脚与 cp2102 模块的 usb 口的4个引脚进行焊接(注意线的对应, 红、白、绿、黑，vcc、d-、d+、gnd)  用一个母口的杜邦线, 短接 cp2102 模块引出来的 txd 与 rxd.     在 raspi 上安装 minicom, 并进行配置, sud">
 <meta name="keywords" content="raspi,Serial Communications">
 <meta property="og:type" content="article">
 <meta property="og:title" content="raspi 上 CP2102 使用">
 <meta property="og:url" content="https://ocd.ooo/2019/01/14/raspi上CP2102使用/index.html">
 <meta property="og:site_name" content="OCD Blog">
-<meta property="og:description" content="测试 usb hub 接 cp2102 模块的 usb 转串口在 raspi 上的数据收发 将 hub 的一个 usb 口的4个引脚与 cp2102 模块的 usb 口的4个引脚进行焊接(注意线的对应, 红、白、绿、黑，vcc、d-、d+、gnd)  用一个母口的杜邦线, 短接 cp2102 模块引出来的 txd 与 rxd.  在 raspi 上安装 minicom, 并进行配置, sudo m">
+<meta property="og:description" content="测试 usb hub 接 cp2102 模块的 usb 转串口在 raspi 上的数据收发 将 hub 的一个 usb 口的4个引脚与 cp2102 模块的 usb 口的4个引脚进行焊接(注意线的对应, 红、白、绿、黑，vcc、d-、d+、gnd)  用一个母口的杜邦线, 短接 cp2102 模块引出来的 txd 与 rxd.     在 raspi 上安装 minicom, 并进行配置, sud">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fz5yxib2ncj30ts06qwkz.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fz5yokj59tj30oa0l6wsk.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fz5yr15qw2j30uy0jc4gf.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fz5yuffy99j30u0199u0x.jpg">
-<meta property="og:updated_time" content="2019-01-14T03:46:24.882Z">
+<meta property="og:updated_time" content="2019-01-14T03:48:53.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="raspi 上 CP2102 使用">
-<meta name="twitter:description" content="测试 usb hub 接 cp2102 模块的 usb 转串口在 raspi 上的数据收发 将 hub 的一个 usb 口的4个引脚与 cp2102 模块的 usb 口的4个引脚进行焊接(注意线的对应, 红、白、绿、黑，vcc、d-、d+、gnd)  用一个母口的杜邦线, 短接 cp2102 模块引出来的 txd 与 rxd.  在 raspi 上安装 minicom, 并进行配置, sudo m">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fz5yokj59tj30oa0l6wsk.jpg">
+<meta name="twitter:description" content="测试 usb hub 接 cp2102 模块的 usb 转串口在 raspi 上的数据收发 将 hub 的一个 usb 口的4个引脚与 cp2102 模块的 usb 口的4个引脚进行焊接(注意线的对应, 红、白、绿、黑，vcc、d-、d+、gnd)  用一个母口的杜邦线, 短接 cp2102 模块引出来的 txd 与 rxd.     在 raspi 上安装 minicom, 并进行配置, sud">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fz5yxib2ncj30ts06qwkz.jpg">
 
 
 
@@ -494,7 +495,7 @@
                 
               
 
-              <time title="创建时间：2019-01-14 11:36:46 / 修改时间：11:46:24" itemprop="dateCreated datePublished" datetime="2019-01-14T11:36:46+08:00">2019-01-14</time>
+              <time title="创建时间：2019-01-14 11:36:46 / 修改时间：11:48:53" itemprop="dateCreated datePublished" datetime="2019-01-14T11:36:46+08:00">2019-01-14</time>
             
 
             
@@ -555,7 +556,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">814</span>
+                <span title="本文字数">816</span>
               
 
               
@@ -594,8 +595,10 @@
 </li>
 <li><p>用一个母口的杜邦线, 短接 cp2102 模块引出来的 txd 与 rxd.</p>
 </li>
-<li><p>在 raspi 上安装 minicom, 并进行配置, sudo minicom -s (不能直接 minicom，权限不够), 注意设置的一处为 serial port setup </p>
-</li>
+</ol>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fz5yxib2ncj30ts06qwkz.jpg" alt=""></p>
+<ol start="3">
+<li>在 raspi 上安装 minicom, 并进行配置, sudo minicom -s (不能直接 minicom，权限不够), 注意设置的一处为 serial port setup </li>
 </ol>
 <p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fz5yokj59tj30oa0l6wsk.jpg" alt=""></p>
 <p>的 a-serial device 处, 改为 /dev/ttyUSB0 (与usb转串口的对应), f-hardware flow control 改为 no (时间允许的话, 也可以测试一下, yes)</p>

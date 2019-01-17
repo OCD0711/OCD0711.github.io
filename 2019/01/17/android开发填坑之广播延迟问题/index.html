@@ -127,18 +127,18 @@
 
 
 
-  <meta name="description" content="在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 Vi">
+  <meta name="description" content="前言在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在">
 <meta name="keywords" content="android,broadcast">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android开发填坑之广播延迟问题">
 <meta property="og:url" content="https://ocd.ooo/2019/01/17/android开发填坑之广播延迟问题/index.html">
 <meta property="og:site_name" content="OCD Blog">
-<meta property="og:description" content="在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 Vi">
+<meta property="og:description" content="前言在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-17T03:57:09.447Z">
+<meta property="og:updated_time" content="2019-01-17T05:10:29.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android开发填坑之广播延迟问题">
-<meta name="twitter:description" content="在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 Vi">
+<meta name="twitter:description" content="前言在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在">
 
 
 
@@ -490,7 +490,7 @@
                 
               
 
-              <time title="创建时间：2019-01-17 11:44:57 / 修改时间：11:57:09" itemprop="dateCreated datePublished" datetime="2019-01-17T11:44:57+08:00">2019-01-17</time>
+              <time title="创建时间：2019-01-17 11:44:57 / 修改时间：13:10:29" itemprop="dateCreated datePublished" datetime="2019-01-17T11:44:57+08:00">2019-01-17</time>
             
 
             
@@ -585,7 +585,7 @@
       
 
       
-        <p>在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气…</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气…</p>
 <p>刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 View 中重写 View.onScreenStateChanged, 通过回调实现监听.</p>
 <h2 id="View-onScreenStateChanged"><a href="#View-onScreenStateChanged" class="headerlink" title="View.onScreenStateChanged"></a>View.onScreenStateChanged</h2><p>源码如下:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This method is called whenever the state of the screen this view is</span></span><br><span class="line"><span class="comment"> * attached to changes. A state change will usually occurs when the screen</span></span><br><span class="line"><span class="comment"> * turns on or off (whether it happens automatically or the user does it</span></span><br><span class="line"><span class="comment"> * manually.)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> screenState The new state of the screen. Can be either</span></span><br><span class="line"><span class="comment"> *                    &#123;<span class="doctag">@link</span> #SCREEN_STATE_ON&#125; or &#123;<span class="doctag">@link</span> #SCREEN_STATE_OFF&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScreenStateChanged</span><span class="params">(<span class="keyword">int</span> screenState)</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1008,7 +1008,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#View-onScreenStateChanged"><span class="nav-number">1.</span> <span class="nav-text">View.onScreenStateChanged</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方案"><span class="nav-number">2.</span> <span class="nav-text">实现方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View-onScreenStateChanged"><span class="nav-number">2.</span> <span class="nav-text">View.onScreenStateChanged</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方案"><span class="nav-number">3.</span> <span class="nav-text">实现方案</span></a></li></ol></div>
             
 
           </div>

@@ -127,18 +127,18 @@
 
 
 
-  <meta name="description" content="首先新建一个shell脚本文件，如/root/autoupgrade.sh，加上执行权限，写入以下几行：12345#!/bin/shopkg updatefor ipk in $(opkg list-upgradable | awk &apos;$1!~/^kmod|^Multiple/&amp;#123;print $1&amp;#125;&apos;); doopkg upgrade $ipkdone 然后加入到计划任务中：12">
-<meta name="keywords" content="OpenWRT">
+  <meta name="description" content="在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 Vi">
+<meta name="keywords" content="android,broadcast">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenWRT自动更新软件包脚本">
-<meta property="og:url" content="https://ocd.ooo/2018/10/17/2018-10-17-OpenWRT-update-sh/index.html">
+<meta property="og:title" content="android开发填坑之广播延迟问题">
+<meta property="og:url" content="https://ocd.ooo/2019/01/17/android开发填坑之广播延迟问题/index.html">
 <meta property="og:site_name" content="OCD Blog">
-<meta property="og:description" content="首先新建一个shell脚本文件，如/root/autoupgrade.sh，加上执行权限，写入以下几行：12345#!/bin/shopkg updatefor ipk in $(opkg list-upgradable | awk &apos;$1!~/^kmod|^Multiple/&amp;#123;print $1&amp;#125;&apos;); doopkg upgrade $ipkdone 然后加入到计划任务中：12">
+<meta property="og:description" content="在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 Vi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T03:32:37.620Z">
+<meta property="og:updated_time" content="2019-01-17T03:57:09.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenWRT自动更新软件包脚本">
-<meta name="twitter:description" content="首先新建一个shell脚本文件，如/root/autoupgrade.sh，加上执行权限，写入以下几行：12345#!/bin/shopkg updatefor ipk in $(opkg list-upgradable | awk &apos;$1!~/^kmod|^Multiple/&amp;#123;print $1&amp;#125;&apos;); doopkg upgrade $ipkdone 然后加入到计划任务中：12">
+<meta name="twitter:title" content="android开发填坑之广播延迟问题">
+<meta name="twitter:description" content="在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气… 刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 Vi">
 
 
 
@@ -147,7 +147,7 @@
 
 
 
-  <link rel="canonical" href="https://ocd.ooo/2018/10/17/2018-10-17-OpenWRT-update-sh/">
+  <link rel="canonical" href="https://ocd.ooo/2019/01/17/android开发填坑之广播延迟问题/">
 
 
 
@@ -157,7 +157,7 @@
   };
 </script>
 
-  <title>OpenWRT自动更新软件包脚本 | OCD Blog</title>
+  <title>android开发填坑之广播延迟问题 | OCD Blog</title>
   
 
 
@@ -448,7 +448,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ocd.ooo/2018/10/17/2018-10-17-OpenWRT-update-sh/">
+    <link itemprop="mainEntityOfPage" href="https://ocd.ooo/2019/01/17/android开发填坑之广播延迟问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
@@ -465,7 +465,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">OpenWRT自动更新软件包脚本
+          <h1 class="post-title" itemprop="name headline">android开发填坑之广播延迟问题
               
             
           </h1>
@@ -490,24 +490,12 @@
                 
               
 
-              <time title="创建时间：2018-10-17 11:03:26" itemprop="dateCreated datePublished" datetime="2018-10-17T11:03:26+08:00">2018-10-17</time>
+              <time title="创建时间：2019-01-17 11:44:57 / 修改时间：11:57:09" itemprop="dateCreated datePublished" datetime="2019-01-17T11:44:57+08:00">2019-01-17</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-26 11:32:37" itemprop="dateModified" datetime="2018-11-26T11:32:37+08:00">2018-11-26</time>
               
             
           </span>
@@ -524,7 +512,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/路由器/" itemprop="url" rel="index"><span itemprop="name">路由器</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/android-app/" itemprop="url" rel="index"><span itemprop="name">android app</span></a></span>
 
                 
                 
@@ -538,7 +526,7 @@
 
           
           
-             <span id="/2018/10/17/2018-10-17-OpenWRT-update-sh/" class="leancloud_visitors" data-flag-title="OpenWRT自动更新软件包脚本">
+             <span id="/2019/01/17/android开发填坑之广播延迟问题/" class="leancloud_visitors" data-flag-title="android开发填坑之广播延迟问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -563,7 +551,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">388</span>
+                <span title="本文字数">1.8k</span>
               
 
               
@@ -577,7 +565,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -597,9 +585,28 @@
       
 
       
-        <p>首先新建一个shell脚本文件，如/root/autoupgrade.sh，加上执行权限，写入以下几行：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">opkg update</span><br><span class="line"><span class="keyword">for</span> ipk <span class="keyword">in</span> $(opkg list-upgradable | awk <span class="string">'$1!~/^kmod|^Multiple/&#123;print $1&#125;'</span>); <span class="keyword">do</span></span><br><span class="line">opkg upgrade <span class="variable">$ipk</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
-<p>然后加入到计划任务中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#  文件格式说明</span><br><span class="line">#  ——分钟 (0 - 59)</span><br><span class="line"># |  ——小时 (0 - 23)</span><br><span class="line"># | |  ——日   (1 - 31)</span><br><span class="line"># | | |  ——月   (1 - 12)</span><br><span class="line"># | | | |  ——星期 (0 - 7)（星期日=0或7）</span><br><span class="line"># | | | | |</span><br><span class="line"># * * * * * 被执行的命令</span><br><span class="line"># 0 1 * * * /root/autoupgrade.sh</span><br></pre></td></tr></table></figure></p>
-
+        <p>在写公司项目, 项目验收的时候挖出了历史遗留的bug, 经过分析功能依赖系统的屏幕监听广播 (ACTION_SCREEN_ON 和 ACTION_SCREEN_OFF). 但是这里有个深坑, 广播发送有延迟…当我们短时间迅速开关屏幕, 功能正常…但是实际使用中全看运气…</p>
+<p>刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 View 中重写 View.onScreenStateChanged, 通过回调实现监听.</p>
+<h2 id="View-onScreenStateChanged"><a href="#View-onScreenStateChanged" class="headerlink" title="View.onScreenStateChanged"></a>View.onScreenStateChanged</h2><p>源码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This method is called whenever the state of the screen this view is</span></span><br><span class="line"><span class="comment"> * attached to changes. A state change will usually occurs when the screen</span></span><br><span class="line"><span class="comment"> * turns on or off (whether it happens automatically or the user does it</span></span><br><span class="line"><span class="comment"> * manually.)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> screenState The new state of the screen. Can be either</span></span><br><span class="line"><span class="comment"> *                    &#123;<span class="doctag">@link</span> #SCREEN_STATE_ON&#125; or &#123;<span class="doctag">@link</span> #SCREEN_STATE_OFF&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScreenStateChanged</span><span class="params">(<span class="keyword">int</span> screenState)</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到注释中写到: 这个方法在屏幕开关都会触发这个方法, 参数列表中 <strong>int screenState</strong> 代表屏幕开关状态</p>
+<h2 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h2><p>在我们自定义 View 中, 重写这个方法, 并且加回调, 就可以实现跟踪屏幕效果.</p>
+<ol>
+<li><strong>View 中重写</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加屏幕监听</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScreenStateChanged</span><span class="params">(<span class="keyword">int</span> screenState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onScreenStateChanged(screenState);</span><br><span class="line">        <span class="keyword">if</span> (mCallback != <span class="keyword">null</span>)&#123;</span><br><span class="line">            mCallback.onScreenState(screenState);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>定义回调</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加回调接口</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DragLayerCallback</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SCREEN_OFF = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SCREEN_ON = <span class="number">1</span>;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onScreenState</span><span class="params">(<span class="keyword">int</span> screenState)</span></span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>注册回调</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScreenStateCallback</span><span class="params">(DragLayerCallback callback)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.mCallback = callback;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在需要监听的地方实现</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mDragLayer.setScreenStateCallback(<span class="keyword">new</span> DragLayer.DragLayerCallback() &#123;</span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScreenState</span><span class="params">(<span class="keyword">int</span> screenState)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 开启屏幕</span></span><br><span class="line">        <span class="keyword">if</span> (screenState==DragLayer.DragLayerCallback.SCREEN_ON)&#123;</span><br><span class="line">            screenOn();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 关闭屏幕</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            screenOff();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -661,7 +668,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://ocd.ooo/2018/10/17/2018-10-17-OpenWRT-update-sh/" title="OpenWRT自动更新软件包脚本">https://ocd.ooo/2018/10/17/2018-10-17-OpenWRT-update-sh/</a>
+    <a href="https://ocd.ooo/2019/01/17/android开发填坑之广播延迟问题/" title="android开发填坑之广播延迟问题">https://ocd.ooo/2019/01/17/android开发填坑之广播延迟问题/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -674,7 +681,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/OpenWRT/" rel="tag"># OpenWRT</a>
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+            <a href="/tags/broadcast/" rel="tag"># broadcast</a>
           
         </div>
       
@@ -687,8 +696,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/29/change-background/" rel="next" title="Next 主题自动更换背景图片">
-                <i class="fa fa-chevron-left"></i> Next 主题自动更换背景图片
+              <a href="/2019/01/14/raspi上4G模块使用研究过程/" rel="next" title="raspi 上 4G 模块使用研究过程">
+                <i class="fa fa-chevron-left"></i> raspi 上 4G 模块使用研究过程
               </a>
             
           </div>
@@ -696,10 +705,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/02/sony-aosp-build/" rel="prev" title="自编译 AOSP 下载地址">
-                自编译 AOSP 下载地址 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -745,8 +750,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -984,6 +998,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#View-onScreenStateChanged"><span class="nav-number">1.</span> <span class="nav-text">View.onScreenStateChanged</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方案"><span class="nav-number">2.</span> <span class="nav-text">实现方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

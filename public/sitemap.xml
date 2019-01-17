@@ -4,7 +4,7 @@
   <url>
     <loc>https://ocd.ooo/2019/01/17/android%E5%BC%80%E5%8F%91%E5%A1%AB%E5%9D%91%E4%B9%8B%E5%B9%BF%E6%92%AD%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/</loc>
     
-    <lastmod>2019-01-17T03:57:09.447Z</lastmod>
+    <lastmod>2019-01-17T05:10:29.454Z</lastmod>
     
   </url>
   
@@ -58,14 +58,14 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/categories/index.html</loc>
+    <loc>https://ocd.ooo/about/index.html</loc>
     
     <lastmod>2018-11-26T03:32:37.623Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/about/index.html</loc>
+    <loc>https://ocd.ooo/categories/index.html</loc>
     
     <lastmod>2018-11-26T03:32:37.623Z</lastmod>
     
@@ -93,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/09/20/2018-9-20-Build-Android-on-MacOS-preparation/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
@@ -108,6 +101,13 @@
   
   <url>
     <loc>https://ocd.ooo/2018/09/21/2018-9-21-clover-UUID/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.621Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/09/20/2018-9-20-Build-Android-on-MacOS-preparation/</loc>
     
     <lastmod>2018-11-26T03:32:37.621Z</lastmod>
     
@@ -163,13 +163,6 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-23-User-input-and-while-loop/</loc>
-    
-    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ocd.ooo/2018/11/26/2017-11-15-Build-Android-on-MacOS/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
@@ -184,7 +177,7 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-26-Algorithm-Analysis/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-23-User-input-and-while-loop/</loc>
     
     <lastmod>2018-11-26T03:32:37.619Z</lastmod>
     
@@ -198,14 +191,21 @@
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-11-if-statements/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-26-Algorithm-Analysis/</loc>
+    
+    <lastmod>2018-11-26T03:32:37.619Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-11-new-to-python/</loc>
     
     <lastmod>2018-11-26T03:32:37.618Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ocd.ooo/2018/11/26/2017-11-11-new-to-python/</loc>
+    <loc>https://ocd.ooo/2018/11/26/2017-11-11-if-statements/</loc>
     
     <lastmod>2018-11-26T03:32:37.618Z</lastmod>
     

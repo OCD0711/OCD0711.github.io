@@ -127,16 +127,18 @@
 
 
 
-  <meta name="description" content="Nothing here, trust me">
-<meta property="og:type" content="website">
-<meta property="og:title" content="OCD Blog">
-<meta property="og:url" content="https://ocd.ooo/categories/java/index.html">
+  <meta name="description" content="参考 http://weishu.me/2018/06/07/free-reflection-above-android-p/   https://juejin.im/post/5ba0f3f7e51d450e6f2e39e0  原理链接已经提供了，这里不做解释。 维术的第二个条件和掘金的方法五，虽然提到了Unsafe，但是都没有给出源码。现在我把源码发上来，算是这部分的最后一块拼图。 12345">
+<meta name="keywords" content="Develop,android app">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android-P破解隐藏私有API禁止调用的限制">
+<meta property="og:url" content="https://ocd.ooo/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/index.html">
 <meta property="og:site_name" content="OCD Blog">
-<meta property="og:description" content="Nothing here, trust me">
+<meta property="og:description" content="参考 http://weishu.me/2018/06/07/free-reflection-above-android-p/   https://juejin.im/post/5ba0f3f7e51d450e6f2e39e0  原理链接已经提供了，这里不做解释。 维术的第二个条件和掘金的方法五，虽然提到了Unsafe，但是都没有给出源码。现在我把源码发上来，算是这部分的最后一块拼图。 12345">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-18T03:26:05.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OCD Blog">
-<meta name="twitter:description" content="Nothing here, trust me">
+<meta name="twitter:title" content="Android-P破解隐藏私有API禁止调用的限制">
+<meta name="twitter:description" content="参考 http://weishu.me/2018/06/07/free-reflection-above-android-p/   https://juejin.im/post/5ba0f3f7e51d450e6f2e39e0  原理链接已经提供了，这里不做解释。 维术的第二个条件和掘金的方法五，虽然提到了Unsafe，但是都没有给出源码。现在我把源码发上来，算是这部分的最后一块拼图。 12345">
 
 
 
@@ -145,7 +147,7 @@
 
 
 
-  <link rel="canonical" href="https://ocd.ooo/categories/java/">
+  <link rel="canonical" href="https://ocd.ooo/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/">
 
 
 
@@ -155,7 +157,7 @@
   };
 </script>
 
-  <title>分类: java | OCD Blog</title>
+  <title>Android-P破解隐藏私有API禁止调用的限制 | OCD Blog</title>
   
 
 
@@ -227,7 +229,7 @@
     <canvas id="canvas"></canvas>
   </div>
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -298,7 +300,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -426,86 +428,300 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>java<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ocd.ooo/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OCD">
+      <meta itemprop="description" content="Nothing here, trust me">
+      <meta itemprop="image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OCD Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/21/ConcurrentLinkedQueue使用/" itemprop="url">
-              
-                <span itemprop="name">ConcurrentLinkedQueue使用</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Android-P破解隐藏私有API禁止调用的限制
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-21T21:01:34+08:00" content="2018-12-21">
-          12-21
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-18 11:23:00 / 修改时间：11:26:05" itemprop="dateCreated datePublished" datetime="2019-01-18T11:23:00+08:00">2019-01-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/" class="leancloud_visitors" data-flag-title="Android-P破解隐藏私有API禁止调用的限制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="http://weishu.me/2018/06/07/free-reflection-above-android-p/" target="_blank" rel="noopener">http://weishu.me/2018/06/07/free-reflection-above-android-p/</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://juejin.im/post/5ba0f3f7e51d450e6f2e39e0" target="_blank" rel="noopener">https://juejin.im/post/5ba0f3f7e51d450e6f2e39e0</a></p>
+</blockquote>
+<p>原理链接已经提供了，这里不做解释。</p>
+<p>维术的第二个条件和掘金的方法五，虽然提到了Unsafe，但是都没有给出源码。<br>现在我把源码发上来，算是这部分的最后一块拼图。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用Unsafe清除classloader</span></span><br><span class="line"><span class="comment"> * 该方法仅对同一个类生效，所以必须在需要的类中添加使用，不可以跨类调用</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> cls 需要清除Loader的类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@SuppressWarnings</span>(&#123;<span class="string">"unchecked"</span>, <span class="string">"JavaReflectionMemberAccess"</span>&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">clearClassLoaderInClass</span><span class="params">(Class cls)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//Unsafe类</span></span><br><span class="line">        Class unsafeClass = Class.forName(<span class="string">"sun.misc.Unsafe"</span>);</span><br><span class="line">        <span class="comment">//取Unsafe实例字段</span></span><br><span class="line">        Field unsafeInstanceField = unsafeClass.getDeclaredField(<span class="string">"theUnsafe"</span>);</span><br><span class="line">        <span class="comment">//放开Unsafe实例字段权限</span></span><br><span class="line">        unsafeInstanceField.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">//取Unsafe实例</span></span><br><span class="line">        Object unsafeInstance = unsafeInstanceField.get(<span class="keyword">null</span>);</span><br><span class="line">        <span class="comment">//取objectFieldOffset方法取偏移量</span></span><br><span class="line">        Method objectFieldOffset = unsafeClass.getMethod(<span class="string">"objectFieldOffset"</span>, Field.class);</span><br><span class="line">        <span class="comment">//Class的classLoader字段</span></span><br><span class="line">        Field classLoaderField = Class.class.getDeclaredField(<span class="string">"classLoader"</span>);</span><br><span class="line">        <span class="comment">//使classLoader可见</span></span><br><span class="line">        classLoaderField.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">//取putObject方法进行置空</span></span><br><span class="line">        Method putObject = unsafeClass.getMethod(<span class="string">"putObject"</span>, Object.class, <span class="keyword">long</span>.class, Object.class);</span><br><span class="line">        <span class="comment">//值为8，这里不用硬编码，看什么时候等到classLoader字段被404了再用</span></span><br><span class="line">        <span class="keyword">long</span> offset = (<span class="keyword">long</span>) objectFieldOffset.invoke(unsafeInstance, classLoaderField);</span><br><span class="line"></span><br><span class="line">        Log.i(TAG, <span class="string">"clearClassLoaderInClass: classLoader offset="</span> + offset);</span><br><span class="line">        <span class="comment">//偏移量为8处置空</span></span><br><span class="line">        putObject.invoke(unsafeInstance, cls, offset, <span class="keyword">null</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">        Log.e(TAG, <span class="string">"clearClassLoaderInClass: "</span>, throwable);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在当前类下</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reflection9</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//传入当前类</span></span><br><span class="line">        clearClassLoaderInClass(Reflection9.class);</span><br><span class="line">        <span class="comment">//接下来就可以调用隐私API了...</span></span><br><span class="line">        SystemService.restart(<span class="string">"zygote"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>和掘金说的不同，不仅仅反射，直接调用也是可以的，没有此类限制。</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="OCD 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="OCD 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OCD</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://ocd.ooo/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/" title="Android-P破解隐藏私有API禁止调用的限制">https://ocd.ooo/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Develop/" rel="tag"># Develop</a>
+          
+            <a href="/tags/android-app/" rel="tag"># android app</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/17/android开发填坑之广播延迟问题/" rel="next" title="android开发填坑之广播延迟问题">
+                <i class="fa fa-chevron-left"></i> android开发填坑之广播延迟问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div id="gitalk-container"></div>
+  
+
+
         </div>
         
           
@@ -525,8 +741,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -769,6 +994,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -968,6 +1209,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
 
   
 
@@ -990,6 +1235,22 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '4dc5af3af4cbaf3256e3',
+          clientSecret: 'ba0af07deb8b413c08a37d4f8f031077b43b3ed2',
+          repo: 'ocd0711.github.io',
+          owner: 'OCD0711',
+          admin: ['OCD0711'],
+          id: md5(window.location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
   
@@ -1016,43 +1277,42 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1072,9 +1332,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });

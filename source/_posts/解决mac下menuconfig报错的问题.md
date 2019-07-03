@@ -14,7 +14,7 @@ tags:
 
 最近无聊开坑....好吧是公司项目...玩着玩着想在自己电脑上跑...结果 osx 下 menuconfig 出这个问题, 看下图....没办法解决掉坑来写个 blog 记录
 
-![](https://ws1.sinaimg.cn/large/006tNc79gy1fzf5woibvvj30u015w7q5.jpg)
+![](https://github.com/OCD0711/MyPostImages/raw/master/006tNc79gy1fzf5woibvvj30u015w7q5.jpg)
 
 __错误:__
 > ld: symbol(s) not found for architecture x86_64

@@ -164,9 +164,9 @@ public class Test01ConcurrentLinkedQueue {
 
 执行结果:
 > 使用 size 耗时: 757ms
-![](https://ws3.sinaimg.cn/large/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg)
+![](https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg)
 使用 isEmpty 耗时: 210ms
-![](https://ws1.sinaimg.cn/large/006tNbRwgy1fyepmvpgvdj30iw049dg5.jpg)
+![](https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepmvpgvdj30iw049dg5.jpg)
 
 当数据越大, 这种耗时差距越明显. 所以这种判断用 isEmpty 更加合理.
 
@@ -186,7 +186,7 @@ public static void main(String[] args) throws InterruptedException {
 ```
 
 执行结果:
-> ![](https://ws3.sinaimg.cn/large/006tNbRwgy1fyeprtdib4j306z01at8h.jpg)
+> ![](https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyeprtdib4j306z01at8h.jpg)
 
 
 ## toArray
@@ -212,7 +212,7 @@ public static void main(String[] args) throws InterruptedException {
 ```
 
 执行结果:
-> ![](https://ws1.sinaimg.cn/large/006tNbRwgy1fyepuyo52ej305e01kjr6.jpg)
+> ![](https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepuyo52ej305e01kjr6.jpg)
 
 
 ## iterator
@@ -232,4 +232,4 @@ public static void main(String[] args) throws InterruptedException {
 }
 ```
 
-![](https://ws1.sinaimg.cn/large/006tNbRwgy1fyepyiyx30j305601f3ya.jpg)
+![](https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepyiyx30j305601f3ya.jpg)

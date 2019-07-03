@@ -18,7 +18,7 @@ gitalk：一个基于 Github Issue 和 Preact 开发的评论插件
 ## Register Application
 
 在GitHub上注册新应用，链接：https://github.com/settings/applications/new
-![](https://ws3.sinaimg.cn/large/006tNbRwgy1fy407a45v3j30iw0d93zg.jpg)
+![](https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fy407a45v3j30iw0d93zg.jpg)
 
 参数说明：
 Application name： # 应用名称，随意
@@ -27,7 +27,7 @@ Application description # 描述，随意
 Authorization callback URL：# 网站URL [example link](https://ocd0711.github.ooo)
 
 点击注册后，页面跳转如下，其中Client ID和Client Secret在后面的配置中需要用到，到时复制粘贴即可:
-![](https://ws4.sinaimg.cn/large/006tNbRwgy1fy4087vmjmj31rl0u0wjr.jpg)
+![](https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fy4087vmjmj31rl0u0wjr.jpg)
 
 
 ## gitalk.swig

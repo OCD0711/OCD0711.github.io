@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: "https://ocd.ooo"
+url: "https://ocd0711.ml"
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -103,8 +103,8 @@ algolia:
 ## Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
 live2d:
+    # enable: true
     enable: false
-  # enable: false
     scriptFrom: local # 默认
     pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)
     pluginJsPath: lib/ # 脚本文件相对与插件根目录路径

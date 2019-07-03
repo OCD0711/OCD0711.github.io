@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="google2ff74b080d9e3f60.html">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "520cff11"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/./images/2.ico?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'DY0G50H99R',
+      apiKey: '3ad7f696dc7901f700f2391d485396bb',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="In a Tree, the running time for most operations is O(logN)">
+<meta name="keywords" content="Develop,C,Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trees">
+<meta property="og:url" content="https://ocd.ooo/2019/07/03/2017-12-08-Trees/index.html">
+<meta property="og:site_name" content="OCD Blog">
+<meta property="og:description" content="In a Tree, the running time for most operations is O(logN)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ocd.ooo/images/tree.svg">
+<meta property="og:image" content="https://ocd.ooo/images/exp-tree.svg">
+<meta property="og:image" content="https://ocd.ooo/images/AVL-Tree-1.svg.png">
+<meta property="og:image" content="https://ocd.ooo/images/AVL-Tree-2.gif">
+<meta property="og:updated_time" content="2019-07-03T14:15:20.344Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Trees">
+<meta name="twitter:description" content="In a Tree, the running time for most operations is O(logN)">
+<meta name="twitter:image" content="https://ocd.ooo/images/tree.svg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="OCD Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://ocd.ooo/2019/07/03/2017-12-08-Trees/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Trees | OCD Blog</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126027123-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126027123-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?106da5dde879abce484d31eb7746a49c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OCD Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ocd.ooo/2019/07/03/2017-12-08-Trees/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OCD">
+      <meta itemprop="description" content="Nothing here, trust me">
+      <meta itemprop="image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OCD Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Trees
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-03 22:15:20" itemprop="dateCreated datePublished" datetime="2019-07-03T22:15:20+08:00">2019-07-03</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/07/03/2017-12-08-Trees/" class="leancloud_visitors" data-flag-title="Trees">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>In a <code>Tree</code>, the running time for most operations is <strong>O(logN)</strong></p>
+<a id="more"></a>
+<h2 id="4-1-Preliminaries"><a href="#4-1-Preliminaries" class="headerlink" title="4.1 Preliminaries"></a>4.1 Preliminaries</h2><ul>
+<li>A <code>tree</code> can be defined in several ways. One natural way to define a tree is <strong>recursively</strong>.<ul>
+<li>A <code>tree</code> is a collection of <em>nodes</em>.</li>
+<li>If not empty, a <code>tree</code> consists of a distinguished node _r_, called the <strong>root</strong>, and zero or more nonempty (sub)trees _T1_, _T2_, …. , _Tk_, each of whose roots are connected by a directed <em>edge</em> from _r_</li>
+<li>The <em>root</em> of each subtree is said to be a <strong>child</strong> of _r_, and _r_ is the parent of each subtree root.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/tree.svg" alt="tree"> </p>
+<p><strong>Figure 4.1</strong> A tree</p>
+<h3 id="4-1-1-Implementation-of-Trees"><a href="#4-1-1-Implementation-of-Trees" class="headerlink" title="4.1.1 Implementation of Trees"></a>4.1.1 Implementation of Trees</h3><p>The solution is simple:<br>    Keep the children of each node in a linked list of tree nodes.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ElementType int</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>* <span class="title">PtrToNode</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ElementType Element;</span><br><span class="line">	PtrToNode FirstChild;</span><br><span class="line">	PtrToNode NextSibling;</span><br><span class="line">&#125;;</span><br><span class="line">``` </span><br><span class="line">`FirstChild` points to the head of its child </span><br><span class="line">`NextSibling` points to its brother in the linked <span class="built_in">list</span></span><br><span class="line"></span><br><span class="line">### <span class="number">4.1</span><span class="number">.2</span> Tree Traversals with an Application</span><br><span class="line">The structure of a Unix file system.</span><br><span class="line">`/usr`</span><br><span class="line">__Codes to imply <span class="keyword">this</span> idea:__</span><br><span class="line">```c</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ListDir</span><span class="params">( DirectoryOrFile D, <span class="keyword">int</span> Depth )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (D is a legitimate entry)</span><br><span class="line">	&#123;</span><br><span class="line">		PrintName(D, Depth);</span><br><span class="line">		<span class="keyword">if</span> (D is an directory )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> each child, C of D</span><br><span class="line">				ListDir(C, Depth+<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ListDirectory</span><span class="params">( DirectoryOrFile D )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ListDir(D, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SizeOfDirectory</span><span class="params">( DirectoryOrFile D )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> TotalSize;</span><br><span class="line">    </span><br><span class="line">    TotalSize = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>( D is a legitimate entry )</span><br><span class="line">    &#123;</span><br><span class="line">        TotalSize = FileSize( D );</span><br><span class="line">        <span class="keyword">if</span>( D is a directory )</span><br><span class="line">            <span class="keyword">for</span> each child C of D</span><br><span class="line">                TotalSize += SizeOfDirectory( C );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> TotalSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-2-Binary-Trees"><a href="#4-2-Binary-Trees" class="headerlink" title="4.2 Binary Trees"></a>4.2 Binary Trees</h2><p>A binary tree is a tree in which no node can have more than two children.</p>
+<h3 id="4-2-1-Implementation"><a href="#4-2-1-Implementation" class="headerlink" title="4.2.1 Implementation"></a>4.2.1 Implementation</h3><ul>
+<li>Because a binary tree has most two children, we can keep direct pointers to them.</li>
+<li>In that a node is a structure consists of the <em>Key</em> information plus two pointers (<code>left</code> and <code>right</code>) to other nodes.</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>* <span class="title">PtrToNode</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">PtrToNode</span> <span class="title">Tree</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ElementType Element;</span><br><span class="line">	Tree Left;</span><br><span class="line">	Tree Right;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-2-Expression-Trees"><a href="#4-2-2-Expression-Trees" class="headerlink" title="4.2.2 Expression Trees"></a>4.2.2 Expression Trees</h3><p><img src="/images/exp-tree.svg" alt="tree"><br>We can produce an (overly parenthesized) infix expression by recursively producing a parenthesized left expression, then print out the operator at the root, and finally recursively producing a right parenthesized expression.</p>
+<p>This general strategy is known as an <em>inorder</em> traversal; it is easy to remember because of the type of expression it produces.</p>
+<p>There are two alternative strategies. See the book for more examples.</p>
+<h4 id="Constructing-an-Expression-Tree"><a href="#Constructing-an-Expression-Tree" class="headerlink" title="Constructing an Expression Tree"></a>Constructing an Expression Tree</h4><p>We now give an algorithm to convert a postfix expression into an expression tree.<br>As an example, suppose the input is:<br>    <code>a b + c d e + * *</code><br>Codes can be found <a href="https://github.com/hellobbn/C-Program/tree/master/C-Programs/P-8" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="4-3-AVL-Tree"><a href="#4-3-AVL-Tree" class="headerlink" title="4.3 AVL Tree"></a>4.3 AVL Tree</h2><p>An <code>AVL</code> tree is a search tree with a <em>balance</em> condition.</p>
+<ul>
+<li>Require the left and right subtrees have the same height </li>
+<li>Every node must have left and right trees with the same height.</li>
+</ul>
+<p>An <code>AVL</code> tree is identical to a binary search tree, except that for every node in the tree, the height of the left and right subtrees can differ at most 1. (The height of a empty tree is defined to be <code>-1</code>)<br><img src="/images/AVL-Tree-1.svg.png" alt="AVL-Tree-1"><br><strong>Figure: A AVL tree</strong></p>
+<p><strong>Note: Balanced factor</strong> (Wikipedia)<br>In a binary tree the balance factor of a node N is defined to be the height difference</p>
+<pre><code>BalanceFactor(N) := Height(RightSubtree(N)) – Height(LeftSubtree(N))
+</code></pre><p>of its two child subtrees. A binary tree is defined to be an AVL tree if the invariant</p>
+<pre><code>BalanceFactor(N) ∈ {–1,0,+1}
+</code></pre><p>holds for every node N in the tree.</p>
+<p>A node N with BalanceFactor(N) &lt; 0 is called “left-heavy”, one with BalanceFactor(N) &gt; 0 is called “right-heavy”, and one with BalanceFactor(N) = 0 is sometimes simply called “balanced”.</p>
+<p>The minimum number of nodes, <em>S(h)</em> , in an <code>AVL</code> tree of height <strong>h</strong> is given by</p>
+<pre><code>S(h) = S(h-1) + S(h-2) + 1 
+</code></pre><ul>
+<li>Thus, all the tree operations can be performed in <strong>O($$log(N)$$)</strong> time, except possibly insertion( we will assume lazy deletion ). When we do a insertion, we need to update all the balancing information for the nodes on the path back to the <code>root</code>, but the reason that insertion is potentially difficult is that inserting a node could violate the <code>AVL</code> Tree property.</li>
+<li>If this is the case, then the property has to be resorted before the insertion step is considered over. It turns out that this can always be done with a simple modification to the tree, known as a <strong>rotation</strong></li>
+<li>After insertion, only nodes that are on the path from the insertion point to the root might have their balance altered because only those nodes have their subtrees altered. </li>
+<li>As we follow the path up to the root and update the balancing information, we may find a node whose new balance violates the <code>AVL</code> condition.</li>
+</ul>
+<p>Lets call the node that must be rebalanced $${\alpha}$$. Since any node has at most two children, and a height imbalance requires that $${\alpha}$$’s two subtrees’ height differ by two, it is easy to see that a violation might occur in four cases:</p>
+<ol>
+<li>An insertion into the left subtree of the left child of $${\alpha}$$;</li>
+<li>An insertion into the right subtree of the left child of $${\alpha}$$.</li>
+<li>An insertion into the left subtree of the right child of $${\alpha}$$.</li>
+<li>An insertion into the left subtree of the right child of $${\alpha}$$.</li>
+</ol>
+<p>The first case (<code>left-left</code> <code>right-right</code>) is fixed by a <em>single rotation</em> of the tree and the second case (<code>left-right</code> <code>right-left</code>) is handled by a more complex <em>double rotation</em>.</p>
+<p><img src="/images/AVL-Tree-2.gif" alt="AVL rotation"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="OCD 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="OCD 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OCD</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://ocd.ooo/2019/07/03/2017-12-08-Trees/" title="Trees">https://ocd.ooo/2019/07/03/2017-12-08-Trees/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Develop/" rel="tag"># Develop</a>
+          
+            <a href="/tags/C/" rel="tag"># C</a>
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/03/2017-11-11-new-to-python/" rel="next" title="Python 入门">
+                <i class="fa fa-chevron-left"></i> Python 入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/03/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/" rel="prev" title="Use Apple Time-Machine on Raspberry Pi with ArchLinux ARM">
+                Use Apple Time-Machine on Raspberry Pi with ArchLinux ARM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://ws3.sinaimg.cn/large/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
+            
+              <p class="site-author-name" itemprop="name">OCD</p>
+              <p class="site-description motion-element" itemprop="description">Nothing here, trust me</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/OCD0711" title="GitHub &rarr; https://github.com/OCD0711" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:ocd2057@gmail.com" title="E-Mail &rarr; mailto:ocd2057@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/5818658576/profile?topnav=1&wvr=6" title="Weibo &rarr; https://weibo.com/5818658576/profile?topnav=1&wvr=6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://music.163.com/#/user/home?id=253138628" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=253138628" rel="noopener" target="_blank"><i class="fa fa-fw fa-spotify"></i>网易云音乐</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.denua.cn" title="https://www.denua.cn" rel="noopener" target="_blank">denua</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ncgame.cc" title="http://www.ncgame.cc" rel="noopener" target="_blank">ncgame</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Preliminaries"><span class="nav-number">1.</span> <span class="nav-text">4.1 Preliminaries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-Implementation-of-Trees"><span class="nav-number">1.1.</span> <span class="nav-text">4.1.1 Implementation of Trees</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Binary-Trees"><span class="nav-number">2.</span> <span class="nav-text">4.2 Binary Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-Implementation"><span class="nav-number">2.1.</span> <span class="nav-text">4.2.1 Implementation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-Expression-Trees"><span class="nav-number">2.2.</span> <span class="nav-text">4.2.2 Expression Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Constructing-an-Expression-Tree"><span class="nav-number">2.2.1.</span> <span class="nav-text">Constructing an Expression Tree</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-AVL-Tree"><span class="nav-number">3.</span> <span class="nav-text">4.3 AVL Tree</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OCD</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">96k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">2:55</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+  
+</div>
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66023692";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+      <div>
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  // with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      </div>
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '4dc5af3af4cbaf3256e3',
+          clientSecret: 'ba0af07deb8b413c08a37d4f8f031077b43b3ed2',
+          repo: 'ocd0711.github.io',
+          owner: 'OCD0711',
+          admin: ['OCD0711'],
+          id: md5(window.location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.5.0"></script>
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "u8ODajgyDwCkJvebfFfP49M4-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "u8ODajgyDwCkJvebfFfP49M4-gzGzoHsz",
+                'X-LC-Key': "UTMYP5u51XAECGbVz74kLBk7",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+
+<script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+

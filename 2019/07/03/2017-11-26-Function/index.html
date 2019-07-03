@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="google2ff74b080d9e3f60.html">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "520cff11"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/./images/2.ico?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'DY0G50H99R',
+      apiKey: '3ad7f696dc7901f700f2391d485396bb',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="要执行函数定义的特定任务, 可调用 函数 8.1 定义函数E.g: greeter.py12345def greet_user():                           # Line 1    &quot;&quot;&quot;Show simple greetings&quot;&quot;&quot;             # Line 2    print(&quot;Hello!&quot;)                         # L">
+<meta name="keywords" content="Python,Develop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-Functions">
+<meta property="og:url" content="https://ocd.ooo/2019/07/03/2017-11-26-Function/index.html">
+<meta property="og:site_name" content="OCD Blog">
+<meta property="og:description" content="要执行函数定义的特定任务, 可调用 函数 8.1 定义函数E.g: greeter.py12345def greet_user():                           # Line 1    &quot;&quot;&quot;Show simple greetings&quot;&quot;&quot;             # Line 2    print(&quot;Hello!&quot;)                         # L">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-03T14:15:20.343Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python-Functions">
+<meta name="twitter:description" content="要执行函数定义的特定任务, 可调用 函数 8.1 定义函数E.g: greeter.py12345def greet_user():                           # Line 1    &quot;&quot;&quot;Show simple greetings&quot;&quot;&quot;             # Line 2    print(&quot;Hello!&quot;)                         # L">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="OCD Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://ocd.ooo/2019/07/03/2017-11-26-Function/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python-Functions | OCD Blog</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126027123-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126027123-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?106da5dde879abce484d31eb7746a49c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OCD Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ocd.ooo/2019/07/03/2017-11-26-Function/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OCD">
+      <meta itemprop="description" content="Nothing here, trust me">
+      <meta itemprop="image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OCD Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python-Functions
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-03 22:15:20" itemprop="dateCreated datePublished" datetime="2019-07-03T22:15:20+08:00">2019-07-03</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/07/03/2017-11-26-Function/" class="leancloud_visitors" data-flag-title="Python-Functions">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>要执行函数定义的特定任务, 可调用 <code>函数</code></p>
+<h2 id="8-1-定义函数"><a href="#8-1-定义函数" class="headerlink" title="8.1 定义函数"></a>8.1 定义函数</h2><p><strong>E.g:</strong> greeter.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span><span class="params">()</span>:</span>                           <span class="comment"># Line 1</span></span><br><span class="line">    <span class="string">"""Show simple greetings"""</span>             <span class="comment"># Line 2</span></span><br><span class="line">    print(<span class="string">"Hello!"</span>)                         <span class="comment"># Line 3</span></span><br><span class="line">    </span><br><span class="line">greet_user()                                <span class="comment"># Line 4</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="Output"><a href="#Output" class="headerlink" title="Output:"></a>Output:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello!</span><br></pre></td></tr></table></figure>
+<h4 id="解释"><a href="#解释" class="headerlink" title="解释:"></a>解释:</h4><p>Line 1: <code>def</code> 表明你要定义一个函数, 后面缩进构成函数体<br>Line 2: 文档字符串, 由三个引号引起<br>Line 3: 函数代码<br>Line 4: 函数调用</p>
+<h3 id="8-1-1-向函数传递信息"><a href="#8-1-1-向函数传递信息" class="headerlink" title="8.1.1 向函数传递信息"></a>8.1.1 向函数传递信息</h3><p><strong>E.g:</strong> improved_greeter.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span><span class="params">(username)</span>:</span>                           <span class="comment"># A - 1</span></span><br><span class="line">    <span class="string">"""Show simple greeting message"""</span></span><br><span class="line">    print(<span class="string">"Hello, "</span> + username.title() + <span class="string">"!"</span>)</span><br><span class="line">    </span><br><span class="line">greet_user(<span class="string">'jesse'</span>)                                 <span class="comment"># A - 2</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-1"><a href="#Output-1" class="headerlink" title="Output:"></a>Output:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, Jesse!</span><br></pre></td></tr></table></figure>
+<h3 id="8-1-2-实参和形参"><a href="#8-1-2-实参和形参" class="headerlink" title="8.1.2 实参和形参"></a>8.1.2 实参和形参</h3><p>在 <code>A - 1</code> 中, <code>username</code> 是一个形参<br>在 <code>A - 2</code> 中, <code>&#39;jesse&#39;</code> 是一个实参</p>
+<h2 id="8-2-传递实参"><a href="#8-2-传递实参" class="headerlink" title="8.2 传递实参"></a>8.2 传递实参</h2><h3 id="8-2-1-位置实参"><a href="#8-2-1-位置实参" class="headerlink" title="8.2.1 位置实参"></a>8.2.1 位置实参</h3><p>你调用函数时, Python 必须根据调用中的每个实参都关联到函数定义中的一个形参, 为此, 最简单的关联方式是基于实参的顺序<br>这种调用方式被称为 <code>位置实参</code></p>
+<p><strong>E.g:</strong> pets.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span><span class="params">(animal_type, pet_name)</span>:</span></span><br><span class="line">    <span class="string">"""Show pets' information"""</span></span><br><span class="line">    print(<span class="string">"\nI have a "</span> + animal_type + <span class="string">"."</span>)</span><br><span class="line">    print(<span class="string">"My "</span> + animal_type + <span class="string">"'s name is "</span> + pet_name.title() + <span class="string">"."</span>)</span><br><span class="line">    </span><br><span class="line">describe_pet(<span class="string">'hamster'</span>, <span class="string">'harry'</span>)</span><br><span class="line">describe_pet(<span class="string">'dog'</span>, <span class="string">'willie'</span>)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">I have a hamster.</span><br><span class="line">My hamster&apos;s name is Harry.</span><br><span class="line"></span><br><span class="line">I have a dog.</span><br><span class="line">My dog&apos;s name is Willie.</span><br></pre></td></tr></table></figure>
+<h3 id="8-2-2-关键字实参"><a href="#8-2-2-关键字实参" class="headerlink" title="8.2.2 关键字实参"></a>8.2.2 关键字实参</h3><p><strong>E.g:</strong> new_pets.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span><span class="params">(animal_type, pet_name)</span>:</span></span><br><span class="line">    <span class="string">"""Show pets' information"""</span></span><br><span class="line">    print(<span class="string">"\nI have a "</span> + animal_type + <span class="string">"."</span>)</span><br><span class="line">    print(<span class="string">"My "</span> + animal_type + <span class="string">"'s name is "</span> + pet_name.title() + <span class="string">"."</span>)</span><br><span class="line">    </span><br><span class="line">describe_pet(pet_name = <span class="string">'harry'</span>, animal_type = <span class="string">'hamster'</span>)</span><br><span class="line">describe_pet(<span class="string">'dog'</span>, <span class="string">'willie'</span>)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-is-the-same-as-above"><a href="#Output-is-the-same-as-above" class="headerlink" title="Output is the same as above"></a>Output is the same as <code>above</code></h6><h3 id="8-2-3-默认值"><a href="#8-2-3-默认值" class="headerlink" title="8.2.3 默认值"></a>8.2.3 默认值</h3><p><strong>E.g:</strong> new2_pets.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span><span class="params">(animal_type = <span class="string">'dog'</span>, pet_name)</span>:</span></span><br><span class="line">    <span class="string">"""Show pets' information"""</span></span><br><span class="line">    print(<span class="string">"\nI have a "</span> + animal_type + <span class="string">"."</span>)</span><br><span class="line">    print(<span class="string">"My "</span> + animal_type + <span class="string">"'s name is "</span> + pet_name.title() + <span class="string">"."</span>)</span><br><span class="line">    </span><br><span class="line">describe_pet(pet_name = <span class="string">'harry'</span>, animal_type = <span class="string">'hamster'</span>)</span><br><span class="line">describe_pet(pet_name = <span class="string">'willie'</span>)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-3"><a href="#Output-3" class="headerlink" title="Output"></a>Output</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">I have a hamster.</span><br><span class="line">My hamster&apos;s name is Harry.</span><br><span class="line"></span><br><span class="line">I have a dog.</span><br><span class="line">My dog&apos;s name is Willie.</span><br></pre></td></tr></table></figure>
+<p>注: 使用默认值时, 在形参列表中必须先列出没有默认值的形参</p>
+<h3 id="8-2-4-等效的函数调用"><a href="#8-2-4-等效的函数调用" class="headerlink" title="8.2.4 等效的函数调用"></a>8.2.4 等效的函数调用</h3><p>注意到在之前的函数定义: <code>def describe_pet(pet_name, animal_type = &#39;dog&#39;)</code> 在任何情况下都必须给 <code>pet_name</code> 提供实参</p>
+<p>略 23333</p>
+<h3 id="8-2-5-避免实参错误"><a href="#8-2-5-避免实参错误" class="headerlink" title="8.2.5 避免实参错误"></a>8.2.5 避免实参错误</h3><h2 id="8-3-返回值"><a href="#8-3-返回值" class="headerlink" title="8.3 返回值"></a>8.3 返回值</h2><h3 id="8-3-1-简单返回值"><a href="#8-3-1-简单返回值" class="headerlink" title="8.3.1 简单返回值"></a>8.3.1 简单返回值</h3><p><strong>E.g:</strong> formatted_name.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_formatted_name</span><span class="params">(first_name, last_name)</span>:</span></span><br><span class="line">    <span class="string">"""Return Formatted Names"""</span></span><br><span class="line">    full_name = first_name + <span class="string">' '</span> + last_name</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> full_name.title()</span><br><span class="line">    </span><br><span class="line">musician = get_formatted_name(<span class="string">'jimi'</span>, <span class="string">'hendrix'</span>)</span><br><span class="line">print(musician)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-4"><a href="#Output-4" class="headerlink" title="Output"></a>Output</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Jimi Hendrix</span><br></pre></td></tr></table></figure>
+<h3 id="8-3-2-使实参可选"><a href="#8-3-2-使实参可选" class="headerlink" title="8.3.2 使实参可选"></a>8.3.2 使实参可选</h3><p><strong>E.g:</strong><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_formatted_name</span><span class="params">(first_name, last_name, middle_name = <span class="string">''</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="8-3-3-返回字典"><a href="#8-3-3-返回字典" class="headerlink" title="8.3.3 返回字典"></a>8.3.3 返回字典</h3><p><strong>E.g:</strong> person.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_person</span><span class="params">(first_name, last_name, age = <span class="string">''</span>)</span>:</span></span><br><span class="line">    <span class="string">"""return a Dictionary"""</span></span><br><span class="line">    person = &#123;<span class="string">'first'</span>: first_name, <span class="string">'last'</span>: last_name&#125;</span><br><span class="line">    <span class="keyword">if</span> age:</span><br><span class="line">        person[<span class="string">'age'</span>] = age</span><br><span class="line">    <span class="keyword">return</span> person</span><br><span class="line">    </span><br><span class="line">musician = build_person(<span class="string">'jimi'</span>, <span class="string">'henrix'</span>, age = <span class="number">27</span>)</span><br><span class="line">print(musician)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-5"><a href="#Output-5" class="headerlink" title="Output:"></a>Output:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;first&apos;: &apos;jimi&apos;, &apos;last&apos;: &apos;henrix&apos;, &apos;age&apos;: 27&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="8-3-4-结合使用函数和-while-循环"><a href="#8-3-4-结合使用函数和-while-循环" class="headerlink" title="8.3.4 结合使用函数和 while 循环"></a>8.3.4 结合使用函数和 <code>while</code> 循环</h3><p><strong>E.g:</strong><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_formatted_name</span><span class="params">(first_name, last_name)</span>:</span></span><br><span class="line">    <span class="string">"""Return Formatted Names"""</span></span><br><span class="line">    full_name = first_name + <span class="string">' '</span> + last_name</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> full_name.title()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Infinite Loop!</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    print(<span class="string">"\nPlease tell me your name: "</span>)</span><br><span class="line">    f_name = input(<span class="string">"First name: "</span>)</span><br><span class="line">    l_name = input(<span class="string">"Last name: "</span>)</span><br><span class="line">    </span><br><span class="line">    formatted_name = get_formatted_name(f_name, l_name)</span><br><span class="line">    print(<span class="string">"\nHello, "</span> + formatted_name.title())</span><br></pre></td></tr></table></figure></p>
+<h2 id="8-4-传递列表"><a href="#8-4-传递列表" class="headerlink" title="8.4  传递列表"></a>8.4  传递列表</h2><p><strong>E.g:</strong> greet_users.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_users</span><span class="params">(names)</span>:</span></span><br><span class="line">    <span class="string">"""Send greetings to everyone in the list"""</span></span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">        print(<span class="string">"Hello, "</span> + name.title() + <span class="string">"!"</span>)</span><br><span class="line">        </span><br><span class="line">usernames = [<span class="string">'hannah'</span>, <span class="string">'ty'</span>, <span class="string">'margot'</span>]</span><br><span class="line">greet_users(usernames)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-6"><a href="#Output-6" class="headerlink" title="Output:"></a>Output:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hello, Hannah!</span><br><span class="line">Hello, Ty!</span><br><span class="line">Hello, Margot!</span><br></pre></td></tr></table></figure>
+<h3 id="8-4-1-在函数中修改列表"><a href="#8-4-1-在函数中修改列表" class="headerlink" title="8.4.1 在函数中修改列表"></a>8.4.1 在函数中修改列表</h3><p><strong>E.g:</strong> printing_models.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_models</span><span class="params">(unprinted_designs, completed_models)</span>:</span></span><br><span class="line">	<span class="string">""" ... """</span></span><br><span class="line">	<span class="keyword">while</span> unprinted_designs:</span><br><span class="line">		current_design = unprinted_designs.pop()</span><br><span class="line">		</span><br><span class="line">		print(<span class="string">"Print model: "</span> + current_design)</span><br><span class="line">		completed_models.append(current_design)</span><br><span class="line">		</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_completed_models</span><span class="params">(completed_models)</span>:</span></span><br><span class="line">	print(<span class="string">"\nThe following models have been printed: "</span>)</span><br><span class="line">	<span class="keyword">for</span> completed_model <span class="keyword">in</span> completed_models:</span><br><span class="line">		print(completed_model)</span><br><span class="line">		</span><br><span class="line">unprinted_designs = [<span class="string">'iphone case'</span>, <span class="string">'rebot pendant'</span>, <span class="string">'dodecahedron'</span>]</span><br><span class="line">completed_models = []</span><br><span class="line">print_models(unprinted_designs, completed_models)</span><br><span class="line">show_completed_models(completed_models)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-7"><a href="#Output-7" class="headerlink" title="Output:"></a>Output:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Print model: dodecahedron</span><br><span class="line">Print model: rebot pendant</span><br><span class="line">Print model: iphone case</span><br><span class="line"></span><br><span class="line">The following models have been printed: </span><br><span class="line">dodecahedron</span><br><span class="line">rebot pendant</span><br><span class="line">iphone case</span><br></pre></td></tr></table></figure>
+<h3 id="8-4-2-禁止函数修改列表"><a href="#8-4-2-禁止函数修改列表" class="headerlink" title="8.4.2 禁止函数修改列表"></a>8.4.2 禁止函数修改列表</h3><p>Use <code>function[:]</code> to pass a copy of the list to a sunction<br>切片法表示创建列表副本</p>
+<h2 id="8-5-传递任意数量的实参"><a href="#8-5-传递任意数量的实参" class="headerlink" title="8.5 传递任意数量的实参"></a>8.5 传递任意数量的实参</h2><p><strong>E.g:</strong> pizza.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_pizza</span><span class="params">(*toppings)</span>:</span></span><br><span class="line">    print(toppings)</span><br><span class="line">    </span><br><span class="line">make_pizza(<span class="string">'pepperoni'</span>)</span><br><span class="line">make_pizza(<span class="string">'mushrooms'</span>, <span class="string">'green peppers'</span>, <span class="string">'extra cheese'</span>)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-8"><a href="#Output-8" class="headerlink" title="Output:"></a>Output:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(&apos;pepperoni&apos;,)</span><br><span class="line">(&apos;mushrooms&apos;, &apos;green peppers&apos;, &apos;extra cheese&apos;)</span><br></pre></td></tr></table></figure>
+<h4 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation:"></a>Explanation:</h4><p><code>*toppings</code> 创建了一个名为 <code>toppings</code> 的空元组, 并把所有值封装到元组中</p>
+<h3 id="8-5-1-结合使用位置实参和任意数量实参"><a href="#8-5-1-结合使用位置实参和任意数量实参" class="headerlink" title="8.5.1 结合使用位置实参和任意数量实参"></a>8.5.1 结合使用位置实参和任意数量实参</h3><p><strong>E.g:</strong> new_pizza.py<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_pizza</span><span class="params">(size, *toppings)</span>:</span></span><br><span class="line">    print(<span class="string">"\nMaking a "</span> + str(size) + <span class="string">"-inch pizza with the following toppings:"</span>)</span><br><span class="line">    <span class="keyword">for</span> topping <span class="keyword">in</span> toppings:</span><br><span class="line">        print(<span class="string">"- "</span> + topping)</span><br><span class="line">    </span><br><span class="line">make_pizza(<span class="number">16</span>, <span class="string">'pepperoni'</span>)</span><br><span class="line">make_pizza(<span class="number">12</span>, <span class="string">'mushrooms'</span>, <span class="string">'green peppers'</span>, <span class="string">'extra cheese'</span>)</span><br></pre></td></tr></table></figure></p>
+<h6 id="Output-9"><a href="#Output-9" class="headerlink" title="Output"></a>Output</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Making a 16-inch pizza with the following toppings:</span><br><span class="line">- pepperoni</span><br><span class="line"></span><br><span class="line">Making a 12-inch pizza with the following toppings:</span><br><span class="line">- mushrooms</span><br><span class="line">- green peppers</span><br><span class="line">- extra cheese</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="OCD 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="OCD 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OCD</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://ocd.ooo/2019/07/03/2017-11-26-Function/" title="Python-Functions">https://ocd.ooo/2019/07/03/2017-11-26-Function/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Develop/" rel="tag"># Develop</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/03/2017-11-11-if-statements/" rel="next" title="If Statement">
+                <i class="fa fa-chevron-left"></i> If Statement
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/03/2017-11-11-python-list/" rel="prev" title="Python 列表">
+                Python 列表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://ws3.sinaimg.cn/large/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
+            
+              <p class="site-author-name" itemprop="name">OCD</p>
+              <p class="site-description motion-element" itemprop="description">Nothing here, trust me</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/OCD0711" title="GitHub &rarr; https://github.com/OCD0711" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:ocd2057@gmail.com" title="E-Mail &rarr; mailto:ocd2057@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/5818658576/profile?topnav=1&wvr=6" title="Weibo &rarr; https://weibo.com/5818658576/profile?topnav=1&wvr=6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://music.163.com/#/user/home?id=253138628" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=253138628" rel="noopener" target="_blank"><i class="fa fa-fw fa-spotify"></i>网易云音乐</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.denua.cn" title="https://www.denua.cn" rel="noopener" target="_blank">denua</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ncgame.cc" title="http://www.ncgame.cc" rel="noopener" target="_blank">ncgame</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-定义函数"><span class="nav-number">1.</span> <span class="nav-text">8.1 定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">Output:</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#解释"><span class="nav-number">1.0.1.</span> <span class="nav-text">解释:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-1-向函数传递信息"><span class="nav-number">1.1.</span> <span class="nav-text">8.1.1 向函数传递信息</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-1"><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">Output:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-2-实参和形参"><span class="nav-number">1.2.</span> <span class="nav-text">8.1.2 实参和形参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-传递实参"><span class="nav-number">2.</span> <span class="nav-text">8.2 传递实参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-1-位置实参"><span class="nav-number">2.1.</span> <span class="nav-text">8.2.1 位置实参</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-2"><span class="nav-number">2.1.0.0.1.</span> <span class="nav-text">Output</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-2-关键字实参"><span class="nav-number">2.2.</span> <span class="nav-text">8.2.2 关键字实参</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-is-the-same-as-above"><span class="nav-number">2.2.0.0.1.</span> <span class="nav-text">Output is the same as above</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-3-默认值"><span class="nav-number">2.3.</span> <span class="nav-text">8.2.3 默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-3"><span class="nav-number">2.3.0.0.1.</span> <span class="nav-text">Output</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-4-等效的函数调用"><span class="nav-number">2.4.</span> <span class="nav-text">8.2.4 等效的函数调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-5-避免实参错误"><span class="nav-number">2.5.</span> <span class="nav-text">8.2.5 避免实参错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-返回值"><span class="nav-number">3.</span> <span class="nav-text">8.3 返回值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-1-简单返回值"><span class="nav-number">3.1.</span> <span class="nav-text">8.3.1 简单返回值</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-4"><span class="nav-number">3.1.0.0.1.</span> <span class="nav-text">Output</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-2-使实参可选"><span class="nav-number">3.2.</span> <span class="nav-text">8.3.2 使实参可选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-3-返回字典"><span class="nav-number">3.3.</span> <span class="nav-text">8.3.3 返回字典</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-5"><span class="nav-number">3.3.0.0.1.</span> <span class="nav-text">Output:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-4-结合使用函数和-while-循环"><span class="nav-number">3.4.</span> <span class="nav-text">8.3.4 结合使用函数和 while 循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-4-传递列表"><span class="nav-number">4.</span> <span class="nav-text">8.4  传递列表</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-6"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">Output:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-4-1-在函数中修改列表"><span class="nav-number">4.1.</span> <span class="nav-text">8.4.1 在函数中修改列表</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-7"><span class="nav-number">4.1.0.0.1.</span> <span class="nav-text">Output:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-4-2-禁止函数修改列表"><span class="nav-number">4.2.</span> <span class="nav-text">8.4.2 禁止函数修改列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-传递任意数量的实参"><span class="nav-number">5.</span> <span class="nav-text">8.5 传递任意数量的实参</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-8"><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">Output:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Explanation"><span class="nav-number">5.0.1.</span> <span class="nav-text">Explanation:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-5-1-结合使用位置实参和任意数量实参"><span class="nav-number">5.1.</span> <span class="nav-text">8.5.1 结合使用位置实参和任意数量实参</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Output-9"><span class="nav-number">5.1.0.0.1.</span> <span class="nav-text">Output</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OCD</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">96k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">2:55</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+  
+</div>
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66023692";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+      <div>
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  // with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      </div>
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '4dc5af3af4cbaf3256e3',
+          clientSecret: 'ba0af07deb8b413c08a37d4f8f031077b43b3ed2',
+          repo: 'ocd0711.github.io',
+          owner: 'OCD0711',
+          admin: ['OCD0711'],
+          id: md5(window.location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.5.0"></script>
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "u8ODajgyDwCkJvebfFfP49M4-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "u8ODajgyDwCkJvebfFfP49M4-gzGzoHsz",
+                'X-LC-Key': "UTMYP5u51XAECGbVz74kLBk7",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+
+<script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+

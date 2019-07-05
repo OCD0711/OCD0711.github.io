@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -218,7 +218,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -232,7 +232,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -443,20 +443,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/01/17/android开发填坑之广播延迟问题/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -524,7 +524,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/android-app/" itemprop="url" rel="index"><span itemprop="name">android app</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/android-app/" itemprop="url" rel="index"><span itemprop="name">android app</span></a></span>
 
                 
                 
@@ -601,20 +601,24 @@
 <p>刚开始想通过前台广播解决, 但是只有自定义广播可以设置前台, 系统广播无法设置, 这种解决方案被放弃..最终解决方案: 在 View 中重写 View.onScreenStateChanged, 通过回调实现监听.</p>
 <h2 id="View-onScreenStateChanged"><a href="#View-onScreenStateChanged" class="headerlink" title="View.onScreenStateChanged"></a>View.onScreenStateChanged</h2><p>源码如下:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This method is called whenever the state of the screen this view is</span></span><br><span class="line"><span class="comment"> * attached to changes. A state change will usually occurs when the screen</span></span><br><span class="line"><span class="comment"> * turns on or off (whether it happens automatically or the user does it</span></span><br><span class="line"><span class="comment"> * manually.)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> screenState The new state of the screen. Can be either</span></span><br><span class="line"><span class="comment"> *                    &#123;<span class="doctag">@link</span> #SCREEN_STATE_ON&#125; or &#123;<span class="doctag">@link</span> #SCREEN_STATE_OFF&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScreenStateChanged</span><span class="params">(<span class="keyword">int</span> screenState)</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>可以看到注释中写到: 这个方法在屏幕开关都会触发这个方法, 参数列表中 <strong>int screenState</strong> 代表屏幕开关状态</p>
 <h2 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h2><p>在我们自定义 View 中, 重写这个方法, 并且加回调, 就可以实现跟踪屏幕效果.</p>
 <ol>
 <li><strong>View 中重写</strong></li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加屏幕监听</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScreenStateChanged</span><span class="params">(<span class="keyword">int</span> screenState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onScreenStateChanged(screenState);</span><br><span class="line">        <span class="keyword">if</span> (mCallback != <span class="keyword">null</span>)&#123;</span><br><span class="line">            mCallback.onScreenState(screenState);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li><strong>定义回调</strong></li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加回调接口</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DragLayerCallback</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SCREEN_OFF = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SCREEN_ON = <span class="number">1</span>;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onScreenState</span><span class="params">(<span class="keyword">int</span> screenState)</span></span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <ol start="3">
 <li><strong>注册回调</strong></li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScreenStateCallback</span><span class="params">(DragLayerCallback callback)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.mCallback = callback;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ol start="4">
 <li>在需要监听的地方实现</li>
 </ol>
@@ -778,7 +782,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1072,7 +1076,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1081,7 +1085,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

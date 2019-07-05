@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -218,7 +218,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -232,7 +232,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -443,20 +443,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2018/11/09/Sony-Headphone-Connect-update-google-assistant/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -524,7 +524,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android-App/" itemprop="url" rel="index"><span itemprop="name">Android App</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android-App/" itemprop="url" rel="index"><span itemprop="name">Android App</span></a></span>
 
                 
                 
@@ -608,14 +608,19 @@
 </blockquote>
 <p>手机上抓包,发现软件启动的时候请求 <code>https://info.update.sony.net/HP001/MDRID289202/info/info.xml</code>, 居然返回的是404. 不负责的猜测了一下 MDRID289202 是机身的内部型号(包括版本号). 全局搜索了下源码发现<code>MDRID289202</code> 在 <code>com.sony.songpal.mdr.automagic.AutoMagicManager</code> 里面.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> URL <span class="title">m9721d</span><span class="params">(String str, String str2)</span> </span>&#123;</span><br><span class="line">    String str3 = <span class="string">"info.update.sony.net"</span>;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(String.format(Locale.getDefault(), <span class="string">"%s:code=%d"</span>, <span class="keyword">new</span> Object[]&#123;<span class="string">"AutoMagicManagerErrorDomain"</span>, Integer.valueOf(AutoMagicError.NoCategoryID.ordinal())&#125;));</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str2 == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(String.format(Locale.getDefault(), <span class="string">"%s:code=%d"</span>, <span class="keyword">new</span> Object[]&#123;<span class="string">"AutoMagicManagerErrorDomain"</span>, Integer.valueOf(AutoMagicError.NoServiceID.ordinal())&#125;));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> URL(String.format(Locale.getDefault(), <span class="string">"http://%s/%s/%s/info/%s"</span>, <span class="keyword">new</span> Object[]&#123;str3, str, str2, <span class="string">"info.xml"</span>&#125;));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable e) &#123;</span><br><span class="line">            SpLog.m12039a(f5487a, e);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这玩意用了两个字符串类的参数, 然后在 URL 里面就是 HP001 和 MDRID289202, 于是猜测假如我篡改这个参数的获取程序使其获取成国外行货的代码, 大概就能强制更新了(前提是硬件完全一样). 顺藤摸瓜检查 m9271d 这方法的调用, 查到了保存这个参数的类 com.sony.songpal.mdr.application.p061b.C1702a.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">m7942a</span><span class="params">(C2503b c2503b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Command.fromByteCode(c2503b.m11224a()) == Command.UPDT_RET_PARAM) &#123;</span><br><span class="line">        cm cmVar = (cm) c2503b;</span><br><span class="line">        <span class="keyword">if</span> (cmVar.m11579e() != <span class="keyword">this</span>.f4438n) &#123;</span><br><span class="line">            SpLog.m12040b(f4425a, <span class="keyword">this</span>.f4438n + <span class="string">" expected, but received "</span> + cmVar.m11579e());</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        af f = cmVar.m11580f();</span><br><span class="line">        <span class="keyword">switch</span> (cmVar.m11579e()) &#123;</span><br><span class="line">            <span class="keyword">case</span> CATEGORY_ID:</span><br><span class="line">                <span class="keyword">this</span>.f4429e = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> SERVICE_ID:</span><br><span class="line">                <span class="keyword">this</span>.f4430f = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> NATION_CODE:</span><br><span class="line">                <span class="keyword">this</span>.f4431g = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> LANGUAGE:</span><br><span class="line">                <span class="keyword">this</span>.f4432h = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> SERIAL_NUMBER:</span><br><span class="line">                <span class="keyword">this</span>.f4433i = ((ag) f).m11716a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> BATTERY_POWER_THRESHOLD:</span><br><span class="line">                <span class="keyword">this</span>.f4434j = ((ae) f).m11711a();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Invalid inquired type "</span> + cmVar.m11579e() + <span class="string">" was expected"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.f4437m != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.f4437m.countDown();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>SMALI 指令码对应如下(com.sony.songpal.mdr.application.b.a)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.line 156</span><br><span class="line">    :pswitch_1</span><br><span class="line">    check-cast v0, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;</span><br><span class="line"> </span><br><span class="line">    invoke-virtual &#123;v0&#125;, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;-&gt;a()Ljava/lang/String;</span><br><span class="line"> </span><br><span class="line">    move-result-object v0</span><br><span class="line"> </span><br><span class="line">    iput-object v0, p0, Lcom/sony/songpal/mdr/application/b/a;-&gt;f:Ljava/lang/String;</span><br><span class="line"> </span><br><span class="line">    goto :goto_1</span><br></pre></td></tr></table></figure>
+
 <p>把这玩意的SERVICE_ID那改成外国行货的ID就好了. 比如</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> SERVICE_ID:</span><br><span class="line">    <span class="keyword">this</span>.f4430f = <span class="string">"MDRID123456"</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+
 <p>但问题来了, 不知道外国行货的 ID 是多少, 可能ID是连着的, 于是我试了试 MDRID289200, 确认有这个型号. 于是修改 Apktool 解包的 SMALI 为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.line 156</span><br><span class="line">    :pswitch_1</span><br><span class="line">    #check-cast v0, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;</span><br><span class="line"> </span><br><span class="line">    #invoke-virtual &#123;v0&#125;, Lcom/sony/songpal/tandemfamily/message/mdr/param/ag;-&gt;a()Ljava/lang/String;</span><br><span class="line"> </span><br><span class="line">    #move-result-object v0</span><br><span class="line"> </span><br><span class="line">    const-string v0, &quot;MDRID289200&quot;</span><br><span class="line"> </span><br><span class="line">    iput-object v0, p0, Lcom/sony/songpal/mdr/application/b/a;-&gt;f:Ljava/lang/String;</span><br><span class="line"> </span><br><span class="line">    goto :goto_1</span><br></pre></td></tr></table></figure>
+
 <p>重新用 Apktool 打包, 然后用自己的证书签名. 传到手机那, 成功检测到更新. 实测貌似没啥毛病，更新成了国外版本的 2.0.1 固件并且语音变成了英文. 于是自己也试了一下, 更新后貌似确实没啥毛病.</p>
 <p>装回原版程序后再次用抓包抓了一下, 发现请求的 service id 已经变成了 MDRID289200. 大概不用担心以后又变回国行固件的问题.</p>
 <h2 id="简要教程"><a href="#简要教程" class="headerlink" title="简要教程"></a>简要教程</h2><ol>
@@ -790,7 +795,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1084,7 +1089,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1093,7 +1098,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -218,7 +218,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -232,7 +232,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -443,20 +443,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/07/03/2017-11-11-new-to-python/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -508,7 +508,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
 
                 
                 
@@ -547,7 +547,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">489</span>
+                <span title="本文字数">492</span>
               
 
               
@@ -583,9 +583,12 @@
       
         <p>Python - A powerful language</p>
 <a id="more"></a>
-<h3 id="1-1-A-simple-program"><a href="#1-1-A-simple-program" class="headerlink" title="1.1. A simple program"></a>1.1. A simple program</h3><p>Hello, world<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">print(<span class="string">"Hello"</span>, <span class="string">"World"</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-1-A-simple-program"><a href="#1-1-A-simple-program" class="headerlink" title="1.1. A simple program"></a>1.1. A simple program</h3><p>Hello, world</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">print(<span class="string">"Hello"</span>, <span class="string">"World"</span>)</span><br></pre></td></tr></table></figure>
+
 <h3 id="1-2-数据类型"><a href="#1-2-数据类型" class="headerlink" title="1.2. 数据类型"></a>1.2. 数据类型</h3><p><code>int</code> and <code>str</code></p>
 <h3 id="1-2-1-str-Usage"><a href="#1-2-1-str-Usage" class="headerlink" title="1.2.1. str Usage"></a>1.2.1. str Usage</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(name.title())                         <span class="comment"># 首字母大写</span></span><br><span class="line">print(name.upper())                         <span class="comment"># 全部大写</span></span><br><span class="line">print(name.lower())                         <span class="comment"># 全部小写</span></span><br><span class="line">print(favourite_language.rstrip())          <span class="comment"># 去处末尾空格</span></span><br><span class="line">print(favourite_language.lstrip())          <span class="comment"># 去处开头空格</span></span><br><span class="line">print(favourite_language.strip())           <span class="comment"># 去除所有空格</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="1-2-2-int-Usage"><a href="#1-2-2-int-Usage" class="headerlink" title="1.2.2. int Usage"></a>1.2.2. int Usage</h3><p>+ - * / 运算</p>
 
       
@@ -677,8 +680,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/03/2017-11-15-Build-Android-on-MacOS/" rel="next" title="在 macOS 编译 Android 的尝试">
-                <i class="fa fa-chevron-left"></i> 在 macOS 编译 Android 的尝试
+              <a href="/2019/07/03/2017-11-11-python-list/" rel="next" title="Python 列表">
+                <i class="fa fa-chevron-left"></i> Python 列表
               </a>
             
           </div>
@@ -747,7 +750,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1041,7 +1044,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1050,7 +1053,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -221,7 +221,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -235,7 +235,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -446,20 +446,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2018/12/12/NexT主题中集成gitalk评论系统/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -584,21 +584,27 @@
       
         <p>记录在NexT主题中添加gitalk评论系统的步骤。</p>
 <p>gitalk：一个基于 Github Issue 和 Preact 开发的评论插件<br>详情Demo可见：<a href="https://gitalk.github.io/" target="_blank" rel="noopener">https://gitalk.github.io/</a></p>
-<h2 id="Register-Application"><a href="#Register-Application" class="headerlink" title="Register Application"></a>Register Application</h2><p>在GitHub上注册新应用，链接：<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a><br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fy407a45v3j30iw0d93zg.jpg" alt=""></p>
+<h2 id="Register-Application"><a href="#Register-Application" class="headerlink" title="Register Application"></a>Register Application</h2><p>在GitHub上注册新应用，链接：<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a><br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fy407a45v3j30iw0d93zg.jpg" alt></p>
 <p>参数说明：<br>Application name： # 应用名称，随意<br>Homepage URL： # 网站URL <a href="https://ocd0711.github.ooo" target="_blank" rel="noopener">example link</a><br>Application description # 描述，随意<br>Authorization callback URL：# 网站URL <a href="https://ocd0711.github.ooo" target="_blank" rel="noopener">example link</a></p>
-<p>点击注册后，页面跳转如下，其中Client ID和Client Secret在后面的配置中需要用到，到时复制粘贴即可:<br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fy4087vmjmj31rl0u0wjr.jpg" alt=""></p>
+<p>点击注册后，页面跳转如下，其中Client ID和Client Secret在后面的配置中需要用到，到时复制粘贴即可:<br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fy4087vmjmj31rl0u0wjr.jpg" alt></p>
 <h2 id="gitalk-swig"><a href="#gitalk-swig" class="headerlink" title="gitalk.swig"></a>gitalk.swig</h2><p>新建<code>/layout/_third-party/comments/gitalk.swig</code>文件，并添加内容：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> page.comments &amp;&amp; theme.gitalk.enable %&#125;</span><br><span class="line">  &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://unpkg.com/gitalk/dist/gitalk.css"</span>&gt;</span><br><span class="line">  &lt;script src=<span class="string">"https://unpkg.com/gitalk/dist/gitalk.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">   &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        <span class="keyword">var</span> gitalk = <span class="keyword">new</span> Gitalk(&#123;</span><br><span class="line">          clientID: <span class="string">'&#123;&#123; theme.gitalk.ClientID &#125;&#125;'</span>,</span><br><span class="line">          clientSecret: <span class="string">'&#123;&#123; theme.gitalk.ClientSecret &#125;&#125;'</span>,</span><br><span class="line">          repo: <span class="string">'&#123;&#123; theme.gitalk.repo &#125;&#125;'</span>,</span><br><span class="line">          owner: <span class="string">'&#123;&#123; theme.gitalk.githubID &#125;&#125;'</span>,</span><br><span class="line">          admin: [<span class="string">'&#123;&#123; theme.gitalk.adminUser &#125;&#125;'</span>],</span><br><span class="line">          id: location.pathname,</span><br><span class="line">          distractionFreeMode: <span class="string">'&#123;&#123; theme.gitalk.distractionFreeMode &#125;&#125;'</span></span><br><span class="line">        &#125;)</span><br><span class="line">        gitalk.render(<span class="string">'gitalk-container'</span>)           </span><br><span class="line">       &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="comments-swig"><a href="#comments-swig" class="headerlink" title="comments.swig"></a>comments.swig</h2><p>修改<code>/layout/_partials/comments.swig</code>，添加内容如下，与前面的elseif同一级别上：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% elseif theme.gitalk.enable %&#125;</span><br><span class="line"> &lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="index-swig"><a href="#index-swig" class="headerlink" title="index.swig"></a>index.swig</h2><p>修改l<code>ayout/_third-party/comments/index.swig</code>，在最后一行添加内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include &apos;gitalk.swig&apos; %&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="gitalk-styl"><a href="#gitalk-styl" class="headerlink" title="gitalk.styl"></a>gitalk.styl</h2><p>新建<code>/source/css/_common/components/third-party/gitalk.styl</code>文件，添加内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.gt-header a, .gt-comments a, .gt-popup a</span><br><span class="line">  border-bottom: none;</span><br><span class="line">.gt-container .gt-popup .gt-action.is--active:before</span><br><span class="line">  top: 0.7em;</span><br></pre></td></tr></table></figure>
+
 <h2 id="third-party-styl"><a href="#third-party-styl" class="headerlink" title="third-party.styl"></a>third-party.styl</h2><p>修改<code>/source/css/_common/components/third-party/third-party.styl</code>，在最后一行上添加内容，引入样式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;gitalk&quot;;</span><br></pre></td></tr></table></figure>
+
 <h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>在主题配置文件next/_config.yml中添加如下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  githubID: github帐号  # OCD0711   </span><br><span class="line">  repo: 仓库名称   # 例：ocd0711.github.io</span><br><span class="line">  ClientID: Client ID</span><br><span class="line">  ClientSecret: Client Secret</span><br><span class="line">  adminUser: github帐号 #指定可初始化评论账户</span><br><span class="line">  distractionFreeMode: true</span><br></pre></td></tr></table></figure>
+
 <p>以上就是NexT中添加gitalk评论的配置，博客上传到GitHub上后，打开页面进入某一博客内容下，就可看到评论处。</p>
 
       
@@ -760,7 +766,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1054,7 +1060,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1063,7 +1069,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

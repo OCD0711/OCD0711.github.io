@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -224,7 +224,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -238,7 +238,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -449,20 +449,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue使用/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -530,7 +530,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
@@ -605,55 +605,63 @@
       
         <p>ConcurrentLinkedQueue 笔记</p>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.<br>新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择. 此队列不允许使用 null 元素.</p>
-<h2 id="offer-和-poll"><a href="#offer-和-poll" class="headerlink" title="offer 和 poll"></a>offer 和 poll</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#offer(E" target="_blank" rel="noopener">offer</a>)(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html" target="_blank" rel="noopener">E</a> e)<br>将指定元素插入此队列的尾部.</p>
-<p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#poll(" target="_blank" rel="noopener">poll</a>)<br>获取并移除此队列的头, 如果此队列为空, 则返回null.</p>
+<h2 id="offer-和-poll"><a href="#offer-和-poll" class="headerlink" title="offer 和 poll"></a>offer 和 poll</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#offer(E)" target="_blank" rel="noopener">offer</a>(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html" target="_blank" rel="noopener">E</a> e)<br>将指定元素插入此队列的尾部.</p>
+<p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#poll()" target="_blank" rel="noopener">poll</a><br>获取并移除此队列的头, 如果此队列为空, 则返回null.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"嘤嘤嘤"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后，队列是否空？"</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 poll："</span> + queue.poll());</span><br><span class="line">    System.out.println(<span class="string">"pool 后，队列是否空？"</span> + queue.isEmpty());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>offer 是往队列添加元素, poll是从队列取出元素并且删除该元素.</p>
 <p>执行结果:</p>
 <blockquote>
 <p>offer 后, 队列是否为空? false<br>从队列 poll: 嘤嘤嘤<br>pool 后, 队列是否为空? true</p>
 </blockquote>
 <p>ConcurrentLinkedQueue 中的 add() 和 offer() 完全一样, 都是往队列尾部添加元素.</p>
-<h2 id="还有个取出元素方法-peek"><a href="#还有个取出元素方法-peek" class="headerlink" title="还有个取出元素方法 peek"></a>还有个取出元素方法 peek</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#peek(" target="_blank" rel="noopener">peek</a>)<br>获取但不移除此队列的头; 如果此队列为空, 则返回null</p>
+<h2 id="还有个取出元素方法-peek"><a href="#还有个取出元素方法-peek" class="headerlink" title="还有个取出元素方法 peek"></a>还有个取出元素方法 peek</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#peek()" target="_blank" rel="noopener">peek</a><br>获取但不移除此队列的头; 如果此队列为空, 则返回null</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"emmm"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后, 队列是否空?"</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"pool 后. 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>执行结果:</p>
 <blockquote>
 <p>offer 后，队列是否空? false<br>从队列中 peek: emmm<br>从队列中 peek: emmm<br>从队列中 peek: emmm<br>pool 后, 队列是否空? false</p>
 </blockquote>
-<h2 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#remove(java.lang.Object" target="_blank" rel="noopener">remove</a>)(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/lang/Object.html" target="_blank" rel="noopener">Object</a> o)<br>从队列中移除指定元素的单个实例(如果存在)</p>
+<h2 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#remove(java.lang.Object)" target="_blank" rel="noopener">remove</a>(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/lang/Object.html" target="_blank" rel="noopener">Object</a> o)<br>从队列中移除指定元素的单个实例(如果存在)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"hhh"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后, 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 remove 已存在元素: "</span> + queue.remove(<span class="string">"xxx"</span>));</span><br><span class="line">    System.out.println(<span class="string">"从队列中 remove 不存在元素: "</span> + queue.remove(<span class="string">"123"</span>));</span><br><span class="line">    System.out.println(<span class="string">"remove 后, 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <p>remove 一个元素, 会返回 true, remove 不存在元素, 返回 false.</p>
 <p>执行结果:</p>
 <blockquote>
 <p>offer 后, 队列是否空? false<br>从队列中 remove 已存在元素: true<br>从队列中 remove 不存在元素: false<br>remove 后, 队列是否空? true</p>
 </blockquote>
-<h2 id="size-or-isEmpty"><a href="#size-or-isEmpty" class="headerlink" title="size or isEmpty"></a>size or isEmpty</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#size(" target="_blank" rel="noopener">size</a>)()<br>返回此队列中的元素数量</p>
+<h2 id="size-or-isEmpty"><a href="#size-or-isEmpty" class="headerlink" title="size or isEmpty"></a>size or isEmpty</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#size()" target="_blank" rel="noopener">size</a>()<br>返回此队列中的元素数量</p>
 <p><strong>注意:</strong></p>
 <blockquote>
 <p>如果此队列包含的元素大于 Integer.MAX_VALUE, 则返回 Integer.MAX_VALUE. 需要小心的是, 与大多数 collection 不同, 此方法不是一个固定时间操作. 由于这些队列的异步特性, 确定当前的元素数需要进行一次花费 O(n) 时间的遍历.<br>所以在需要判断队列是否为空时, 尽量不要用 queue.size()&gt;0, 而是用 !queue.isEmpty()</p>
 </blockquote>
 <p>比较 size() 和 isEmpty() 效率的实例:<br>场景: 10000个人去饭店吃饭, 10张桌子, 分别比较 size() 和 isEmpty() 的耗时</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01ConcurrentLinkedQueue</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> peopleNum = <span class="number">10000</span>;<span class="comment">//吃饭人数</span></span><br><span class="line">        <span class="keyword">int</span> tableNum = <span class="number">10</span>;<span class="comment">//饭桌数量</span></span><br><span class="line"></span><br><span class="line">        ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;&gt;();</span><br><span class="line">        CountDownLatch count = <span class="keyword">new</span> CountDownLatch(tableNum);<span class="comment">//计数器</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//将吃饭人数放入队列（吃饭的人进行排队）</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=peopleNum;i++)&#123;</span><br><span class="line">            queue.offer(<span class="string">"消费者_"</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//执行10个线程从队列取出元素（10个桌子开始供饭）</span></span><br><span class="line">        System.out.println(<span class="string">"-----------------------------------开饭了-----------------------------------"</span>);</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(tableNum);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tableNum;i++) &#123;</span><br><span class="line">            executorService.submit(<span class="keyword">new</span> Dinner(<span class="string">"00"</span> + (i+<span class="number">1</span>), queue, count));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//计数器等待，知道队列为空（所有人吃完）</span></span><br><span class="line">        count.await();</span><br><span class="line">        <span class="keyword">long</span> time = System.currentTimeMillis() - start;</span><br><span class="line">        System.out.println(<span class="string">"-----------------------------------所有人已经吃完-----------------------------------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"共耗时："</span> + time);</span><br><span class="line">        <span class="comment">//停止线程池</span></span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Dinner</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name;</span><br><span class="line">        <span class="keyword">private</span> ConcurrentLinkedQueue&lt;String&gt; queue;</span><br><span class="line">        <span class="keyword">private</span> CountDownLatch count;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Dinner</span><span class="params">(String name, ConcurrentLinkedQueue&lt;String&gt; queue, CountDownLatch count)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">            <span class="keyword">this</span>.queue = queue;</span><br><span class="line">            <span class="keyword">this</span>.count = count;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">//while (queue.size() &gt; 0)&#123;</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.isEmpty())&#123;</span><br><span class="line">                <span class="comment">//从队列取出一个元素 排队的人少一个</span></span><br><span class="line">                System.out.println(<span class="string">"【"</span> +queue.poll() + <span class="string">"】----已吃完...， 饭桌编号："</span> + name);</span><br><span class="line">            &#125;</span><br><span class="line">            count.countDown();<span class="comment">//计数器-1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>执行结果:</p>
 <blockquote>
-<p>使用 size 耗时: 757ms<br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg" alt=""><br>使用 isEmpty 耗时: 210ms<br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepmvpgvdj30iw049dg5.jpg" alt=""></p>
+<p>使用 size 耗时: 757ms<br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg" alt><br>使用 isEmpty 耗时: 210ms<br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepmvpgvdj30iw049dg5.jpg" alt></p>
 </blockquote>
 <p>当数据越大, 这种耗时差距越明显. 所以这种判断用 isEmpty 更加合理.</p>
-<h2 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#contains(java.lang.Object" target="_blank" rel="noopener">contains</a>)(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/lang/Object.html" target="_blank" rel="noopener">Object</a> o)<br>如果此列队包含指定元素, 则返回 true</p>
+<h2 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#contains(java.lang.Object)" target="_blank" rel="noopener">contains</a>(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/lang/Object.html" target="_blank" rel="noopener">Object</a> o)<br>如果此列队包含指定元素, 则返回 true</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    System.out.println(queue.contains(<span class="string">"123"</span>));</span><br><span class="line">    System.out.println(queue.contains(<span class="string">"234"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>执行结果:</p>
 <blockquote>
-<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyeprtdib4j306z01at8h.jpg" alt=""></p>
+<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyeprtdib4j306z01at8h.jpg" alt></p>
 </blockquote>
-<h2 id="toArray"><a href="#toArray" class="headerlink" title="toArray"></a>toArray</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#toArray(" target="_blank" rel="noopener">toArray</a>)<br>返回以恰当顺序包含此队列所有元素的数组</p>
-<p><a href="T[] a">toArray</a><br>返回以恰当顺序包含此队列所有元素的数组, 返回数组的运行时类型是指数组的运行时类型<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;String&gt;();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    queue.offer(<span class="string">"234"</span>);</span><br><span class="line">    Object[] objects = queue.toArray();</span><br><span class="line">    System.out.println(objects[<span class="number">0</span>] + <span class="string">", "</span> + objects[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将数据存储到指定数组</span></span><br><span class="line">    String[] strs = <span class="keyword">new</span> String[<span class="number">2</span>];</span><br><span class="line">    queue.toArray(strs);</span><br><span class="line">    System.out.println(strs[<span class="number">0</span>] + <span class="string">", "</span> + strs[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="toArray"><a href="#toArray" class="headerlink" title="toArray"></a>toArray</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#toArray()" target="_blank" rel="noopener">toArray</a><br>返回以恰当顺序包含此队列所有元素的数组</p>
+<p>[toArray](T[] a)<br>返回以恰当顺序包含此队列所有元素的数组, 返回数组的运行时类型是指数组的运行时类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;String&gt;();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    queue.offer(<span class="string">"234"</span>);</span><br><span class="line">    Object[] objects = queue.toArray();</span><br><span class="line">    System.out.println(objects[<span class="number">0</span>] + <span class="string">", "</span> + objects[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将数据存储到指定数组</span></span><br><span class="line">    String[] strs = <span class="keyword">new</span> String[<span class="number">2</span>];</span><br><span class="line">    queue.toArray(strs);</span><br><span class="line">    System.out.println(strs[<span class="number">0</span>] + <span class="string">", "</span> + strs[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>执行结果:</p>
 <blockquote>
-<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepuyo52ej305e01kjr6.jpg" alt=""></p>
+<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepuyo52ej305e01kjr6.jpg" alt></p>
 </blockquote>
-<h2 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#iterator(" target="_blank" rel="noopener">ierator</a>)()<br>返回在此队列元素上以恰当顺序进行迭代的迭代器</p>
+<h2 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#iterator()" target="_blank" rel="noopener">ierator</a>()<br>返回在此队列元素上以恰当顺序进行迭代的迭代器</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;String&gt;();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    queue.offer(<span class="string">"234"</span>);</span><br><span class="line">    Iterator&lt;String&gt; iterator = queue.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepyiyx30j305601f3ya.jpg" alt=""></p>
+
+<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepyiyx30j305601f3ya.jpg" alt></p>
 
       
     </div>
@@ -814,7 +822,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1108,7 +1116,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1117,7 +1125,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

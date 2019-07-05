@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -218,7 +218,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -232,7 +232,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -443,20 +443,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2018/09/20/2018-9-20-Build-Android-on-MacOS-preparation/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -524,7 +524,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android-Build/" itemprop="url" rel="index"><span itemprop="name">Android Build</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android-Build/" itemprop="url" rel="index"><span itemprop="name">Android Build</span></a></span>
 
                 
                 
@@ -599,6 +599,7 @@
       
         <p>This passage introduces a way to build Android on MacOS (NEW)</p>
 <a id="more"></a>
+
 <p><strong>Caution</strong>: 由于最新Xcode9编译Android源码问题很多，使用旧版Xcode 8.3.3</p>
 <h2 id="编译前的准备工作"><a href="#编译前的准备工作" class="headerlink" title="编译前的准备工作"></a>编译前的准备工作</h2><p><strong>Xcode8.3.3</strong></p>
 <ol>
@@ -614,13 +615,13 @@
 </li>
 <li><p>环境变量<br><code>$ vim ~/.bash_profile</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/make/libexec/gnubin:$PATH</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <p><strong>Set the number of open files to be 1024</strong></p>
 <p><code>ulimit -S -n 1024</code></p>
 <p><strong>Jack memory</strong></p>
-<pre><code>export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;
-</code></pre><p><strong>python2</strong></p>
+<pre><code>export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</code></pre><p><strong>python2</strong></p>
 <ol>
 <li>编译时用到python2命令，mac里只有python2.7 软链接成python2即可<br><code>$ ln /usr/bin/python2.7 /usr/bin/python2</code></li>
 </ol>
@@ -632,6 +633,7 @@
 </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">​$ cd external/bison</span><br><span class="line"></span><br><span class="line">$ git cherry-pick c0c852bd6fe462b148475476d9124fd740eba160</span><br><span class="line"></span><br><span class="line">$ mm</span><br><span class="line"></span><br><span class="line">$ cp out/host/darwin-x86/bin/bison prebuilts/misc/darwin-x86/bison/bison</span><br></pre></td></tr></table></figure>
+
 <h2 id="除了环境配置和编译时的几个问题，其他和在Linux下编译区别不大​​​​"><a href="#除了环境配置和编译时的几个问题，其他和在Linux下编译区别不大​​​​" class="headerlink" title="除了环境配置和编译时的几个问题，其他和在Linux下编译区别不大​​​​"></a>除了环境配置和编译时的几个问题，其他和在Linux下编译区别不大​​​​</h2>
       
     </div>
@@ -792,7 +794,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1086,7 +1088,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1095,7 +1097,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

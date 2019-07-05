@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -218,7 +218,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -232,7 +232,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -443,20 +443,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -524,7 +524,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
 
                 
                 
@@ -606,8 +606,10 @@
 <p>原理链接已经提供了，这里不做解释。</p>
 <p>维术的第二个条件和掘金的方法五，虽然提到了Unsafe，但是都没有给出源码。<br>现在我把源码发上来，算是这部分的最后一块拼图。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用Unsafe清除classloader</span></span><br><span class="line"><span class="comment"> * 该方法仅对同一个类生效，所以必须在需要的类中添加使用，不可以跨类调用</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> cls 需要清除Loader的类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@SuppressWarnings</span>(&#123;<span class="string">"unchecked"</span>, <span class="string">"JavaReflectionMemberAccess"</span>&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">clearClassLoaderInClass</span><span class="params">(Class cls)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//Unsafe类</span></span><br><span class="line">        Class unsafeClass = Class.forName(<span class="string">"sun.misc.Unsafe"</span>);</span><br><span class="line">        <span class="comment">//取Unsafe实例字段</span></span><br><span class="line">        Field unsafeInstanceField = unsafeClass.getDeclaredField(<span class="string">"theUnsafe"</span>);</span><br><span class="line">        <span class="comment">//放开Unsafe实例字段权限</span></span><br><span class="line">        unsafeInstanceField.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">//取Unsafe实例</span></span><br><span class="line">        Object unsafeInstance = unsafeInstanceField.get(<span class="keyword">null</span>);</span><br><span class="line">        <span class="comment">//取objectFieldOffset方法取偏移量</span></span><br><span class="line">        Method objectFieldOffset = unsafeClass.getMethod(<span class="string">"objectFieldOffset"</span>, Field.class);</span><br><span class="line">        <span class="comment">//Class的classLoader字段</span></span><br><span class="line">        Field classLoaderField = Class.class.getDeclaredField(<span class="string">"classLoader"</span>);</span><br><span class="line">        <span class="comment">//使classLoader可见</span></span><br><span class="line">        classLoaderField.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">//取putObject方法进行置空</span></span><br><span class="line">        Method putObject = unsafeClass.getMethod(<span class="string">"putObject"</span>, Object.class, <span class="keyword">long</span>.class, Object.class);</span><br><span class="line">        <span class="comment">//值为8，这里不用硬编码，看什么时候等到classLoader字段被404了再用</span></span><br><span class="line">        <span class="keyword">long</span> offset = (<span class="keyword">long</span>) objectFieldOffset.invoke(unsafeInstance, classLoaderField);</span><br><span class="line"></span><br><span class="line">        Log.i(TAG, <span class="string">"clearClassLoaderInClass: classLoader offset="</span> + offset);</span><br><span class="line">        <span class="comment">//偏移量为8处置空</span></span><br><span class="line">        putObject.invoke(unsafeInstance, cls, offset, <span class="keyword">null</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">        Log.e(TAG, <span class="string">"clearClassLoaderInClass: "</span>, throwable);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>用法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在当前类下</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reflection9</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//传入当前类</span></span><br><span class="line">        clearClassLoaderInClass(Reflection9.class);</span><br><span class="line">        <span class="comment">//接下来就可以调用隐私API了...</span></span><br><span class="line">        SystemService.restart(<span class="string">"zygote"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>和掘金说的不同，不仅仅反射，直接调用也是可以的，没有此类限制。</p>
 
       
@@ -769,7 +771,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1063,7 +1065,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1072,7 +1074,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

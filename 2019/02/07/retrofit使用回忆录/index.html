@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -220,7 +220,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -234,7 +234,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -445,20 +445,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/02/07/retrofit使用回忆录/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -526,7 +526,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
@@ -604,7 +604,7 @@
 <p>Retrofit 在项目使用中的流程: 创建 Bean 类 –&gt; 创建接口形式的 http 请求方法 –&gt; 通过 Retrofit.builder() 创建接口对象并调用 http 方法请求网络数据 –&gt; 在 RxJava 中 Observable (被观察者) 中异步处理请求结果</p>
 <h2 id="01-Retrofit-HTTP-请求方法注解的字段说明"><a href="#01-Retrofit-HTTP-请求方法注解的字段说明" class="headerlink" title="01 Retrofit HTTP 请求方法注解的字段说明"></a>01 Retrofit HTTP 请求方法注解的字段说明</h2><hr>
 <p>Retrofit 进行网络请求的 URL 分为两部分: BaseURL 和 relativeURL. BaseURL 需要以 “/” 结尾, 一般不需要变化直接定义即可(域名), 当然特殊的情况下, 比如后一次网络访问 URL 需要从前一次访问结果中获取相关参数, 那么就需要动态的操作 URL, 这种用法会在后面介绍; relativeURL 就是请求参数相关, 所以每个 request 方法都需要 http annotation 来提供请求的 relativeURL, Retrofit 内置的注视有五个: <code>GET, POST, PUT, DELETE, HEAD</code>. 这些注解在使用时涉及到哪些相关字段, 下面引用一张图</p>
-<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNc79gy1fzy50n412uj30hn09e0so.jpg" alt=""></p>
+<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNc79gy1fzy50n412uj30hn09e0so.jpg" alt></p>
 
       
     </div>
@@ -767,7 +767,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1061,7 +1061,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1070,7 +1070,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

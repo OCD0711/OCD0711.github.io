@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -218,7 +218,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -232,7 +232,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -443,20 +443,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/07/03/2017-11-15-Build-Android-on-MacOS/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -543,7 +543,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">6 分钟</span>
               
             </div>
           
@@ -563,35 +563,51 @@
       
 
       
-        <p>尝试在 macOS 10.13 上编译 Android LineageOS 14.1 备份以便将来使用<br><a id="more"></a></p>
+        <p>尝试在 macOS 10.13 上编译 Android LineageOS 14.1 备份以便将来使用</p>
+<a id="more"></a>
+
 <h2 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1. 环境搭建"></a>1. 环境搭建</h2><h3 id="1-1-repo"><a href="#1-1-repo" class="headerlink" title="1.1 repo"></a>1.1 repo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install repo</span><br></pre></td></tr></table></figure>
+
 <h3 id="1-2-准备硬盘-镜像"><a href="#1-2-准备硬盘-镜像" class="headerlink" title="1.2 准备硬盘(镜像)"></a>1.2 准备硬盘(镜像)</h3><p>我的办法使直接从移动硬盘上割了一块以储存 Android 源码, 格式应当设置为 macOS拓展 日志式 <code>区分大小写</code></p>
 <h3 id="1-3-准备源码"><a href="#1-3-准备源码" class="headerlink" title="1.3 准备源码"></a>1.3 准备源码</h3><p>从 GitHub 同步 Lineage 14.1 源码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repo init -u git://github.com/LineageOS/android.git -b cm-14.1</span><br><span class="line">repo sync -j4</span><br></pre></td></tr></table></figure>
+
 <p>唔，作为 IPv6 用户，同步速度 10M/s 无压力呀。<br>如遇速度慢请使用 USTC 镜像代替 Google Source 进行同步，必要时可能需要爱国XD～</p>
 <h3 id="1-4-Xcode-降级"><a href="#1-4-Xcode-降级" class="headerlink" title="1.4 Xcode 降级"></a>1.4 Xcode 降级</h3><p>在同步代码的时候，我们可以进行一些其他工作<del>为编译的顺畅进行做好准备</del><br>Xcode 9 的 SDK 对 Android 7.1 十分不友好， 因此，建议从 <a href="https://developer.apple.com/download/more/" target="_blank" rel="noopener">Apple Developer</a> 下载 Xcode 8.3.3.<br>将 Xcode8.3.3.app 移动到 /Application 中， 然后运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select -p /Application/Xcode8.3.3.app</span><br></pre></td></tr></table></figure>
+
 <h3 id="1-5-Java-安装"><a href="#1-5-Java-安装" class="headerlink" title="1.5 Java 安装"></a>1.5 Java 安装</h3><p>编译 Lineage14.1 需要 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">JDK8</a>, 如果安装了JDK 9 你还是先卸了吧。。。毕竟我是没法子转 JDK Version.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#卸载Java9</span></span><br><span class="line">sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin</span><br><span class="line">sudo rm -fr /Library/PreferencePanes/JavaControlPanel.prefPane</span><br><span class="line">sudo rm -fr ~/Library/Application\ Support/Java</span><br><span class="line">sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk</span><br></pre></td></tr></table></figure>
+
 <p>然后即可安装 JDK 8.<br>安装后确认:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜ java -version</span><br><span class="line">java version <span class="string">"1.8.0_151"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_151-b12)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)</span><br></pre></td></tr></table></figure>
+
 <h3 id="1-6-依赖安装"><a href="#1-6-依赖安装" class="headerlink" title="1.6 依赖安装"></a>1.6 依赖安装</h3><p>唔 这个参考 <a href="https://source.android.com/source/initializing" target="_blank" rel="noopener">Android Source</a></p>
 <h2 id="2-开始编译"><a href="#2-开始编译" class="headerlink" title="2. 开始编译"></a>2. 开始编译</h2><h3 id="2-1-设置环境变量"><a href="#2-1-设置环境变量" class="headerlink" title="2.1 设置环境变量"></a>2.1 设置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ccache</span></span><br><span class="line"><span class="built_in">export</span> USE_CCACHE=1             <span class="comment"># 开启 CCACHE</span></span><br><span class="line"><span class="built_in">export</span> CCACHE_DIR=/&lt;path_of_your_choice&gt;/.ccache <span class="comment"># 设置 CCACHE 文件夹</span></span><br><span class="line">prebuilts/misc/darwin-x86/ccache/ccache -M 50G    <span class="comment"># 设置 CCACHE 大小</span></span><br></pre></td></tr></table></figure>
+
 <p>也可以将上述写入 ~/.bash_profile 以避免重复输入。。</p>
 <h3 id="2-2-对内核进行修改"><a href="#2-2-对内核进行修改" class="headerlink" title="2.2 对内核进行修改"></a>2.2 对内核进行修改</h3><h4 id="2-2-1-gsed"><a href="#2-2-1-gsed" class="headerlink" title="2.2.1 gsed"></a>2.2.1 gsed</h4><p>我们注意到 <code>brew install gnu-sed</code> 使用的是 <code>gsed</code> 命令。<br>因此我们要对 kernel source 中的脚本进行修改。</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--- a/scripts/headers_install.sh</span></span><br><span class="line"><span class="comment">+++ b/scripts/headers_install.sh</span></span><br><span class="line"></span><br><span class="line"><span class="deletion">-   sed -r \</span></span><br><span class="line"><span class="addition">+   gsed -r \</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--- a/arch/arm64/kernel/vdso/gen_vdso_offsets.sh</span></span><br><span class="line"><span class="comment">+++ b/arch/arm64/kernel/vdso/gen_vdso_offsets.sh</span></span><br><span class="line"></span><br><span class="line"><span class="deletion">- sed -n -e 's/^00*/0/' -e \</span></span><br><span class="line"><span class="addition">+ gsed -n -e 's/^00*/0/' -e \</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="2-2-2-xargs"><a href="#2-2-2-xargs" class="headerlink" title="2.2.2 xargs"></a>2.2.2 xargs</h4><p>Mac 的 xargs 与Linux存在差别，因此进行修改:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install findutils</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--- a/scripts/Makefile.modpost</span></span><br><span class="line"><span class="comment">+++ b/scripts/Makefile.modpost</span></span><br><span class="line"></span><br><span class="line"><span class="deletion">- MODLISTCMD := find $(MODVERDIR) -name '*.mod' | xargs -r grep -h '\.ko$$' | sort  -u</span></span><br><span class="line"><span class="addition">+ MODLISTCMD := find $(MODVERDIR) -name '*.mod' | gxargs -r grep -h '\.ko$$' | sort  -u</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="2-3-Bison"><a href="#2-3-Bison" class="headerlink" title="2.3 Bison"></a>2.3 Bison</h3><p>Bison requires a commit to work.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># in the root of the source code</span></span><br><span class="line"><span class="built_in">cd</span> external/bison</span><br><span class="line">git cherry-pick c0c852bd6fe462b148475476d9124fd740eba160</span><br><span class="line"><span class="built_in">cd</span> ../../</span><br><span class="line">mm bison</span><br><span class="line">cp out/host/darwin-x86/bin/bison prebuilts/misc/darwin-x86/bison/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Credits: https://groups.google.com/forum/#!topic/android-building/D1-c5lZ9Oco</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="3-Here-wo-go"><a href="#3-Here-wo-go" class="headerlink" title="3. Here wo go"></a>3. Here wo go</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">breakfast &lt;device_name&gt;         <span class="comment"># 从 Lineage 的 repo 上下载 device kernel 等</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/TheMuppets/&lt;repo&gt; vendor/&lt;device_name&gt;</span><br><span class="line">                                <span class="comment"># 从 TheMuppets 的 repo 下载 vendor 文件</span></span><br><span class="line">lunch lineage_&lt;device_name&gt;-userdebug</span><br><span class="line">make -j&lt;cpu_num&gt; bacon          <span class="comment"># 开始编译</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="3-1-out-of-memory-error"><a href="#3-1-out-of-memory-error" class="headerlink" title="3.1 out of memory error"></a>3.1 out of memory error</h3><p>诶机器差的命啊:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JACK_SERVER_VM_ARGUMENTS=<span class="string">"-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m"</span> \</span><br><span class="line">jack-admin <span class="built_in">kill</span>-server &amp;&amp; jack-admin start-server \</span><br><span class="line">make -j&lt;cpu_num&gt; bacon</span><br></pre></td></tr></table></figure>
+
 <h2 id="4-Job-done"><a href="#4-Job-done" class="headerlink" title="4. Job done"></a>4. Job done</h2><p>没什么好写的233333<br>我什么也不会呀</p>
 <p>注: 当初找 xargs 的 GNU 版本找了很久, 现在发现奇淫技巧:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜ brew search --desc xargs</span><br><span class="line">findutils: Collection of GNU find, xargs, and locate</span><br></pre></td></tr></table></figure>
+
 <h2 id="Special-Thanks"><a href="#Special-Thanks" class="headerlink" title="Special Thanks"></a>Special Thanks</h2><p>@Asuka<br>@XINGRZ</p>
 
       
@@ -683,8 +699,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/03/2017-11-11-python-list/" rel="next" title="Python 列表">
-                <i class="fa fa-chevron-left"></i> Python 列表
+              <a href="/2019/07/03/2017-11-23-User-input-and-while-loop/" rel="next" title="用户输入和 while 循环">
+                <i class="fa fa-chevron-left"></i> 用户输入和 while 循环
               </a>
             
           </div>
@@ -693,8 +709,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/03/2017-11-11-new-to-python/" rel="prev" title="Python 入门">
-                Python 入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/03/2017-11-11-python-list/" rel="prev" title="Python 列表">
+                Python 列表 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -753,7 +769,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1047,7 +1063,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1056,7 +1072,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

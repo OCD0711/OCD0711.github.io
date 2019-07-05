@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -218,7 +218,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -232,7 +232,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -443,20 +443,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/07/03/2017-11-11-if-statements/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -508,7 +508,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
 
                 
                 
@@ -547,7 +547,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.7k</span>
+                <span title="本文字数">3.8k</span>
               
 
               
@@ -583,48 +583,79 @@
       
         <p> An class for <code>if</code> STATEMENT</p>
 <a id="more"></a>
-<h2 id="3-1-An-simple-example"><a href="#3-1-An-simple-example" class="headerlink" title="3.1 An simple example"></a>3.1 An simple example</h2><p><em>cars.py</em><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cars = [<span class="string">'audi'</span>, <span class="string">'bmw'</span>, <span class="string">'subaru'</span>, <span class="string">'toyota'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> car <span class="keyword">in</span> cars:</span><br><span class="line">    <span class="keyword">if</span> car == <span class="string">'bmw'</span>:</span><br><span class="line">        print(car.upper())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(car.title())</span><br></pre></td></tr></table></figure></p>
+
+<h2 id="3-1-An-simple-example"><a href="#3-1-An-simple-example" class="headerlink" title="3.1 An simple example"></a>3.1 An simple example</h2><p><em>cars.py</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cars = [<span class="string">'audi'</span>, <span class="string">'bmw'</span>, <span class="string">'subaru'</span>, <span class="string">'toyota'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> car <span class="keyword">in</span> cars:</span><br><span class="line">    <span class="keyword">if</span> car == <span class="string">'bmw'</span>:</span><br><span class="line">        print(car.upper())</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(car.title())</span><br></pre></td></tr></table></figure>
+
 <h6 id="Output"><a href="#Output" class="headerlink" title="Output:"></a>Output:</h6><p><code>Audi</code></p>
 <p><code>BMW</code></p>
 <p><code>Subaru</code></p>
 <p><code>Toyota</code></p>
-<h2 id="3-2-条件测试"><a href="#3-2-条件测试" class="headerlink" title="3.2 条件测试"></a>3.2 条件测试</h2><h3 id="3-2-1-检查是否相等"><a href="#3-2-1-检查是否相等" class="headerlink" title="3.2.1 检查是否相等"></a>3.2.1 检查是否相等</h3><p><code>car == &#39;bmw&#39;</code> will output like <code>True</code> or <code>False</code><br>The following code will always be true<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">car = <span class="string">'audi'</span></span><br><span class="line">car == <span class="string">'audi'</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-2-条件测试"><a href="#3-2-条件测试" class="headerlink" title="3.2 条件测试"></a>3.2 条件测试</h2><h3 id="3-2-1-检查是否相等"><a href="#3-2-1-检查是否相等" class="headerlink" title="3.2.1 检查是否相等"></a>3.2.1 检查是否相等</h3><p><code>car == &#39;bmw&#39;</code> will output like <code>True</code> or <code>False</code><br>The following code will always be true</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">car = <span class="string">'audi'</span></span><br><span class="line">car == <span class="string">'audi'</span></span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-True"><a href="#Output-True" class="headerlink" title="Output: True"></a>Output: <code>True</code></h6><h4 id="3-2-1-1-检查是否相等时不考虑大小写"><a href="#3-2-1-1-检查是否相等时不考虑大小写" class="headerlink" title="3.2.1.1 检查是否相等时不考虑大小写"></a>3.2.1.1 检查是否相等时不考虑大小写</h4><p><strong>Use <code>lower()</code> or <code>upper</code></strong></p>
-<p>E.g:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">car = <span class="string">'Audi'</span></span><br><span class="line">print(car.lower() == <span class="string">'audi'</span>)</span><br><span class="line">print(car)</span><br></pre></td></tr></table></figure></p>
+<p>E.g:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">car = <span class="string">'Audi'</span></span><br><span class="line">print(car.lower() == <span class="string">'audi'</span>)</span><br><span class="line">print(car)</span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-1"><a href="#Output-1" class="headerlink" title="Output:"></a>Output:</h6><p><code>True</code><br><code>Audi</code><br>–&gt; 操作不影响存储在变量 <code>car</code> 中的值</p>
 <h3 id="3-2-2-检查是否不相等"><a href="#3-2-2-检查是否不相等" class="headerlink" title="3.2.2 检查是否不相等"></a>3.2.2 检查是否不相等</h3><p><strong>Use <code>!=</code></strong></p>
-<p>E.g: toppings.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">requested_topping = <span class="string">'mushrooms'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> requested_topping != <span class="string">'anchovies'</span>:</span><br><span class="line">    print(<span class="string">"Hold the anchovies!"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>E.g: toppings.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">requested_topping = <span class="string">'mushrooms'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> requested_topping != <span class="string">'anchovies'</span>:</span><br><span class="line">    print(<span class="string">"Hold the anchovies!"</span>)</span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-Hold-the-anchovies"><a href="#Output-Hold-the-anchovies" class="headerlink" title="Output: Hold the anchovies!"></a>Output: <code>Hold the anchovies!</code></h6><h3 id="3-2-3-比较数字"><a href="#3-2-3-比较数字" class="headerlink" title="3.2.3 比较数字"></a>3.2.3 比较数字</h3><p><strong>also use <code>==</code> and <code>!=</code></strong></p>
-<p>E.g: magic_number.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">answer = <span class="number">17</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> answer != <span class="number">42</span>:</span><br><span class="line">    print(<span class="string">"This is not the correct answer. please try again!"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>E.g: magic_number.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">answer = <span class="number">17</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> answer != <span class="number">42</span>:</span><br><span class="line">    print(<span class="string">"This is not the correct answer. please try again!"</span>)</span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-This-is-not-the-correct-answer-please-try-again"><a href="#Output-This-is-not-the-correct-answer-please-try-again" class="headerlink" title="Output: This is not the correct answer. please try again!"></a>Output: <code>This is not the correct answer. please try again!</code></h6><h3 id="3-2-4-检查多个条件"><a href="#3-2-4-检查多个条件" class="headerlink" title="3.2.4 检查多个条件"></a>3.2.4 检查多个条件</h3><p><strong>Use <code>and</code> and <code>or</code></strong></p>
-<h4 id="3-2-4-1-使用-and-检查多个条件"><a href="#3-2-4-1-使用-and-检查多个条件" class="headerlink" title="3.2.4.1 使用 and 检查多个条件"></a>3.2.4.1 使用 <code>and</code> 检查多个条件</h4><p>E.g:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">age_0 = <span class="number">22</span></span><br><span class="line">age_1 = <span class="number">18</span></span><br><span class="line">print(age_0 &gt;= <span class="number">21</span> <span class="keyword">and</span> age_1 &gt;= <span class="number">21</span>)  <span class="comment"># False</span></span><br><span class="line">age_1 = <span class="number">22</span></span><br><span class="line">print(age_0 &gt;= <span class="number">21</span> <span class="keyword">and</span> age_1 &gt;= <span class="number">21</span>)  <span class="comment"># True</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="3-2-4-1-使用-and-检查多个条件"><a href="#3-2-4-1-使用-and-检查多个条件" class="headerlink" title="3.2.4.1 使用 and 检查多个条件"></a>3.2.4.1 使用 <code>and</code> 检查多个条件</h4><p>E.g:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">age_0 = <span class="number">22</span></span><br><span class="line">age_1 = <span class="number">18</span></span><br><span class="line">print(age_0 &gt;= <span class="number">21</span> <span class="keyword">and</span> age_1 &gt;= <span class="number">21</span>)  <span class="comment"># False</span></span><br><span class="line">age_1 = <span class="number">22</span></span><br><span class="line">print(age_0 &gt;= <span class="number">21</span> <span class="keyword">and</span> age_1 &gt;= <span class="number">21</span>)  <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="3-2-4-2-使用-or-检查多个条件"><a href="#3-2-4-2-使用-or-检查多个条件" class="headerlink" title="3.2.4.2 使用 or 检查多个条件"></a>3.2.4.2 使用 <code>or</code> 检查多个条件</h4><p><strong>同上</strong></p>
 <h3 id="3-2-5-检查特定值是否在表中"><a href="#3-2-5-检查特定值是否在表中" class="headerlink" title="3.2.5 检查特定值是否在表中"></a>3.2.5 检查特定值是否在表中</h3><p><strong>使用关键词 <code>in</code></strong></p>
-<p>E.g:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [<span class="string">'mushrooms'</span>, <span class="string">'onions'</span>, <span class="string">'pineapple'</span>]</span><br><span class="line">print(<span class="string">'mushrooms'</span> <span class="keyword">in</span> requested_toppings)    <span class="comment"># True</span></span><br><span class="line">print(<span class="string">'pepperoni'</span> <span class="keyword">in</span> requested_toppings)    <span class="comment"># false</span></span><br></pre></td></tr></table></figure></p>
+<p>E.g:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [<span class="string">'mushrooms'</span>, <span class="string">'onions'</span>, <span class="string">'pineapple'</span>]</span><br><span class="line">print(<span class="string">'mushrooms'</span> <span class="keyword">in</span> requested_toppings)    <span class="comment"># True</span></span><br><span class="line">print(<span class="string">'pepperoni'</span> <span class="keyword">in</span> requested_toppings)    <span class="comment"># false</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="3-2-6-检查特定元素不在列表中"><a href="#3-2-6-检查特定元素不在列表中" class="headerlink" title="3.2.6 检查特定元素不在列表中"></a>3.2.6 检查特定元素不在列表中</h3><p><strong>使用关键字 <code>not in</code></strong></p>
-<p>E.g: banned_users.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">banned_users = [<span class="string">'andrew'</span>, <span class="string">'carolina'</span>, david<span class="string">']</span></span><br><span class="line"><span class="string">user = '</span>marie<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">if user not in banned_users:</span></span><br><span class="line"><span class="string">    print(user.title() + ", you can post a response if you wish.")</span></span><br></pre></td></tr></table></figure></p>
+<p>E.g: banned_users.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">banned_users = [<span class="string">'andrew'</span>, <span class="string">'carolina'</span>, david<span class="string">']</span></span><br><span class="line"><span class="string">user = '</span>marie<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">if user not in banned_users:</span></span><br><span class="line"><span class="string">    print(user.title() + ", you can post a response if you wish.")</span></span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-2"><a href="#Output-2" class="headerlink" title="Output:"></a>Output:</h6><p><code>Marie, you can post a response if you wish</code></p>
 <h3 id="3-2-7-bool-expression"><a href="#3-2-7-bool-expression" class="headerlink" title="3.2.7 bool expression"></a>3.2.7 bool expression</h3><p><strong>条件测试的别名, 要么为 <code>True</code> 要么为 <code>False</code></strong></p>
-<p>E.g:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">game_active = <span class="keyword">True</span></span><br><span class="line">can_edit = <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
+<p>E.g:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">game_active = <span class="keyword">True</span></span><br><span class="line">can_edit = <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="3-3-If语句"><a href="#3-3-If语句" class="headerlink" title="3.3 If语句"></a>3.3 If语句</h2><h3 id="3-3-1-简单的-if-语句"><a href="#3-3-1-简单的-if-语句" class="headerlink" title="3.3.1 简单的 if 语句"></a>3.3.1 简单的 if 语句</h3><p><strong>一个测试一个操作</strong></p>
-<p>E.g:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition_test:</span><br><span class="line">    do something</span><br></pre></td></tr></table></figure></p>
+<p>E.g:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition_test:</span><br><span class="line">    do something</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">19</span></span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>:</span><br><span class="line">    print(<span class="string">"You are old enough to vote!"</span>)</span><br><span class="line">    print(<span class="string">"Have you registered to vote yet?"</span>)</span><br></pre></td></tr></table></figure>
+
 <p>this will print two lines</p>
 <h6 id="Output-3"><a href="#Output-3" class="headerlink" title="Output:"></a>Output:</h6><p><code>You are old enough to vote!</code><br><code>Have you registered to vote yet?</code></p>
 <p>if age is less than 18, the program will give no output.</p>
 <h3 id="3-3-2-if-else-语句"><a href="#3-3-2-if-else-语句" class="headerlink" title="3.3.2 if-else 语句"></a>3.3.2 if-else 语句</h3><p><strong><code>else</code> 在if不成立时执行</strong></p>
-<p>E.g:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">17</span></span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>:</span><br><span class="line">    print(<span class="string">"You are old enough to vote"</span>)</span><br><span class="line">    print(<span class="string">"Have you registered to vote yet?"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"Sorry, you are too young to vote."</span>)</span><br><span class="line">    print(<span class="string">"Please register to cote as soon as you turn 18!"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>E.g:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">17</span></span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>:</span><br><span class="line">    print(<span class="string">"You are old enough to vote"</span>)</span><br><span class="line">    print(<span class="string">"Have you registered to vote yet?"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"Sorry, you are too young to vote."</span>)</span><br><span class="line">    print(<span class="string">"Please register to cote as soon as you turn 18!"</span>)</span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-4"><a href="#Output-4" class="headerlink" title="Output:"></a>Output:</h6><p><code>Sorry, you are too young to vote.</code><br><code>Please register to cote as soon as you turn 18!</code></p>
 <h3 id="3-3-3-if-elif-else-结构"><a href="#3-3-3-if-elif-else-结构" class="headerlink" title="3.3.3 if-elif-else 结构"></a>3.3.3 if-elif-else 结构</h3><p><strong>检查超过两个条件的情形</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> age &lt; <span class="number">4</span>:</span><br><span class="line">    print(<span class="string">"Your admission cost is $0"</span>)</span><br><span class="line"><span class="keyword">elif</span> age &lt; <span class="number">18</span></span><br><span class="line">    print(<span class="string">"Your admission cost is $5"</span>)</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    print(<span class="string">"Your admission cost is $10"</span>)</span><br></pre></td></tr></table></figure>
-<h6 id="Output-Your-admission-cost-is-5"><a href="#Output-Your-admission-cost-is-5" class="headerlink" title="Output: Your admission cost is $5"></a>Output: <code>Your admission cost is $5</code></h6><h3 id="3-3-4-使用多个-elif-代码块"><a href="#3-3-4-使用多个-elif-代码块" class="headerlink" title="3.3.4 使用多个 elif 代码块"></a>3.3.4 使用多个 <code>elif</code> 代码块</h3><h3 id="3-3-5-省略-else-代码块"><a href="#3-3-5-省略-else-代码块" class="headerlink" title="3.3.5 省略 else 代码块"></a>3.3.5 省略 <code>else</code> 代码块</h3><h3 id="3-3-6-测试多个条件"><a href="#3-3-6-测试多个条件" class="headerlink" title="3.3.6 测试多个条件"></a>3.3.6 测试多个条件</h3><h2 id="3-4-使用-if-语句处理列表"><a href="#3-4-使用-if-语句处理列表" class="headerlink" title="3.4 使用 if 语句处理列表"></a>3.4 使用 <code>if</code> 语句处理列表</h2><h3 id="3-4-1-检查特殊元素"><a href="#3-4-1-检查特殊元素" class="headerlink" title="3.4.1 检查特殊元素"></a>3.4.1 检查特殊元素</h3><p>E.g: toppings.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [<span class="string">'mushrooms'</span>, <span class="string">'green_peppers'</span>, extra cheese<span class="string">']</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">for requested_topping in requested_toppings:</span></span><br><span class="line"><span class="string">    print("Adding " + requested_topping + '</span>.<span class="string">')</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">print("\nFinished making your pizza")</span></span><br></pre></td></tr></table></figure></p>
+
+<h6 id="Output-Your-admission-cost-is-5"><a href="#Output-Your-admission-cost-is-5" class="headerlink" title="Output: Your admission cost is $5"></a>Output: <code>Your admission cost is $5</code></h6><h3 id="3-3-4-使用多个-elif-代码块"><a href="#3-3-4-使用多个-elif-代码块" class="headerlink" title="3.3.4 使用多个 elif 代码块"></a>3.3.4 使用多个 <code>elif</code> 代码块</h3><h3 id="3-3-5-省略-else-代码块"><a href="#3-3-5-省略-else-代码块" class="headerlink" title="3.3.5 省略 else 代码块"></a>3.3.5 省略 <code>else</code> 代码块</h3><h3 id="3-3-6-测试多个条件"><a href="#3-3-6-测试多个条件" class="headerlink" title="3.3.6 测试多个条件"></a>3.3.6 测试多个条件</h3><h2 id="3-4-使用-if-语句处理列表"><a href="#3-4-使用-if-语句处理列表" class="headerlink" title="3.4 使用 if 语句处理列表"></a>3.4 使用 <code>if</code> 语句处理列表</h2><h3 id="3-4-1-检查特殊元素"><a href="#3-4-1-检查特殊元素" class="headerlink" title="3.4.1 检查特殊元素"></a>3.4.1 检查特殊元素</h3><p>E.g: toppings.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [<span class="string">'mushrooms'</span>, <span class="string">'green_peppers'</span>, extra cheese<span class="string">']</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">for requested_topping in requested_toppings:</span></span><br><span class="line"><span class="string">    print("Adding " + requested_topping + '</span>.<span class="string">')</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">print("\nFinished making your pizza")</span></span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-5"><a href="#Output-5" class="headerlink" title="Output"></a>Output</h6><p><code>Adding mushrooms.</code><br><code>Adding green_peppers.</code><br><code>Adding extra cheese.</code></p>
 <p><code>Finished making your pizza</code></p>
-<p>A polished version<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [<span class="string">'mushrooms'</span>, <span class="string">'green_peppers'</span>, extra cheese<span class="string">']</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">for requested_topping in requested_toppings:</span></span><br><span class="line"><span class="string">    if requested_topping == '</span>green_peppers<span class="string">':</span></span><br><span class="line"><span class="string">        print(“Sorry we are out of green peppers right now.")</span></span><br><span class="line"><span class="string">    else: </span></span><br><span class="line"><span class="string">        print("Adding " + requested_topping + '</span>.<span class="string">')</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">print("\nFinished making your pizza")</span></span><br></pre></td></tr></table></figure></p>
+<p>A polished version</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [<span class="string">'mushrooms'</span>, <span class="string">'green_peppers'</span>, extra cheese<span class="string">']</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">for requested_topping in requested_toppings:</span></span><br><span class="line"><span class="string">    if requested_topping == '</span>green_peppers<span class="string">':</span></span><br><span class="line"><span class="string">        print(“Sorry we are out of green peppers right now.")</span></span><br><span class="line"><span class="string">    else: </span></span><br><span class="line"><span class="string">        print("Adding " + requested_topping + '</span>.<span class="string">')</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">print("\nFinished making your pizza")</span></span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-6"><a href="#Output-6" class="headerlink" title="Output:"></a>Output:</h6><p><code>Adding mushrooms</code><br><code>Sorry we are out of green peppers right now.</code><br><code>Adding extra cheese</code></p>
 <p><code>Finished making your pizza</code></p>
 <h3 id="3-4-2-确定列表不是空的"><a href="#3-4-2-确定列表不是空的" class="headerlink" title="3.4.2 确定列表不是空的"></a>3.4.2 确定列表不是空的</h3><p><strong>使用 <code>for</code></strong></p>
-<p>E.g:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> requested_toppings:</span><br><span class="line">    <span class="keyword">for</span> requested_topping <span class="keyword">in</span> requested_toppings:</span><br><span class="line">        print(<span class="string">"Adding "</span> + requested_topping + <span class="string">'.'</span>)</span><br><span class="line">    print(<span class="string">"Finished making your pizza"</span>)</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    print(<span class="string">"Are you sure you want a plain pizza?"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>E.g: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> requested_toppings:</span><br><span class="line">    <span class="keyword">for</span> requested_topping <span class="keyword">in</span> requested_toppings:</span><br><span class="line">        print(<span class="string">"Adding "</span> + requested_topping + <span class="string">'.'</span>)</span><br><span class="line">    print(<span class="string">"Finished making your pizza"</span>)</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    print(<span class="string">"Are you sure you want a plain pizza?"</span>)</span><br></pre></td></tr></table></figure>
+
 <h6 id="Output-7"><a href="#Output-7" class="headerlink" title="Output:"></a>Output:</h6><p><code>Are you sure you want a plain pizza?</code></p>
 <h3 id="3-4-3-使用多个列表"><a href="#3-4-3-使用多个列表" class="headerlink" title="3.4.3 使用多个列表"></a>3.4.3 使用多个列表</h3><p>Skipped</p>
 
@@ -787,7 +818,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1081,7 +1112,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1090,7 +1121,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

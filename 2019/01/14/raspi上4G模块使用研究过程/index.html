@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -220,7 +220,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -234,7 +234,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -445,20 +445,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/01/14/raspi上4G模块使用研究过程/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -526,7 +526,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Raspi/" itemprop="url" rel="index"><span itemprop="name">Raspi</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Raspi/" itemprop="url" rel="index"><span itemprop="name">Raspi</span></a></span>
 
                 
                 
@@ -565,7 +565,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.4k</span>
+                <span title="本文字数">3.6k</span>
               
 
               
@@ -627,7 +627,7 @@
 <li>使用自己的交叉编译环境, 移植和离线发布都非常方便</li>
 <li>如果你使用 macos 以上当我都没说</li>
 </ol>
-<h3 id="第二种方式-交叉编译"><a href="#第二种方式-交叉编译" class="headerlink" title="第二种方式(交叉编译)"></a>第二种方式(交叉编译)</h3><p><a href="https://www.raspberrypi.org/documentation/linux/kernel/building.md “点击跳转”" target="_blank" rel="noopener">参考树莓派官方内核编译说明</a></p>
+<h3 id="第二种方式-交叉编译"><a href="#第二种方式-交叉编译" class="headerlink" title="第二种方式(交叉编译)"></a>第二种方式(交叉编译)</h3><p>[参考树莓派官方内核编译说明](<a href="https://www.raspberrypi.org/documentation/linux/kernel/building.md" target="_blank" rel="noopener">https://www.raspberrypi.org/documentation/linux/kernel/building.md</a> “点击跳转”)</p>
 <ol>
 <li><p>编译前准备</p>
 <p> 首先安装git和依赖:</p>
@@ -641,8 +641,8 @@
 <p>交叉编译器: gcc-linaro-arm-linux-gnueabihf-raspbian</p>
 <p>交叉编译版本: gcc version 7.2.1 20171011 (Linaro GCC 7.2-2017.11)</p>
 </blockquote>
-<p> kali <a href="https://www.kali.org/downloads “点击跳转”" target="_blank" rel="noopener">下载地址</a></p>
-<p> 交叉编译工具链 <a href="https://github.com/raspberrypi/tools “点击跳转”" target="_blank" rel="noopener">下载地址</a></p>
+<p> kali [下载地址](<a href="https://www.kali.org/downloads" target="_blank" rel="noopener">https://www.kali.org/downloads</a> “点击跳转”)</p>
+<p> 交叉编译工具链 [下载地址](<a href="https://github.com/raspberrypi/tools" target="_blank" rel="noopener">https://github.com/raspberrypi/tools</a> “点击跳转”)</p>
 <p> 1) 处理编译环境:</p>
 <pre><code>下载工具链:
 
@@ -654,16 +654,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> PATH=\<span class="variable">$PATH</span>:~/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin &gt;&gt; ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
 
 64位: 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> PATH=\<span class="variable">$PATH</span>:~/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin &gt;&gt; ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-</code></pre><p> 2) 添加系统组建</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> PATH=\<span class="variable">$PATH</span>:~/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin &gt;&gt; ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></code></pre><p> 2) 添加系统组建</p>
 <pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> kernel</span><br><span class="line"></span><br><span class="line">KERNEL=kernel8 (需要在树莓派机器上查看uname -a 看下arm版本)</span><br><span class="line"></span><br><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-  bcm2709_defconfig (32位)</span><br><span class="line"></span><br><span class="line">make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcmrpi3_defconfig (64位)</span><br></pre></td></tr></table></figure>
 
 选中如下组建:
 
 device drivers ---&gt; usb support ---&gt; usb serial converter support 
 
-中选中 USB driver for GSM and CDMA modems
-</code></pre><p> <img src="https://github.com/OCD0711/MyPostImages/raw/master/WX20190628-110326.png" alt=""></p>
+中选中 USB driver for GSM and CDMA modems</code></pre><p> <img src="https://github.com/OCD0711/MyPostImages/raw/master/WX20190628-110326.png" alt></p>
 </li>
 </ol>
 <pre><code>    添加PPP协议支持:
@@ -726,8 +724,7 @@ device drivers ---&gt; usb support ---&gt; usb serial converter support
 
     安装内核模块:
 
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu INSTALL_MOD_PATH=/mnt modules_install</span><br><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="好了这就结束了这篇咕咕咕几个月的教程了…"><a href="#好了这就结束了这篇咕咕咕几个月的教程了…" class="headerlink" title="好了这就结束了这篇咕咕咕几个月的教程了…"></a>好了这就结束了这篇咕咕咕几个月的教程了…</h2>
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu INSTALL_MOD_PATH=/mnt modules_install</span><br><span class="line">umount /mnt/boot</span><br><span class="line">umount /mnt</span><br></pre></td></tr></table></figure></code></pre><h2 id="好了这就结束了这篇咕咕咕几个月的教程了…"><a href="#好了这就结束了这篇咕咕咕几个月的教程了…" class="headerlink" title="好了这就结束了这篇咕咕咕几个月的教程了…"></a>好了这就结束了这篇咕咕咕几个月的教程了…</h2>
       
     </div>
 
@@ -889,7 +886,7 @@ device drivers ---&gt; usb support ---&gt; usb serial converter support
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1183,7 +1180,7 @@ device drivers ---&gt; usb support ---&gt; usb serial converter support
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1192,7 +1189,7 @@ device drivers ---&gt; usb support ---&gt; usb serial converter support
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -218,7 +218,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -232,7 +232,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -443,20 +443,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/07/03/2018-06-08-Install-Arch-Linux-Macbook-13/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -508,7 +508,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a></span>
 
                 
                 
@@ -547,7 +547,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6k</span>
+                <span title="本文字数">6.1k</span>
               
 
               
@@ -583,32 +583,33 @@
       
         <p>This passage introduces a way to install Arch Linux on MacBook that releases in 2016 and 2017</p>
 <a id="more"></a>
+
 <p><strong>Caution</strong>: You should be aware that some functions may not work properly. Do it on your own risk!</p>
 <h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p><strong>What works</strong>:</p>
 <p><strong>1. On booting</strong></p>
 <ul>
-<li style="list-style: none"><input type="checkbox" checked> Booting</li>
-<li style="list-style: none"><input type="checkbox" checked> Disks</li>
-<li style="list-style: none"><input type="checkbox" checked> HiDPI</li>
-<li style="list-style: none"><input type="checkbox" checked> Accelerated Video</li>
-<li style="list-style: none"><input type="checkbox" checked> Keyboard Backlight</li>
-<li style="list-style: none"><input type="checkbox" checked> USB</li>
-<li style="list-style: none"><input type="checkbox" checked> Screen Brightness Control</li>
-<li style="list-style: none"><input type="checkbox" checked> Sensors</li>
-<li style="list-style: none"><input type="checkbox" checked> Bluetooth</li>
+<li><input checked disabled type="checkbox"> Booting</li>
+<li><input checked disabled type="checkbox"> Disks</li>
+<li><input checked disabled type="checkbox"> HiDPI</li>
+<li><input checked disabled type="checkbox"> Accelerated Video</li>
+<li><input checked disabled type="checkbox"> Keyboard Backlight</li>
+<li><input checked disabled type="checkbox"> USB</li>
+<li><input checked disabled type="checkbox"> Screen Brightness Control</li>
+<li><input checked disabled type="checkbox"> Sensors</li>
+<li><input checked disabled type="checkbox"> Bluetooth</li>
 </ul>
 <p><strong>2. Require modules installed</strong></p>
 <ul>
-<li style="list-style: none"><input type="checkbox" checked> Keyboard, touchbar and trackpad</li>
+<li><input checked disabled type="checkbox"> Keyboard, touchbar and trackpad</li>
 </ul>
 <p><strong>3. Partly Working</strong></p>
 <ul>
-<li style="list-style: none"><input type="checkbox"> WiFi (Has some improving method)</li>
+<li><input disabled type="checkbox"> WiFi (Has some improving method)</li>
 </ul>
 <p><strong>4. Not work</strong></p>
 <ul>
-<li style="list-style: none"><input type="checkbox"> Suspend/Resume</li>
-<li style="list-style: none"><input type="checkbox"> Audio (two cards show up, and intel driver is loaded, but no sound)</li>
+<li><input disabled type="checkbox"> Suspend/Resume</li>
+<li><input disabled type="checkbox"> Audio (two cards show up, and intel driver is loaded, but no sound)</li>
 </ul>
 <p><strong>Notice</strong>: You may refer to <a href="https://gist.github.com/roadrunner2/1289542a748d9a104e7baec6a92f9cd7" target="_blank" rel="noopener">roadrunner’s Gist</a> for a more accurate list.</p>
 <h2 id="2-Preparation"><a href="#2-Preparation" class="headerlink" title="2. Preparation"></a>2. Preparation</h2><h3 id="2-1-Hardware"><a href="#2-1-Hardware" class="headerlink" title="2.1 Hardware"></a>2.1 Hardware</h3><p>In this installation, you  need a <strong>USB Stick more than 2 GB</strong>, a <strong>Keybord</strong>, A stable internet connection through tethering, and also, USB Hubs.</p>
@@ -627,11 +628,16 @@
 </ol>
 <h3 id="3-2-Partitioning"><a href="#3-2-Partitioning" class="headerlink" title="3.2 Partitioning"></a>3.2 Partitioning</h3><p><strong>Warning</strong>: Do it carefully!</p>
 <ol>
-<li>Use <code>fdisk -l</code> to check your partition table.</li>
-<li>Look for the disk you want to install ArchLinux (<code>sda</code> <code>sdb</code> …)</li>
-<li>If you could see a <code>EFI Partition</code> then please ignore the section with the mark <code>*</code></li>
-<li>Use <code>fdisk sdX</code> to dig into your disk. Enter <code>p</code> for a table.</li>
-<li>Partition your Disk. ( * You should create a partition of about <strong>500M</strong> at the start the partition table)</li>
+<li><p>Use <code>fdisk -l</code> to check your partition table.</p>
+</li>
+<li><p>Look for the disk you want to install ArchLinux (<code>sda</code> <code>sdb</code> …)</p>
+</li>
+<li><p>If you could see a <code>EFI Partition</code> then please ignore the section with the mark <code>*</code></p>
+</li>
+<li><p>Use <code>fdisk sdX</code> to dig into your disk. Enter <code>p</code> for a table.</p>
+</li>
+<li><p>Partition your Disk. ( * You should create a partition of about <strong>500M</strong> at the start the partition table)</p>
+</li>
 <li><p>* Set EFI Partition</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parted sdX</span><br><span class="line"><span class="built_in">set</span> 1 boot on</span><br></pre></td></tr></table></figure>
 </li>
@@ -640,34 +646,46 @@
 </li>
 <li><p>Mount</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdXy /mnt</span><br><span class="line">mkdir -p /mnt/boot</span><br><span class="line">mount /dev/sda /mnt/boot</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h3 id="3-3-Install"><a href="#3-3-Install" class="headerlink" title="3.3 Install"></a>3.3 Install</h3><p>   <strong>Notice</strong>: You may need to edit <code>/etc/pacman.d/mirrorlist</code> to choose a mirror<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacstrap /mnt base base-devel grub efibootmgr wireless_tools vim</span><br><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure></p>
 <h3 id="3-4-Chroot"><a href="#3-4-Chroot" class="headerlink" title="3.4 Chroot"></a>3.4 Chroot</h3><p>Chroot into the system</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+
 <p>and follow the official <a href="https://wiki.archlinux.org/index.php/installation_guide" target="_blank" rel="noopener">ArchLinux Instruction</a> set up your <code>hostname</code> <code>timezone</code> etc.</p>
 <h4 id="3-4-1-Install-GRUB-Loader"><a href="#3-4-1-Install-GRUB-Loader" class="headerlink" title="3.4.1 Install GRUB ( Loader )"></a>3.4.1 Install GRUB ( Loader )</h4><p>Stay in the chroot mode and use the following command:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grub-install --efi-directory=/boot</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
 <h2 id="4-MacBook-Specified-Configurations"><a href="#4-MacBook-Specified-Configurations" class="headerlink" title="4. MacBook Specified Configurations"></a>4. MacBook Specified Configurations</h2><h3 id="4-1-Make-Keyboard-Work"><a href="#4-1-Make-Keyboard-Work" class="headerlink" title="4.1 Make Keyboard Work"></a>4.1 Make Keyboard Work</h3><p>Install the Driver:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pacman -S linux-headers</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/roadrunner2/macbook12-spi-driver.git</span><br><span class="line"><span class="built_in">pushd</span> macbook12-spi-driver</span><br><span class="line">git checkout touchbar-driver-hid-driver</span><br><span class="line">sudo ln -s `<span class="built_in">pwd</span>` /usr/src/applespi-0.1</span><br><span class="line">sudo dkms install applespi/0.1</span><br><span class="line"><span class="built_in">popd</span></span><br></pre></td></tr></table></figure>
+
 <p>Configure mkinitcpio.conf</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/mkinitcpio.conf</span><br></pre></td></tr></table></figure>
+
 <p>and in the <code>modules</code> section add :</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Modules = (applespi intel_lpss_pci spi_pxa2xx_platform appletb)</span><br></pre></td></tr></table></figure>
+
 <p>Then use <code>mkinitcpio -p linux</code> to load them on next boot.</p>
 <p>Change sensitivity:<br>Save the two following two files to <code>/etc/udev/hwdb.d/</code>:</p>
 <p><a href="https://gist.github.com/roadrunner2/1289542a748d9a104e7baec6a92f9cd7#file-61-evdev-local-hwdb" target="_blank" rel="noopener">61-evdev-local.hwdb</a><br><a href="https://gist.github.com/roadrunner2/1289542a748d9a104e7baec6a92f9cd7#61-libinput-local.hwdb" target="_blank" rel="noopener">61-libinput-local.hwdb</a> </p>
 <p> <strong>Note</strong>: You can also see them in the appendix.</p>
 <p> Reboot and enjoy.</p>
 <h3 id="4-2-WiFi-improvements"><a href="#4-2-WiFi-improvements" class="headerlink" title="4.2 WiFi improvements"></a>4.2 WiFi improvements</h3><p>There are two ways to change the bad WiFi condition and the discussion is <a href="https://bugzilla.kernel.org/show_bug.cgi?id=193121" target="_blank" rel="noopener">here</a>.</p>
-<h4 id="4-2-1-Edit-the-driver"><a href="#4-2-1-Edit-the-driver" class="headerlink" title="4.2.1 Edit the driver"></a>4.2.1 Edit the driver</h4><p>As <a href="https://bugzilla.kernel.org/show_bug.cgi?id=193121#c25" target="_blank" rel="noopener">here</a> suggests:<br>Use hex editor to change the <code>/lib/firmware/brcm/brcmfmac43602-pcie.bin</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/lib/firmware/brcm/brcmfmac43602-pcie.bin</span><br><span class="line">  offset     0 1 2 3 4 5 6 7 8 9 A B C D E F 0123456789ABCDEF    0 1 2 3 4 5 6 7 8 9 A B C D E F 0123456789ABCDEF</span><br><span class="line">0x00000000  80f140b882f1a4b982f1b0b982f1bcb9 ..@.............   80f140b882f1a4b982f1b0b982f1bcb9 ..@.............</span><br><span class="line">0x00000010  82f1cbb982f1dab982f1e9b982f1f8b9 ................   82f1cbb982f1dab982f1e9b982f1f8b9 ................</span><br><span class="line">...</span><br><span class="line">0x0007c820! 30643a66343a33650063636f64653d58 0d:f4:3e.ccode=X   30643a66343a33650063636f64653d30 0d:f4:3e.ccode=0</span><br><span class="line">0x0007c830! 30007265677265763d31350061613267 0.regrev=15.aa2g   00007265677265763d30000061613267 ..regrev=0..aa2g</span><br><span class="line">0x0007c840  3d3700616135673d370061676267303d =7.aa5g=7.agbg0=   3d3700616135673d370061676267303d =7.aa5g=7.agbg0=</span><br><span class="line">0x0007c850  37310061676267313d37310061676267 71.agbg1=71.agbg   37310061676267313d37310061676267 71.agbg1=71.agbg</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-2-1-Edit-the-driver"><a href="#4-2-1-Edit-the-driver" class="headerlink" title="4.2.1 Edit the driver"></a>4.2.1 Edit the driver</h4><p>As <a href="https://bugzilla.kernel.org/show_bug.cgi?id=193121#c25" target="_blank" rel="noopener">here</a> suggests:<br>Use hex editor to change the <code>/lib/firmware/brcm/brcmfmac43602-pcie.bin</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/lib/firmware/brcm/brcmfmac43602-pcie.bin</span><br><span class="line">  offset     0 1 2 3 4 5 6 7 8 9 A B C D E F 0123456789ABCDEF    0 1 2 3 4 5 6 7 8 9 A B C D E F 0123456789ABCDEF</span><br><span class="line">0x00000000  80f140b882f1a4b982f1b0b982f1bcb9 ..@.............   80f140b882f1a4b982f1b0b982f1bcb9 ..@.............</span><br><span class="line">0x00000010  82f1cbb982f1dab982f1e9b982f1f8b9 ................   82f1cbb982f1dab982f1e9b982f1f8b9 ................</span><br><span class="line">...</span><br><span class="line">0x0007c820! 30643a66343a33650063636f64653d58 0d:f4:3e.ccode=X   30643a66343a33650063636f64653d30 0d:f4:3e.ccode=0</span><br><span class="line">0x0007c830! 30007265677265763d31350061613267 0.regrev=15.aa2g   00007265677265763d30000061613267 ..regrev=0..aa2g</span><br><span class="line">0x0007c840  3d3700616135673d370061676267303d =7.aa5g=7.agbg0=   3d3700616135673d370061676267303d =7.aa5g=7.agbg0=</span><br><span class="line">0x0007c850  37310061676267313d37310061676267 71.agbg1=71.agbg   37310061676267313d37310061676267 71.agbg1=71.agbg</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
 <p><strong>Note</strong>: As I changed the file, I cannot connect to any WiFi networks. More Investigation required.</p>
 <h4 id="4-2-2-Change-the-txpower"><a href="#4-2-2-Change-the-txpower" class="headerlink" title="4.2.2 Change the txpower"></a>4.2.2 Change the txpower</h4><p>This is simple (see <a href="https://bugzilla.kernel.org/show_bug.cgi?id=193121#c28" target="_blank" rel="noopener">#10</a>)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip link <span class="built_in">set</span> wlp2s0 up   <span class="comment"># if not already up</span></span><br><span class="line">iwconfig wlp2s0 txpower 10dBm</span><br></pre></td></tr></table></figure>
+
 <h2 id="5-Appendix"><a href="#5-Appendix" class="headerlink" title="5. Appendix"></a>5. Appendix</h2><p><strong>61-evdev-local.hwdb</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># MacBook8,1 (2015), MacBook9,1 (2016), MacBook10,1 (2017)</span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBook8,1:*</span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBook9,1:*</span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBook10,1:*</span><br><span class="line"> EVDEV_ABS_00=::95</span><br><span class="line"> EVDEV_ABS_01=::90</span><br><span class="line"> EVDEV_ABS_35=::95</span><br><span class="line"> EVDEV_ABS_36=::90</span><br><span class="line"></span><br><span class="line"># MacBookPro13,* (Late 2016), MacBookPro14,* (Mid 2017)</span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBookPro13,1:*</span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBookPro13,2:*</span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBookPro14,1:*</span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBookPro14,2:*</span><br><span class="line"> EVDEV_ABS_00=::96</span><br><span class="line"> EVDEV_ABS_01=::94</span><br><span class="line"> EVDEV_ABS_35=::96</span><br><span class="line"> EVDEV_ABS_36=::94</span><br><span class="line"></span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBookPro13,3:*</span><br><span class="line">evdev:name:Apple SPI Touchpad:dmi:*:svnAppleInc.:pnMacBookPro14,3:*</span><br><span class="line"> EVDEV_ABS_00=::96</span><br><span class="line"> EVDEV_ABS_01=::95</span><br><span class="line"> EVDEV_ABS_35=::96</span><br><span class="line"> EVDEV_ABS_36=::95</span><br></pre></td></tr></table></figure>
+
+
 <p> <strong>61-libinput-local.hwdb</strong></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">libinput:name:*Apple SPI Touchpad*:dmi:*</span><br><span class="line">LIBINPUT_MODEL_APPLE_TOUCHPAD=1</span><br><span class="line">LIBINPUT_ATTR_KEYBOARD_INTEGRATION=internal</span><br><span class="line">LIBINPUT_ATTR_TOUCH_SIZE_RANGE=200:150</span><br><span class="line">LIBINPUT_ATTR_PALM_SIZE_THRESHOLD=1200</span><br></pre></td></tr></table></figure>
+
 <h2 id="6-Credits"><a href="#6-Credits" class="headerlink" title="6. Credits"></a>6. Credits</h2><ol>
 <li><a href="https://gist.github.com/roadrunner2/1289542a748d9a104e7baec6a92f9cd7#61-libinput-local.hwdb" target="_blank" rel="noopener">Roadrunner’s gist</a></li>
 <li><a href="https://bugzilla.kernel.org/show_bug.cgi?id=193121" target="_blank" rel="noopener">Many awesome people in bugzilla</a></li>
@@ -760,8 +778,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/03/2017-12-08-Trees/" rel="next" title="Trees">
-                <i class="fa fa-chevron-left"></i> Trees
+              <a href="/2019/07/03/2018-03-29-Use-TM-On-RPi-With-Arch-Linux/" rel="next" title="Use Apple Time-Machine on Raspberry Pi with ArchLinux ARM">
+                <i class="fa fa-chevron-left"></i> Use Apple Time-Machine on Raspberry Pi with ArchLinux ARM
               </a>
             
           </div>
@@ -769,6 +787,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/03/2017-12-08-Trees/" rel="prev" title="Trees">
+                Trees <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -826,7 +848,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1120,7 +1142,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1129,7 +1151,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

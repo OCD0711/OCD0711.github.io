@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -220,7 +220,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -234,7 +234,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -445,20 +445,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2018/09/29/change-background/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
       <meta itemprop="description" content="Nothing here, trust me">
       <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="OCD Blog">
     </span>
 
@@ -526,7 +526,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
 
                 
                 
@@ -565,7 +565,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">897</span>
+                <span title="本文字数">899</span>
               
 
               
@@ -601,20 +601,23 @@
       
         <p>如果觉得 NexT的空白主题看腻了或者太多人用觉得不够个性化，那么不妨试试自动更新背景图片。</p>
 <a id="more"></a>
+
 <h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><h3 id="图片来源"><a href="#图片来源" class="headerlink" title="图片来源"></a>图片来源</h3><p>自动更换背景的实现是修改添加背景的 css 样式实现。图片来源是 <a href="https://source.unsplash.com/" target="_blank" rel="noopener">unsplash</a></p>
 <p>这个网站，里面不仅免费提供了很多高清美图，而且还提供api接口调用，实在是良心。这里实现的原理也是调用了这个网站的接口。</p>
-<h2 id="修改背景样式"><a href="#修改背景样式" class="headerlink" title="修改背景样式"></a>修改背景样式</h2><p>修改themes\next\source\css\<br>_custom\custom.styl文件，这个是Next故意留给用户自己个性化定制一些样式的文件，添加以下代码：</p>
+<h2 id="修改背景样式"><a href="#修改背景样式" class="headerlink" title="修改背景样式"></a>修改背景样式</h2><p>修改themes\next\source\css<br>_custom\custom.styl文件，这个是Next故意留给用户自己个性化定制一些样式的文件，添加以下代码：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(https://source.unsplash.com/random/1600x900);</span><br><span class="line"></span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">background-position</span>:<span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>如果自己不喜欢这个网址提供的图片做背景，那么修改url()里面的路径即可。repeat、attachment、position就是调整图片的位置，不重复出现、不滚动等等。</p>
 <h2 id="修改不透明度"><a href="#修改不透明度" class="headerlink" title="修改不透明度"></a>修改不透明度</h2><p>完成这一步其实背景就会自动更换了，但是会出现一个问题，因为next主题的背景是纯透明的，这样子就造成背景图片的影响看不见文字，这对于博客来说肯定不行。</p>
 <p>那么就需要调整背景的不透明度了。同样是修改themes\next\source\css _custom\custom.styl文件。在后面添加如下代码</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.main-inner</span> &#123; </span><br><span class="line"></span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">60px</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">60px</span> <span class="number">60px</span> <span class="number">60px</span> <span class="number">60px</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line"></span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.8</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">500px</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>background: #fff; 白色</li>
 <li>opacity: 0.8;不透明度</li>
 </ul>
 <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>完成上述设置，我们来看看效果</p>
-<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNc79gy1fvq67w13yqj31kw0x2u0z.jpg" alt=""></p>
+<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNc79gy1fvq67w13yqj31kw0x2u0z.jpg" alt></p>
 
       
     </div>
@@ -775,7 +778,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
             
@@ -1069,7 +1072,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">97k</span>
   
 
   
@@ -1078,7 +1081,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:56</span>
   
 </div>
 

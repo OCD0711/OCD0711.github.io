@@ -214,7 +214,7 @@ avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: https://ws3.sinaimg.cn/large/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg
+  url: https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -603,7 +603,7 @@ needmoreshare2:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters
-google_site_verification: google2ff74b080d9e3f60.html
+google_site_verification: EknedQGJDeXw-ozmOlxmNfLIlNh6iIo2cOr6XV2JQbo
 
 # Google Analytics
 google_analytics: UA-126027123-1

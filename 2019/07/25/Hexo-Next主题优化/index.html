@@ -105,7 +105,7 @@
     root: '/',
     scheme: 'Muse',
     version: '6.5.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -135,7 +135,7 @@
 <meta property="og:site_name" content="OCD Blog">
 <meta property="og:description" content="1. 常用命令Hexo 的命令极简单, 安装后只需要记住四个常用的即可. 执行命令需要Git当前处于blog文件夹根目录下.   generate 生成静态文件.  hexo g  server 启动服务器.  hexo s  deploy 部署网站. 部署网站前, 需要预先生成静态文件.  hexo d  clean 清除缓存文件 (db.json) 和已生成的静态文件 (public).  h">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-25T04:05:56.063Z">
+<meta property="og:updated_time" content="2019-07-25T04:31:31.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-Next主题优化">
 <meta name="twitter:description" content="1. 常用命令Hexo 的命令极简单, 安装后只需要记住四个常用的即可. 执行命令需要Git当前处于blog文件夹根目录下.   generate 生成静态文件.  hexo g  server 启动服务器.  hexo s  deploy 部署网站. 部署网站前, 需要预先生成静态文件.  hexo d  clean 清除缓存文件 (db.json) 和已生成的静态文件 (public).  h">
@@ -490,7 +490,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 11:17:44 / 修改时间：12:05:56" itemprop="dateCreated datePublished" datetime="2019-07-25T11:17:44+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-25 11:17:44 / 修改时间：12:31:31" itemprop="dateCreated datePublished" datetime="2019-07-25T11:17:44+08:00">2019-07-25</time>
             
 
             
@@ -533,7 +533,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.6k</span>
+                <span title="本文字数">6.8k</span>
               
 
               
@@ -547,7 +547,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">8 分钟</span>
+                <span title="阅读时长">12 分钟</span>
               
             </div>
           
@@ -655,7 +655,83 @@
 <ul>
 <li>如果想把 top 按钮放在侧边栏, 打开 themes/next 下的 _config.yml, 搜索关键字 b2t, 把 false 改为 true</li>
 </ul>
-<h1 id="8-好玩的写作样式"><a href="#8-好玩的写作样式" class="headerlink" title="8 好玩的写作样式"></a>8 好玩的写作样式</h1>
+<h1 id="8-好玩的写作样式"><a href="#8-好玩的写作样式" class="headerlink" title="8. 好玩的写作样式"></a>8. 好玩的写作样式</h1><h2 id="8-1-主题自带样式-文本居中引用"><a href="#8-1-主题自带样式-文本居中引用" class="headerlink" title="8.1 主题自带样式 文本居中引用"></a>8.1 主题自带样式 文本居中引用</h2><blockquote class="blockquote-center"><p>人生乃是一面镜子，<br>从镜子里认识自己，<br>我要称之为头等大事，<br>也只是我们追求的目的！</p>
+</blockquote>
+
+<p>code: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% cq %&#125;</span><br><span class="line">人生乃是一面镜子，</span><br><span class="line">从镜子里认识自己，</span><br><span class="line">我要称之为头等大事，</span><br><span class="line">也只是我们追求的目的！</span><br><span class="line">&#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多 NexT 主题自带的标签样式, 请点击：<a href="http://theme-next.iissnan.com/tag-plugins.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/tag-plugins.html</a></p>
+<h2 id="8-2-主题自带样式-note-标签"><a href="#8-2-主题自带样式-note-标签" class="headerlink" title="8.2 主题自带样式 note 标签"></a>8.2 主题自带样式 note 标签</h2><p>在主题配置文件_config.yml里有一个关于这个的配置，但官方文档没有提供 HTML 的使用方式，个人认为这种方式更简单，也不会产生一些奇怪的显示 bug……</p>
+<p><code>&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;default&lt;/p&gt;&lt;/div&gt;</code></p>
+<div class="note default"><p>default</p></div>
+
+<p><code>&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;primary&lt;/p&gt;&lt;/div&gt;</code></p>
+<div class="note primary"><p>primary</p></div>
+
+<p><code>&lt;div class=&quot;note success&quot;&gt;&lt;p&gt;success&lt;/p&gt;&lt;/div&gt;</code></p>
+<div class="note success"><p>success</p></div>
+
+<p><code>&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;info&lt;/p&gt;&lt;/div&gt;</code></p>
+<div class="note info"><p>info</p></div>
+
+<p><code>&lt;div class=&quot;note warning&quot;&gt;&lt;p&gt;warning&lt;/p&gt;&lt;/div&gt;</code></p>
+<div class="note warning"><p>warning</p></div>
+
+<p><code>&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt;</code></p>
+<div class="note danger"><p>danger</p></div>
+
+<p><code>&lt;div class=&quot;note danger no-icon&quot;&gt;&lt;p&gt;danger no-icon&lt;/p&gt;&lt;/div&gt;</code></p>
+<div class="note danger no-icon"><p>danger no-icon</p></div>
+
+<p>首先可以在主题配置文件中需要配置下, 贴上我的: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Note tag (bs-callout).</span><br><span class="line">note:</span><br><span class="line">  # 风格</span><br><span class="line">  style: flat</span><br><span class="line">  # 要不要图标</span><br><span class="line">  icons: true</span><br><span class="line">  # 圆角矩形</span><br><span class="line">  border_radius: 3</span><br><span class="line">  light_bg_offset:</span><br></pre></td></tr></table></figure>
+
+<p>里面的三种风格长啥样？开启图标长啥样？可以查看<a href="https://github.com/iissnan/hexo-theme-next/pull/1697" target="_blank" rel="noopener">这个页面</a>, 更多的介绍也在这个页面, 请自行查看.</p>
+<h2 id="8-3-主题自带样式-label-标签"><a href="#8-3-主题自带样式-label-标签" class="headerlink" title="8.3 主题自带样式 label 标签"></a>8.3 主题自带样式 label 标签</h2><p>首先可以在<code>主题配置文件</code>中有配置, 需要配置下, 贴上我的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Label tag.</span><br><span class="line">label: true</span><br></pre></td></tr></table></figure>
+
+<span class="label default">default</span>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label default@default %&#125;</span><br></pre></td></tr></table></figure>
+
+<span class="label primary">primary</span>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label primary@primary %&#125;</span><br></pre></td></tr></table></figure>
+
+<span class="label success">success</span>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label success@success %&#125;</span><br></pre></td></tr></table></figure>
+
+<span class="label info">info</span>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label info@info %&#125;</span><br></pre></td></tr></table></figure>
+
+<span class="label warning">warning</span>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label warning@warning %&#125;</span><br></pre></td></tr></table></figure>
+
+<span class="label danger">danger</span>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label danger@danger %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-4-主题自带样式-tabs-标签"><a href="#8-4-主题自带样式-tabs-标签" class="headerlink" title="8.4 主题自带样式 tabs 标签"></a>8.4 主题自带样式 tabs 标签</h2><p>效果:</p>
+<div class="tabs" id="选项卡"><ul class="nav-tabs"><li class="tab"><a href="#选项卡-1">选项卡 1</a></li><li class="tab active"><a href="#选项卡-2">选项卡 2</a></li><li class="tab"><a href="#选项卡-3">选项卡 3</a></li></ul><div class="tab-content"><div class="tab-pane" id="选项卡-1"><p><strong>这是选项卡 1</strong> 嘤嘤嘤</p></div><div class="tab-pane active" id="选项卡-2"><p><strong>这是选项卡 2</strong></p></div><div class="tab-pane" id="选项卡-3"><p><strong>这是选项卡 3</strong> 哇，你找到我了！φ(≧ω≦*)♪～</p></div></div></div>
+
+
+<p>code:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs 选项卡, 2 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 1** 嘤嘤嘤</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 2**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 3** 哇，你找到我了！φ(≧ω≦*)♪～</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先可以在主题配置文件中有配置, 需要配置下, 贴上我的: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Tabs tag.</span><br><span class="line">tabs:</span><br><span class="line">  enable: true</span><br><span class="line">  transition:</span><br><span class="line">    tabs: true</span><br><span class="line">    labels: true</span><br><span class="line">  border_radius: 0</span><br></pre></td></tr></table></figure>
+
+<p>然后上面源码中, 2表示一开始在第二个选项卡, 非必须, 若数值为-1则隐藏选项卡内容. 更多用法请查看<a href="https://almostover.ru/2016-01/hexo-theme-next-test/#Tab-tag-test" target="_blank" rel="noopener">这个页面</a></p>
+<h2 id="8-5-主题自带样式-tabs-标签"><a href="#8-5-主题自带样式-tabs-标签" class="headerlink" title="8.5 主题自带样式 tabs 标签"></a>8.5 主题自带样式 tabs 标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% btn https://www.baidu.com, 点击下载百度, download fa-lg fa-fw %&#125;</span><br></pre></td></tr></table></figure>
+
+<a class="btn" href="https://www.baidu.com" target="_blank" rel="noopener"><i class="fa fa-download fa-lg fa-fw"></i>点击下载百度</a>
+
+<p>关于按钮的更多使用可以前往这个<a href="https://almostover.ru/2016-01/hexo-theme-next-test/#Button-tag-test" target="_blank" rel="noopener">页面查看</a></p>
+
       
     </div>
 
@@ -755,6 +831,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/07/25/Hexo-Next添加网页标题崩溃欺骗搞怪特效/" rel="prev" title="Hexo-Next添加网页标题崩溃欺骗搞怪特效">
+                Hexo-Next添加网页标题崩溃欺骗搞怪特效 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -826,7 +906,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1073,7 +1153,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用命令"><span class="nav-number">1.</span> <span class="nav-text">1. 常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-更换主题-以-Next-主题为例"><span class="nav-number">2.</span> <span class="nav-text">2. 更换主题, 以 Next 主题为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-站点初始设置"><span class="nav-number">3.</span> <span class="nav-text">3. 站点初始设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置主题风格"><span class="nav-number">4.</span> <span class="nav-text">4. 设置主题风格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-设置菜单项的显示文本和图标"><span class="nav-number">5.</span> <span class="nav-text">5. 设置菜单项的显示文本和图标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-设置菜单项的显示文本"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 设置菜单项的显示文本:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-设定菜单项的图标"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 设定菜单项的图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-设置菜单项对应的文件目录"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 设置菜单项对应的文件目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-创建菜单项对应文件目录-以分类为例"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 创建菜单项对应文件目录, 以分类为例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-编辑刚新建的页面-设置分类"><span class="nav-number">5.5.</span> <span class="nav-text">5.5 编辑刚新建的页面, 设置分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-头像设置"><span class="nav-number">6.</span> <span class="nav-text">6. 头像设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-添加头像"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 添加头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-设置头像边框为圆形框"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 设置头像边框为圆形框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-特效-鼠标放置头像上旋转"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 特效:鼠标放置头像上旋转</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-浏览页面的时候显示当前浏览进度"><span class="nav-number">7.</span> <span class="nav-text">7. 浏览页面的时候显示当前浏览进度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-好玩的写作样式"><span class="nav-number">8.</span> <span class="nav-text">8 好玩的写作样式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用命令"><span class="nav-number">1.</span> <span class="nav-text">1. 常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-更换主题-以-Next-主题为例"><span class="nav-number">2.</span> <span class="nav-text">2. 更换主题, 以 Next 主题为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-站点初始设置"><span class="nav-number">3.</span> <span class="nav-text">3. 站点初始设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置主题风格"><span class="nav-number">4.</span> <span class="nav-text">4. 设置主题风格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-设置菜单项的显示文本和图标"><span class="nav-number">5.</span> <span class="nav-text">5. 设置菜单项的显示文本和图标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-设置菜单项的显示文本"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 设置菜单项的显示文本:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-设定菜单项的图标"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 设定菜单项的图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-设置菜单项对应的文件目录"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 设置菜单项对应的文件目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-创建菜单项对应文件目录-以分类为例"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 创建菜单项对应文件目录, 以分类为例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-编辑刚新建的页面-设置分类"><span class="nav-number">5.5.</span> <span class="nav-text">5.5 编辑刚新建的页面, 设置分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-头像设置"><span class="nav-number">6.</span> <span class="nav-text">6. 头像设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-添加头像"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 添加头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-设置头像边框为圆形框"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 设置头像边框为圆形框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-特效-鼠标放置头像上旋转"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 特效:鼠标放置头像上旋转</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-浏览页面的时候显示当前浏览进度"><span class="nav-number">7.</span> <span class="nav-text">7. 浏览页面的时候显示当前浏览进度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-好玩的写作样式"><span class="nav-number">8.</span> <span class="nav-text">8. 好玩的写作样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-主题自带样式-文本居中引用"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 主题自带样式 文本居中引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-主题自带样式-note-标签"><span class="nav-number">8.2.</span> <span class="nav-text">8.2 主题自带样式 note 标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-主题自带样式-label-标签"><span class="nav-number">8.3.</span> <span class="nav-text">8.3 主题自带样式 label 标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-4-主题自带样式-tabs-标签"><span class="nav-number">8.4.</span> <span class="nav-text">8.4 主题自带样式 tabs 标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-主题自带样式-tabs-标签"><span class="nav-number">8.5.</span> <span class="nav-text">8.5 主题自带样式 tabs 标签</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1081,13 +1161,6 @@
       <!--/noindex-->
       
 
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
       
 
     </div>
@@ -1112,7 +1185,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">104k</span>
+    <span title="站点总字数">108k</span>
   
 
   
@@ -1121,7 +1194,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:09</span>
+    <span title="站点阅读时长">3:17</span>
   
 </div>
 
@@ -1173,6 +1246,13 @@
       </div>
     </footer>
 
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
     
 
     

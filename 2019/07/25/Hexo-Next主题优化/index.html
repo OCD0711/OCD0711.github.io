@@ -135,7 +135,7 @@
 <meta property="og:site_name" content="OCD Blog">
 <meta property="og:description" content="1. 常用命令Hexo 的命令极简单, 安装后只需要记住四个常用的即可. 执行命令需要Git当前处于blog文件夹根目录下.   generate 生成静态文件.  hexo g  server 启动服务器.  hexo s  deploy 部署网站. 部署网站前, 需要预先生成静态文件.  hexo d  clean 清除缓存文件 (db.json) 和已生成的静态文件 (public).  h">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-25T03:38:49.960Z">
+<meta property="og:updated_time" content="2019-07-25T03:43:43.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-Next主题优化">
 <meta name="twitter:description" content="1. 常用命令Hexo 的命令极简单, 安装后只需要记住四个常用的即可. 执行命令需要Git当前处于blog文件夹根目录下.   generate 生成静态文件.  hexo g  server 启动服务器.  hexo s  deploy 部署网站. 部署网站前, 需要预先生成静态文件.  hexo d  clean 清除缓存文件 (db.json) 和已生成的静态文件 (public).  h">
@@ -490,7 +490,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 11:17:44 / 修改时间：11:38:49" itemprop="dateCreated datePublished" datetime="2019-07-25T11:17:44+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-25 11:17:44 / 修改时间：11:43:43" itemprop="dateCreated datePublished" datetime="2019-07-25T11:17:44+08:00">2019-07-25</time>
             
 
             
@@ -605,45 +605,39 @@
 <li><p>NexT 使用的是 <a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">Font Awesome</a> 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
 </li>
 </ul>
-<pre><code>## 5.1 设置菜单项的显示文本:
+<h2 id="5-1-设置菜单项的显示文本"><a href="#5-1-设置菜单项的显示文本" class="headerlink" title="5.1 设置菜单项的显示文本:"></a>5.1 设置菜单项的显示文本:</h2><ul>
+<li><p>打开 themes/next/languages 下的 zh-Hans.yml 文件, 搜索 menu关键字, 修改对应中文或者新增</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: 首页</span><br><span class="line">archives: 归档</span><br><span class="line">categories: 分类</span><br><span class="line">tags: 标签</span><br><span class="line">about: 关于</span><br><span class="line">search: 搜索</span><br><span class="line">schedule: 日程表</span><br><span class="line">sitemap: 站点地图</span><br><span class="line">commonweal: 公益404</span><br><span class="line"># 新增menu</span><br><span class="line">catalogue: 目录</span><br></pre></td></tr></table></figure>
 
-* 打开 themes/next/languages 下的 zh-Hans.yml 文件, 搜索 menu关键字, 修改对应中文或者新增
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: 首页</span><br><span class="line">archives: 归档</span><br><span class="line">categories: 分类</span><br><span class="line">tags: 标签</span><br><span class="line">about: 关于</span><br><span class="line">search: 搜索</span><br><span class="line">schedule: 日程表</span><br><span class="line">sitemap: 站点地图</span><br><span class="line">commonweal: 公益404</span><br><span class="line"># 新增menu</span><br><span class="line">catalogue: 目录</span><br></pre></td></tr></table></figure>
-
-## 5.2 设定菜单项的图标
-
-* 打开 themes/next 下的 _config.yml 文件, 搜索 menu_icons 关键字, 修改对应图标名称或者新增对应 menu 的图标
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Enable/Disable menu icons.</span><br><span class="line"># Icon Mapping:</span><br><span class="line">#   Map a menu item to a specific FontAwesome icon name.</span><br><span class="line">#   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.</span><br><span class="line">#   When an question mask icon presenting up means that the item has no mapping icon.</span><br><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome</span><br><span class="line">  home: home</span><br><span class="line">  about: user</span><br><span class="line">  categories: th</span><br><span class="line">  schedule: calendar</span><br><span class="line">  tags: tags</span><br><span class="line">  archives: archive</span><br><span class="line">  sitemap: sitemap</span><br><span class="line">  commonweal: heartbeat</span><br><span class="line">  #新增menu_icon</span><br><span class="line">  catalogue: th-list</span><br></pre></td></tr></table></figure>
-
-## 5.3 设置菜单项对应的文件目录
-
-* 打开 themes/next 下的 _config.yml 文件, 搜索 menu 关键字, 以 # 注释原有的菜单项, 或者新增新的菜单项
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Menu Settings</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -&gt; archives)</span><br><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories/</span><br><span class="line">  #about: /about/</span><br><span class="line">  archives: /archives/</span><br><span class="line">  #tags: /tags/</span><br><span class="line">  #sitemap: /sitemap.xml</span><br><span class="line">  #commonweal: /404/</span><br><span class="line">  #新增menu</span><br><span class="line">  catalogue: /catalogues/</span><br></pre></td></tr></table></figure>
-
-* 除了 home, archives,/ 后面都需要手动创建这个页面
-
-
-## 5.4 创建菜单项对应文件目录, 以分类为例
-
-* 在终端窗口下, 定位到 Hexo 站点目录下. 使用 hexo new page 新建一个页面, 命名为 categories: 
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-
-## 5.5 编辑刚新建的页面, 设置分类
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2019-07-22 12:39:04</span><br><span class="line">categories: Testing #分类名</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></code></pre><h1 id="6-头像设置"><a href="#6-头像设置" class="headerlink" title="6. 头像设置"></a>6. 头像设置</h1><ul>
-<li>头像</li>
+</li>
 </ul>
-<pre><code>## 6.1 打开 themes/next 下的 _config.yml 文件, 搜索 Sidebar Avatar 关键字, 去掉 avatar 前面的 #
+<h2 id="5-2-设定菜单项的图标"><a href="#5-2-设定菜单项的图标" class="headerlink" title="5.2 设定菜单项的图标"></a>5.2 设定菜单项的图标</h2><ul>
+<li><p>打开 themes/next 下的 _config.yml 文件, 搜索 menu_icons 关键字, 修改对应图标名称或者新增对应 menu 的图标</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Enable/Disable menu icons.</span><br><span class="line"># Icon Mapping:</span><br><span class="line">#   Map a menu item to a specific FontAwesome icon name.</span><br><span class="line">#   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.</span><br><span class="line">#   When an question mask icon presenting up means that the item has no mapping icon.</span><br><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome</span><br><span class="line">  home: home</span><br><span class="line">  about: user</span><br><span class="line">  categories: th</span><br><span class="line">  schedule: calendar</span><br><span class="line">  tags: tags</span><br><span class="line">  archives: archive</span><br><span class="line">  sitemap: sitemap</span><br><span class="line">  commonweal: heartbeat</span><br><span class="line">  #新增menu_icon</span><br><span class="line">  catalogue: th-list</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line"># in theme directory(source/images): /images/avatar.jpg</span><br><span class="line"># in site  directory(source/uploads): /uploads/avatar.jpg</span><br><span class="line">avatar: http://example.com/avatar.png</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-3-设置菜单项对应的文件目录"><a href="#5-3-设置菜单项对应的文件目录" class="headerlink" title="5.3 设置菜单项对应的文件目录"></a>5.3 设置菜单项对应的文件目录</h2><ul>
+<li><p>打开 themes/next 下的 _config.yml 文件, 搜索 menu 关键字, 以 # 注释原有的菜单项, 或者新增新的菜单项</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Menu Settings</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -&gt; archives)</span><br><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories/</span><br><span class="line">  #about: /about/</span><br><span class="line">  archives: /archives/</span><br><span class="line">  #tags: /tags/</span><br><span class="line">  #sitemap: /sitemap.xml</span><br><span class="line">  #commonweal: /404/</span><br><span class="line">  #新增menu</span><br><span class="line">  catalogue: /catalogues/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除了 home, archives,/ 后面都需要手动创建这个页面</p>
+</li>
+</ul>
+<h2 id="5-4-创建菜单项对应文件目录-以分类为例"><a href="#5-4-创建菜单项对应文件目录-以分类为例" class="headerlink" title="5.4 创建菜单项对应文件目录, 以分类为例"></a>5.4 创建菜单项对应文件目录, 以分类为例</h2><ul>
+<li><p>在终端窗口下, 定位到 Hexo 站点目录下. 使用 hexo new page 新建一个页面, 命名为 categories: </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
 
-* 或者使用本地图片, 把图片放入 themes/next/source/images 下, 修改 avatar
+<h2 id="5-5-编辑刚新建的页面-设置分类"><a href="#5-5-编辑刚新建的页面-设置分类" class="headerlink" title="5.5 编辑刚新建的页面, 设置分类"></a>5.5 编辑刚新建的页面, 设置分类</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2019-07-22 12:39:04</span><br><span class="line">categories: Testing #分类名</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-`avatar: /images/blogLogo.png`</code></pre>
+</li>
+</ul>
+<h1 id="6-头像设置"><a href="#6-头像设置" class="headerlink" title="6. 头像设置"></a>6. 头像设置</h1><h2 id="6-1-打开-themes-next-下的-config-yml-文件-搜索-Sidebar-Avatar-关键字-去掉-avatar-前面的"><a href="#6-1-打开-themes-next-下的-config-yml-文件-搜索-Sidebar-Avatar-关键字-去掉-avatar-前面的" class="headerlink" title="6.1 打开 themes/next 下的 _config.yml 文件, 搜索 Sidebar Avatar 关键字, 去掉 avatar 前面的"></a>6.1 打开 themes/next 下的 _config.yml 文件, 搜索 Sidebar Avatar 关键字, 去掉 avatar 前面的</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line"># in theme directory(source/images): /images/avatar.jpg</span><br><span class="line"># in site  directory(source/uploads): /uploads/avatar.jpg</span><br><span class="line">avatar: http://example.com/avatar.png</span><br></pre></td></tr></table></figure></code></pre><ul>
+<li><p>或者使用本地图片, 把图片放入 themes/next/source/images 下, 修改 avatar</p>
+<p>  <code>avatar: /images/blogLogo.png</code></p>
+</li>
+</ul>
+
       
     </div>
 
@@ -1061,7 +1055,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用命令"><span class="nav-number">1.</span> <span class="nav-text">1. 常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-更换主题-以-Next-主题为例"><span class="nav-number">2.</span> <span class="nav-text">2. 更换主题, 以 Next 主题为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-站点初始设置"><span class="nav-number">3.</span> <span class="nav-text">3. 站点初始设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置主题风格"><span class="nav-number">4.</span> <span class="nav-text">4. 设置主题风格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-设置菜单项的显示文本和图标"><span class="nav-number">5.</span> <span class="nav-text">5. 设置菜单项的显示文本和图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-头像设置"><span class="nav-number">6.</span> <span class="nav-text">6. 头像设置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用命令"><span class="nav-number">1.</span> <span class="nav-text">1. 常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-更换主题-以-Next-主题为例"><span class="nav-number">2.</span> <span class="nav-text">2. 更换主题, 以 Next 主题为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-站点初始设置"><span class="nav-number">3.</span> <span class="nav-text">3. 站点初始设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置主题风格"><span class="nav-number">4.</span> <span class="nav-text">4. 设置主题风格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-设置菜单项的显示文本和图标"><span class="nav-number">5.</span> <span class="nav-text">5. 设置菜单项的显示文本和图标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-设置菜单项的显示文本"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 设置菜单项的显示文本:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-设定菜单项的图标"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 设定菜单项的图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-设置菜单项对应的文件目录"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 设置菜单项对应的文件目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-创建菜单项对应文件目录-以分类为例"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 创建菜单项对应文件目录, 以分类为例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-编辑刚新建的页面-设置分类"><span class="nav-number">5.5.</span> <span class="nav-text">5.5 编辑刚新建的页面, 设置分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-头像设置"><span class="nav-number">6.</span> <span class="nav-text">6. 头像设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-打开-themes-next-下的-config-yml-文件-搜索-Sidebar-Avatar-关键字-去掉-avatar-前面的"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 打开 themes/next 下的 _config.yml 文件, 搜索 Sidebar Avatar 关键字, 去掉 avatar 前面的</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ocd0711.ml/"/>
-  <updated>2019-07-25T02:57:49.652Z</updated>
+  <updated>2019-07-25T03:38:49.960Z</updated>
   <id>https://ocd0711.ml/</id>
   
   <author>
@@ -17,9 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo-Next主题优化</title>
+    <link href="https://ocd0711.ml/2019/07/25/Hexo-Next%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
+    <id>https://ocd0711.ml/2019/07/25/Hexo-Next主题优化/</id>
+    <published>2019-07-25T03:17:44.000Z</published>
+    <updated>2019-07-25T03:38:49.960Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-常用命令"><a href="#1-常用命令" class="headerlink" title="1. 常用命令"></a>1. 常用命令</h1><p>Hexo 的命令极简单, 安装后只需要记住四个常用的即可. 执行命令需要Git当前处于blog文件夹根目录下. </p><ol><li><p>generate 生成静态文件.</p><p> <code>hexo g</code></p></li><li><p>server 启动服务器.</p><p> <code>hexo s</code></p></li><li><p>deploy 部署网站. 部署网站前, 需要预先生成静态文件.</p><p> <code>hexo d</code></p></li><li><p>clean 清除缓存文件 (db.json) 和已生成的静态文件 (public).</p><p> <code>hexo clean</code></p></li><li><p>卸载Hexo.<br> <code>npm uninstall hexo-cli -g</code></p></li></ol><h1 id="2-更换主题-以-Next-主题为例"><a href="#2-更换主题-以-Next-主题为例" class="headerlink" title="2. 更换主题, 以 Next 主题为例"></a>2. 更换主题, 以 Next 主题为例</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> your-hexo-site</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure><ul><li>修改 Hexo 站点目录下的 _config.yml 的主题</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure><h1 id="3-站点初始设置"><a href="#3-站点初始设置" class="headerlink" title="3. 站点初始设置"></a>3. 站点初始设置</h1><p>打开 Hexo 站点目录下的 _config.yml 修改内容如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Hexo #网站标题</span><br><span class="line">subtitle: #网站副标题</span><br><span class="line">description: #网站描述</span><br><span class="line">author: author #名字</span><br><span class="line">language: zh-Hans #网站使用的语言</span><br><span class="line">timezone: Asia/Shanghai #网站时区。Hexo 默认使用电脑的时区。</span><br></pre></td></tr></table></figure><h1 id="4-设置主题风格"><a href="#4-设置主题风格" class="headerlink" title="4. 设置主题风格"></a>4. 设置主题风格</h1><ul><li>打开 themes/next 下的 _config.yml 文件, 搜索 scheme 关键字, 需用启用的 scheme 前面注释 # 去除即可.</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Scheme Settings</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># Schemes</span><br><span class="line">#scheme: Muse # 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line">#scheme: Mist # Muse 的紧凑版本，整洁有序的单栏外观</span><br><span class="line">scheme: Pisces # 双栏 Scheme，小家碧玉似的清新</span><br><span class="line">#scheme: Gemini # 类似 Pisces</span><br></pre></td></tr></table></figure><h1 id="5-设置菜单项的显示文本和图标"><a href="#5-设置菜单项的显示文本和图标" class="headerlink" title="5. 设置菜单项的显示文本和图标"></a>5. 设置菜单项的显示文本和图标</h1><ul><li><p>更新说明：NexT.Pisces v5.1.3, 版本更换了修改菜单图标方式. <a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="noopener">参看详细信息</a></p></li><li><p>NexT 使用的是 <a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">Font Awesome</a> 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p></li></ul><pre><code>## 5.1 设置菜单项的显示文本:* 打开 themes/next/languages 下的 zh-Hans.yml 文件, 搜索 menu关键字, 修改对应中文或者新增<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">home: 首页</span><br><span class="line">archives: 归档</span><br><span class="line">categories: 分类</span><br><span class="line">tags: 标签</span><br><span class="line">about: 关于</span><br><span class="line">search: 搜索</span><br><span class="line">schedule: 日程表</span><br><span class="line">sitemap: 站点地图</span><br><span class="line">commonweal: 公益404</span><br><span class="line"># 新增menu</span><br><span class="line">catalogue: 目录</span><br></pre></td></tr></table></figure>## 5.2 设定菜单项的图标* 打开 themes/next 下的 _config.yml 文件, 搜索 menu_icons 关键字, 修改对应图标名称或者新增对应 menu 的图标<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Enable/Disable menu icons.</span><br><span class="line"># Icon Mapping:</span><br><span class="line">#   Map a menu item to a specific FontAwesome icon name.</span><br><span class="line">#   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.</span><br><span class="line">#   When an question mask icon presenting up means that the item has no mapping icon.</span><br><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome</span><br><span class="line">  home: home</span><br><span class="line">  about: user</span><br><span class="line">  categories: th</span><br><span class="line">  schedule: calendar</span><br><span class="line">  tags: tags</span><br><span class="line">  archives: archive</span><br><span class="line">  sitemap: sitemap</span><br><span class="line">  commonweal: heartbeat</span><br><span class="line">  #新增menu_icon</span><br><span class="line">  catalogue: th-list</span><br></pre></td></tr></table></figure>## 5.3 设置菜单项对应的文件目录* 打开 themes/next 下的 _config.yml 文件, 搜索 menu 关键字, 以 # 注释原有的菜单项, 或者新增新的菜单项<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Menu Settings</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -&gt; archives)</span><br><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories/</span><br><span class="line">  #about: /about/</span><br><span class="line">  archives: /archives/</span><br><span class="line">  #tags: /tags/</span><br><span class="line">  #sitemap: /sitemap.xml</span><br><span class="line">  #commonweal: /404/</span><br><span class="line">  #新增menu</span><br><span class="line">  catalogue: /catalogues/</span><br></pre></td></tr></table></figure>* 除了 home, archives,/ 后面都需要手动创建这个页面## 5.4 创建菜单项对应文件目录, 以分类为例* 在终端窗口下, 定位到 Hexo 站点目录下. 使用 hexo new page 新建一个页面, 命名为 categories: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>## 5.5 编辑刚新建的页面, 设置分类<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2019-07-22 12:39:04</span><br><span class="line">categories: Testing #分类名</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></code></pre><h1 id="6-头像设置"><a href="#6-头像设置" class="headerlink" title="6. 头像设置"></a>6. 头像设置</h1><ul><li>头像</li></ul><pre><code>## 6.1 打开 themes/next 下的 _config.yml 文件, 搜索 Sidebar Avatar 关键字, 去掉 avatar 前面的 #<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line"># in theme directory(source/images): /images/avatar.jpg</span><br><span class="line"># in site  directory(source/uploads): /uploads/avatar.jpg</span><br><span class="line">avatar: http://example.com/avatar.png</span><br></pre></td></tr></table></figure>* 或者使用本地图片, 把图片放入 themes/next/source/images 下, 修改 avatar`avatar: /images/blogLogo.png`</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-常用命令&quot;&gt;&lt;a href=&quot;#1-常用命令&quot; class=&quot;headerlink&quot; title=&quot;1. 常用命令&quot;&gt;&lt;/a&gt;1. 常用命令&lt;/h1&gt;&lt;p&gt;Hexo 的命令极简单, 安装后只需要记住四个常用的即可. 执行命令需要Git当前处于blog文件夹根目
+      
+    
+    </summary>
+    
+    
+      <category term="Next" scheme="https://ocd0711.ml/tags/Next/"/>
+    
+      <category term="Hexo" scheme="https://ocd0711.ml/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo-Next (代码块复制功能)</title>
-    <link href="https://ocd0711.ml/Hexo-Next%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD.html"/>
-    <id>https://ocd0711.ml/Hexo-Next代码块复制功能.html</id>
+    <link href="https://ocd0711.ml/2019/07/25/Hexo-Next%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD/"/>
+    <id>https://ocd0711.ml/2019/07/25/Hexo-Next代码块复制功能/</id>
     <published>2019-07-25T02:25:27.000Z</published>
     <updated>2019-07-25T02:57:49.652Z</updated>
     
@@ -45,8 +70,8 @@
   
   <entry>
     <title>nrf51822_程序分析</title>
-    <link href="https://ocd0711.ml/nrf51822-%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90.html"/>
-    <id>https://ocd0711.ml/nrf51822-程序分析.html</id>
+    <link href="https://ocd0711.ml/2019/05/20/nrf51822-%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90/"/>
+    <id>https://ocd0711.ml/2019/05/20/nrf51822-程序分析/</id>
     <published>2019-05-20T01:30:19.000Z</published>
     <updated>2019-07-03T14:15:20.346Z</updated>
     
@@ -63,8 +88,8 @@
   
   <entry>
     <title>使用回忆录</title>
-    <link href="https://ocd0711.ml/retrofit%E4%BD%BF%E7%94%A8%E5%9B%9E%E5%BF%86%E5%BD%95.html"/>
-    <id>https://ocd0711.ml/retrofit使用回忆录.html</id>
+    <link href="https://ocd0711.ml/2019/02/07/retrofit%E4%BD%BF%E7%94%A8%E5%9B%9E%E5%BF%86%E5%BD%95/"/>
+    <id>https://ocd0711.ml/2019/02/07/retrofit使用回忆录/</id>
     <published>2019-02-07T12:16:31.000Z</published>
     <updated>2019-07-03T14:15:20.348Z</updated>
     
@@ -84,9 +109,9 @@
       <category term="java" scheme="https://ocd0711.ml/categories/java/"/>
     
     
-      <category term="java" scheme="https://ocd0711.ml/tags/java/"/>
-    
       <category term="android" scheme="https://ocd0711.ml/tags/android/"/>
+    
+      <category term="java" scheme="https://ocd0711.ml/tags/java/"/>
     
       <category term="网络层" scheme="https://ocd0711.ml/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
     
@@ -94,8 +119,8 @@
   
   <entry>
     <title>解决mac下menuconfig报错的问题</title>
-    <link href="https://ocd0711.ml/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bmenuconfig%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98.html"/>
-    <id>https://ocd0711.ml/解决mac下menuconfig报错的问题.html</id>
+    <link href="https://ocd0711.ml/2019/01/22/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bmenuconfig%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://ocd0711.ml/2019/01/22/解决mac下menuconfig报错的问题/</id>
     <published>2019-01-22T02:38:05.000Z</published>
     <updated>2019-07-03T14:15:20.348Z</updated>
     
@@ -123,8 +148,8 @@
   
   <entry>
     <title>Android-P破解隐藏私有API禁止调用的限制</title>
-    <link href="https://ocd0711.ml/Android-P%E7%A0%B4%E8%A7%A3%E9%9A%90%E8%97%8F%E7%A7%81%E6%9C%89API%E7%A6%81%E6%AD%A2%E8%B0%83%E7%94%A8%E7%9A%84%E9%99%90%E5%88%B6.html"/>
-    <id>https://ocd0711.ml/Android-P破解隐藏私有API禁止调用的限制.html</id>
+    <link href="https://ocd0711.ml/2019/01/18/Android-P%E7%A0%B4%E8%A7%A3%E9%9A%90%E8%97%8F%E7%A7%81%E6%9C%89API%E7%A6%81%E6%AD%A2%E8%B0%83%E7%94%A8%E7%9A%84%E9%99%90%E5%88%B6/"/>
+    <id>https://ocd0711.ml/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/</id>
     <published>2019-01-18T03:23:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -151,8 +176,8 @@
   
   <entry>
     <title>android开发填坑之广播延迟问题</title>
-    <link href="https://ocd0711.ml/android%E5%BC%80%E5%8F%91%E5%A1%AB%E5%9D%91%E4%B9%8B%E5%B9%BF%E6%92%AD%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98.html"/>
-    <id>https://ocd0711.ml/android开发填坑之广播延迟问题.html</id>
+    <link href="https://ocd0711.ml/2019/01/17/android%E5%BC%80%E5%8F%91%E5%A1%AB%E5%9D%91%E4%B9%8B%E5%B9%BF%E6%92%AD%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/"/>
+    <id>https://ocd0711.ml/2019/01/17/android开发填坑之广播延迟问题/</id>
     <published>2019-01-17T03:44:57.000Z</published>
     <updated>2019-07-03T14:15:20.346Z</updated>
     
@@ -178,8 +203,8 @@
   
   <entry>
     <title>raspi 上 4G 模块使用研究过程</title>
-    <link href="https://ocd0711.ml/raspi%E4%B8%8A4G%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%A0%94%E7%A9%B6%E8%BF%87%E7%A8%8B.html"/>
-    <id>https://ocd0711.ml/raspi上4G模块使用研究过程.html</id>
+    <link href="https://ocd0711.ml/2019/01/14/raspi%E4%B8%8A4G%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%A0%94%E7%A9%B6%E8%BF%87%E7%A8%8B/"/>
+    <id>https://ocd0711.ml/2019/01/14/raspi上4G模块使用研究过程/</id>
     <published>2019-01-14T03:51:15.000Z</published>
     <updated>2019-07-03T14:15:20.347Z</updated>
     
@@ -208,8 +233,8 @@
   
   <entry>
     <title>raspi 上 CP2102 使用</title>
-    <link href="https://ocd0711.ml/raspi%E4%B8%8ACP2102%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://ocd0711.ml/raspi上CP2102使用.html</id>
+    <link href="https://ocd0711.ml/2019/01/14/raspi%E4%B8%8ACP2102%E4%BD%BF%E7%94%A8/"/>
+    <id>https://ocd0711.ml/2019/01/14/raspi上CP2102使用/</id>
     <published>2019-01-14T03:36:46.000Z</published>
     <updated>2019-07-03T14:15:20.347Z</updated>
     
@@ -235,8 +260,8 @@
   
   <entry>
     <title>ConcurrentLinkedQueue使用</title>
-    <link href="https://ocd0711.ml/ConcurrentLinkedQueue%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://ocd0711.ml/ConcurrentLinkedQueue使用.html</id>
+    <link href="https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue%E4%BD%BF%E7%94%A8/"/>
+    <id>https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue使用/</id>
     <published>2018-12-21T13:01:34.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -255,16 +280,16 @@
       <category term="java" scheme="https://ocd0711.ml/categories/java/"/>
     
     
-      <category term="java" scheme="https://ocd0711.ml/tags/java/"/>
-    
       <category term="android" scheme="https://ocd0711.ml/tags/android/"/>
+    
+      <category term="java" scheme="https://ocd0711.ml/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>2018-2019杂记</title>
-    <link href="https://ocd0711.ml/2018-2019.html"/>
-    <id>https://ocd0711.ml/2018-2019.html</id>
+    <link href="https://ocd0711.ml/2018/12/15/2018-2019/"/>
+    <id>https://ocd0711.ml/2018/12/15/2018-2019/</id>
     <published>2018-12-15T07:21:17.000Z</published>
     <updated>2019-07-03T14:15:20.344Z</updated>
     
@@ -291,8 +316,8 @@
   
   <entry>
     <title>NexT主题中集成gitalk评论系统</title>
-    <link href="https://ocd0711.ml/NexT%E4%B8%BB%E9%A2%98%E4%B8%AD%E9%9B%86%E6%88%90gitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F.html"/>
-    <id>https://ocd0711.ml/NexT主题中集成gitalk评论系统.html</id>
+    <link href="https://ocd0711.ml/2018/12/12/NexT%E4%B8%BB%E9%A2%98%E4%B8%AD%E9%9B%86%E6%88%90gitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://ocd0711.ml/2018/12/12/NexT主题中集成gitalk评论系统/</id>
     <published>2018-12-12T07:37:46.000Z</published>
     <updated>2019-07-25T02:27:52.203Z</updated>
     
@@ -317,8 +342,8 @@
   
   <entry>
     <title>Sony_Headphone_Connect_update_google_assistant</title>
-    <link href="https://ocd0711.ml/Sony-Headphone-Connect-update-google-assistant.html"/>
-    <id>https://ocd0711.ml/Sony-Headphone-Connect-update-google-assistant.html</id>
+    <link href="https://ocd0711.ml/2018/11/09/Sony-Headphone-Connect-update-google-assistant/"/>
+    <id>https://ocd0711.ml/2018/11/09/Sony-Headphone-Connect-update-google-assistant/</id>
     <published>2018-11-09T06:53:03.000Z</published>
     <updated>2019-07-03T14:15:20.346Z</updated>
     
@@ -347,8 +372,8 @@
   
   <entry>
     <title>自编译 AOSP 下载地址</title>
-    <link href="https://ocd0711.ml/sony-aosp-build.html"/>
-    <id>https://ocd0711.ml/sony-aosp-build.html</id>
+    <link href="https://ocd0711.ml/2018/11/02/sony-aosp-build/"/>
+    <id>https://ocd0711.ml/2018/11/02/sony-aosp-build/</id>
     <published>2018-11-01T19:00:01.000Z</published>
     <updated>2019-07-03T14:15:20.348Z</updated>
     
@@ -371,8 +396,8 @@
   
   <entry>
     <title>OpenWRT自动更新软件包脚本</title>
-    <link href="https://ocd0711.ml/2018-10-17-OpenWRT-update-sh.html"/>
-    <id>https://ocd0711.ml/2018-10-17-OpenWRT-update-sh.html</id>
+    <link href="https://ocd0711.ml/2018/10/17/2018-10-17-OpenWRT-update-sh/"/>
+    <id>https://ocd0711.ml/2018/10/17/2018-10-17-OpenWRT-update-sh/</id>
     <published>2018-10-17T03:03:26.000Z</published>
     <updated>2019-07-03T14:15:20.344Z</updated>
     
@@ -397,8 +422,8 @@
   
   <entry>
     <title>Next 主题自动更换背景图片</title>
-    <link href="https://ocd0711.ml/change-background.html"/>
-    <id>https://ocd0711.ml/change-background.html</id>
+    <link href="https://ocd0711.ml/2018/09/29/change-background/"/>
+    <id>https://ocd0711.ml/2018/09/29/change-background/</id>
     <published>2018-09-29T01:44:00.000Z</published>
     <updated>2019-07-03T14:15:20.346Z</updated>
     
@@ -421,8 +446,8 @@
   
   <entry>
     <title>OSX 和 windows 时间不同步解决方法</title>
-    <link href="https://ocd0711.ml/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue.html"/>
-    <id>https://ocd0711.ml/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue.html</id>
+    <link href="https://ocd0711.ml/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/"/>
+    <id>https://ocd0711.ml/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</id>
     <published>2018-09-28T05:19:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -443,8 +468,8 @@
   
   <entry>
     <title>Hexo-NexT 主题修改页面透明度及页面颜色</title>
-    <link href="https://ocd0711.ml/2018-9-26-NexT-theme-Page-transparency-color.html"/>
-    <id>https://ocd0711.ml/2018-9-26-NexT-theme-Page-transparency-color.html</id>
+    <link href="https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/"/>
+    <id>https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/</id>
     <published>2018-09-26T08:33:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -470,8 +495,8 @@
   
   <entry>
     <title>OpenWrt 自动更新设置和屏蔽广告</title>
-    <link href="https://ocd0711.ml/2018-9-22-OpenWrt-auto-update-and-adblock.html"/>
-    <id>https://ocd0711.ml/2018-9-22-OpenWrt-auto-update-and-adblock.html</id>
+    <link href="https://ocd0711.ml/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/"/>
+    <id>https://ocd0711.ml/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/</id>
     <published>2018-09-22T07:55:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -495,8 +520,8 @@
   
   <entry>
     <title>clover 注入白果三码实现 imessage 正常使用</title>
-    <link href="https://ocd0711.ml/2018-9-21-clover-UUID.html"/>
-    <id>https://ocd0711.ml/2018-9-21-clover-UUID.html</id>
+    <link href="https://ocd0711.ml/2018/09/21/2018-9-21-clover-UUID/"/>
+    <id>https://ocd0711.ml/2018/09/21/2018-9-21-clover-UUID/</id>
     <published>2018-09-21T01:11:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -518,30 +543,6 @@
       <category term="iMessage" scheme="https://ocd0711.ml/tags/iMessage/"/>
     
       <category term="FaceTime" scheme="https://ocd0711.ml/tags/FaceTime/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Build Android on MacOS preparation</title>
-    <link href="https://ocd0711.ml/2018-9-20-Build-Android-on-MacOS-preparation.html"/>
-    <id>https://ocd0711.ml/2018-9-20-Build-Android-on-MacOS-preparation.html</id>
-    <published>2018-09-20T01:26:01.000Z</published>
-    <updated>2019-07-03T14:15:20.344Z</updated>
-    
-    <content type="html"><![CDATA[<p>This passage introduces a way to build Android on MacOS (NEW)</p><a id="more"></a><p><strong>Caution</strong>: 由于最新Xcode9编译Android源码问题很多，使用旧版Xcode 8.3.3</p><h2 id="编译前的准备工作"><a href="#编译前的准备工作" class="headerlink" title="编译前的准备工作"></a>编译前的准备工作</h2><p><strong>Xcode8.3.3</strong></p><ol><li><p>下载地址:(<a href="https://download.developer.apple.com/Developer_Tools/Xcode_8.3.3/Xcode8.3.3.xip" target="_blank" rel="noopener">https://download.developer.apple.com/Developer_Tools/Xcode_8.3.3/Xcode8.3.3.xip</a>)</p></li><li><p>切换Xcode版本<br><code>$ xcode-select --switch $PATH/Xcode.app</code></p></li></ol><p><strong>编译需要的软件包</strong></p><ol><li><p>(<a href="https://brew.sh/" target="_blank" rel="noopener">brew</a> 使用详见官网)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install bash-completion coreutils e2fsprogs findutilsgit gnu-sed gnupg gnutls imagemagick make maven md5sha1sum openssl repo sdl sdl2</span><br></pre></td></tr></table></figure></li><li><p>环境变量<br><code>$ vim ~/.bash_profile</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/make/libexec/gnubin:$PATH</span><br></pre></td></tr></table></figure></li></ol><p><strong>Set the number of open files to be 1024</strong></p><p><code>ulimit -S -n 1024</code></p><p><strong>Jack memory</strong></p><pre><code>export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;</code></pre><p><strong>python2</strong></p><ol><li>编译时用到python2命令，mac里只有python2.7 软链接成python2即可<br><code>$ ln /usr/bin/python2.7 /usr/bin/python2</code></li></ol><p><strong>bison报错</strong></p><ol><li>目前Android源码自带的bison不兼容macOS10.13新引入的一些安全限制。需要打补丁编译并替换源码自带的bison。以后源码更新应该会修复就不需要了<blockquote><p>详情可见 <a href="https://groups.google.com/forum/?fromgroups#!topic/android-building/D1-c5lZ9Oco" target="_blank" rel="noopener">android-building</a></p></blockquote></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">​$ cd external/bison</span><br><span class="line"></span><br><span class="line">$ git cherry-pick c0c852bd6fe462b148475476d9124fd740eba160</span><br><span class="line"></span><br><span class="line">$ mm</span><br><span class="line"></span><br><span class="line">$ cp out/host/darwin-x86/bin/bison prebuilts/misc/darwin-x86/bison/bison</span><br></pre></td></tr></table></figure><h2 id="除了环境配置和编译时的几个问题，其他和在Linux下编译区别不大​​​​"><a href="#除了环境配置和编译时的几个问题，其他和在Linux下编译区别不大​​​​" class="headerlink" title="除了环境配置和编译时的几个问题，其他和在Linux下编译区别不大​​​​"></a>除了环境配置和编译时的几个问题，其他和在Linux下编译区别不大​​​​</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This passage introduces a way to build Android on MacOS (NEW)&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android Build" scheme="https://ocd0711.ml/categories/Android-Build/"/>
-    
-    
-      <category term="MacOS" scheme="https://ocd0711.ml/tags/MacOS/"/>
-    
-      <category term="Android Build" scheme="https://ocd0711.ml/tags/Android-Build/"/>
     
   </entry>
   

@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="EknedQGJDeXw-ozmOlxmNfLIlNh6iIo2cOr6XV2JQbo">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "520cff11"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/./images/2.ico?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'DY0G50H99R',
+      apiKey: '3ad7f696dc7901f700f2391d485396bb',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与 ${query} 相关的内容","hits_stats":"${hits}条相关记录，共耗时${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ConcurrentLinkedQueue 笔记 定义一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择.">
+<meta name="keywords" content="android,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ConcurrentLinkedQueue使用">
+<meta property="og:url" content="https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue使用/index.html">
+<meta property="og:site_name" content="OCD Blog">
+<meta property="og:description" content="ConcurrentLinkedQueue 笔记 定义一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择.">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg">
+<meta property="og:image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepmvpgvdj30iw049dg5.jpg">
+<meta property="og:image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyeprtdib4j306z01at8h.jpg">
+<meta property="og:image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepuyo52ej305e01kjr6.jpg">
+<meta property="og:image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepyiyx30j305601f3ya.jpg">
+<meta property="og:updated_time" content="2019-07-03T14:15:20.345Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ConcurrentLinkedQueue使用">
+<meta name="twitter:description" content="ConcurrentLinkedQueue 笔记 定义一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择.">
+<meta name="twitter:image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="OCD Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue使用/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>ConcurrentLinkedQueue使用 | OCD Blog</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126027123-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126027123-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?106da5dde879abce484d31eb7746a49c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OCD Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OCD">
+      <meta itemprop="description" content="Nothing here, trust me">
+      <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OCD Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ConcurrentLinkedQueue使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 21:01:34" itemprop="dateCreated datePublished" datetime="2018-12-21T21:01:34+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-03 22:15:20" itemprop="dateModified" datetime="2019-07-03T22:15:20+08:00">2019-07-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/12/21/ConcurrentLinkedQueue使用/" class="leancloud_visitors" data-flag-title="ConcurrentLinkedQueue使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>ConcurrentLinkedQueue 笔记</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>一个基于链接节点的无界线程安全列队. 此列队按照 FIFO (先进先出) 原则对元素进行排序. 队列的头部是队列中时间最长的元素. 队列的尾部是队列中时间最短的元素.<br>新的元素插入到队列的尾部, 队列获取操作从队列头部获取元素. 当多个线程共享访问一个公共 collection 时, ConcurrentLinkedQueue 是一个恰当的选择. 此队列不允许使用 null 元素.</p>
+<h2 id="offer-和-poll"><a href="#offer-和-poll" class="headerlink" title="offer 和 poll"></a>offer 和 poll</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#offer(E)" target="_blank" rel="noopener">offer</a>(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html" target="_blank" rel="noopener">E</a> e)<br>将指定元素插入此队列的尾部.</p>
+<p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#poll()" target="_blank" rel="noopener">poll</a><br>获取并移除此队列的头, 如果此队列为空, 则返回null.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"嘤嘤嘤"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后，队列是否空？"</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 poll："</span> + queue.poll());</span><br><span class="line">    System.out.println(<span class="string">"pool 后，队列是否空？"</span> + queue.isEmpty());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>offer 是往队列添加元素, poll是从队列取出元素并且删除该元素.</p>
+<p>执行结果:</p>
+<blockquote>
+<p>offer 后, 队列是否为空? false<br>从队列 poll: 嘤嘤嘤<br>pool 后, 队列是否为空? true</p>
+</blockquote>
+<p>ConcurrentLinkedQueue 中的 add() 和 offer() 完全一样, 都是往队列尾部添加元素.</p>
+<h2 id="还有个取出元素方法-peek"><a href="#还有个取出元素方法-peek" class="headerlink" title="还有个取出元素方法 peek"></a>还有个取出元素方法 peek</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#peek()" target="_blank" rel="noopener">peek</a><br>获取但不移除此队列的头; 如果此队列为空, 则返回null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"emmm"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后, 队列是否空?"</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 peek: "</span> + queue.peek());</span><br><span class="line">    System.out.println(<span class="string">"pool 后. 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果:</p>
+<blockquote>
+<p>offer 后，队列是否空? false<br>从队列中 peek: emmm<br>从队列中 peek: emmm<br>从队列中 peek: emmm<br>pool 后, 队列是否空? false</p>
+</blockquote>
+<h2 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#remove(java.lang.Object)" target="_blank" rel="noopener">remove</a>(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/lang/Object.html" target="_blank" rel="noopener">Object</a> o)<br>从队列中移除指定元素的单个实例(如果存在)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"hhh"</span>);</span><br><span class="line">    System.out.println(<span class="string">"offer 后, 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">    System.out.println(<span class="string">"从队列中 remove 已存在元素: "</span> + queue.remove(<span class="string">"xxx"</span>));</span><br><span class="line">    System.out.println(<span class="string">"从队列中 remove 不存在元素: "</span> + queue.remove(<span class="string">"123"</span>));</span><br><span class="line">    System.out.println(<span class="string">"remove 后, 队列是否空? "</span> + queue.isEmpty());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>remove 一个元素, 会返回 true, remove 不存在元素, 返回 false.</p>
+<p>执行结果:</p>
+<blockquote>
+<p>offer 后, 队列是否空? false<br>从队列中 remove 已存在元素: true<br>从队列中 remove 不存在元素: false<br>remove 后, 队列是否空? true</p>
+</blockquote>
+<h2 id="size-or-isEmpty"><a href="#size-or-isEmpty" class="headerlink" title="size or isEmpty"></a>size or isEmpty</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#size()" target="_blank" rel="noopener">size</a>()<br>返回此队列中的元素数量</p>
+<p><strong>注意:</strong></p>
+<blockquote>
+<p>如果此队列包含的元素大于 Integer.MAX_VALUE, 则返回 Integer.MAX_VALUE. 需要小心的是, 与大多数 collection 不同, 此方法不是一个固定时间操作. 由于这些队列的异步特性, 确定当前的元素数需要进行一次花费 O(n) 时间的遍历.<br>所以在需要判断队列是否为空时, 尽量不要用 queue.size()&gt;0, 而是用 !queue.isEmpty()</p>
+</blockquote>
+<p>比较 size() 和 isEmpty() 效率的实例:<br>场景: 10000个人去饭店吃饭, 10张桌子, 分别比较 size() 和 isEmpty() 的耗时</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01ConcurrentLinkedQueue</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> peopleNum = <span class="number">10000</span>;<span class="comment">//吃饭人数</span></span><br><span class="line">        <span class="keyword">int</span> tableNum = <span class="number">10</span>;<span class="comment">//饭桌数量</span></span><br><span class="line"></span><br><span class="line">        ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;&gt;();</span><br><span class="line">        CountDownLatch count = <span class="keyword">new</span> CountDownLatch(tableNum);<span class="comment">//计数器</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//将吃饭人数放入队列（吃饭的人进行排队）</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=peopleNum;i++)&#123;</span><br><span class="line">            queue.offer(<span class="string">"消费者_"</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//执行10个线程从队列取出元素（10个桌子开始供饭）</span></span><br><span class="line">        System.out.println(<span class="string">"-----------------------------------开饭了-----------------------------------"</span>);</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(tableNum);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tableNum;i++) &#123;</span><br><span class="line">            executorService.submit(<span class="keyword">new</span> Dinner(<span class="string">"00"</span> + (i+<span class="number">1</span>), queue, count));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//计数器等待，知道队列为空（所有人吃完）</span></span><br><span class="line">        count.await();</span><br><span class="line">        <span class="keyword">long</span> time = System.currentTimeMillis() - start;</span><br><span class="line">        System.out.println(<span class="string">"-----------------------------------所有人已经吃完-----------------------------------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"共耗时："</span> + time);</span><br><span class="line">        <span class="comment">//停止线程池</span></span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Dinner</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name;</span><br><span class="line">        <span class="keyword">private</span> ConcurrentLinkedQueue&lt;String&gt; queue;</span><br><span class="line">        <span class="keyword">private</span> CountDownLatch count;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Dinner</span><span class="params">(String name, ConcurrentLinkedQueue&lt;String&gt; queue, CountDownLatch count)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">            <span class="keyword">this</span>.queue = queue;</span><br><span class="line">            <span class="keyword">this</span>.count = count;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">//while (queue.size() &gt; 0)&#123;</span></span><br><span class="line">            <span class="keyword">while</span> (!queue.isEmpty())&#123;</span><br><span class="line">                <span class="comment">//从队列取出一个元素 排队的人少一个</span></span><br><span class="line">                System.out.println(<span class="string">"【"</span> +queue.poll() + <span class="string">"】----已吃完...， 饭桌编号："</span> + name);</span><br><span class="line">            &#125;</span><br><span class="line">            count.countDown();<span class="comment">//计数器-1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果:</p>
+<blockquote>
+<p>使用 size 耗时: 757ms<br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepm8ds8ij30g0049t91.jpg" alt><br>使用 isEmpty 耗时: 210ms<br><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepmvpgvdj30iw049dg5.jpg" alt></p>
+</blockquote>
+<p>当数据越大, 这种耗时差距越明显. 所以这种判断用 isEmpty 更加合理.</p>
+<h2 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#contains(java.lang.Object)" target="_blank" rel="noopener">contains</a>(<a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/lang/Object.html" target="_blank" rel="noopener">Object</a> o)<br>如果此列队包含指定元素, 则返回 true</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue queue = <span class="keyword">new</span> ConcurrentLinkedQueue();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    System.out.println(queue.contains(<span class="string">"123"</span>));</span><br><span class="line">    System.out.println(queue.contains(<span class="string">"234"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果:</p>
+<blockquote>
+<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyeprtdib4j306z01at8h.jpg" alt></p>
+</blockquote>
+<h2 id="toArray"><a href="#toArray" class="headerlink" title="toArray"></a>toArray</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#toArray()" target="_blank" rel="noopener">toArray</a><br>返回以恰当顺序包含此队列所有元素的数组</p>
+<p>[toArray](T[] a)<br>返回以恰当顺序包含此队列所有元素的数组, 返回数组的运行时类型是指数组的运行时类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;String&gt;();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    queue.offer(<span class="string">"234"</span>);</span><br><span class="line">    Object[] objects = queue.toArray();</span><br><span class="line">    System.out.println(objects[<span class="number">0</span>] + <span class="string">", "</span> + objects[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将数据存储到指定数组</span></span><br><span class="line">    String[] strs = <span class="keyword">new</span> String[<span class="number">2</span>];</span><br><span class="line">    queue.toArray(strs);</span><br><span class="line">    System.out.println(strs[<span class="number">0</span>] + <span class="string">", "</span> + strs[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行结果:</p>
+<blockquote>
+<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepuyo52ej305e01kjr6.jpg" alt></p>
+</blockquote>
+<h2 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h2><p><a href="http://tool.oschina.net/uploads/apidocs/jdk-zh/java/util/concurrent/ConcurrentLinkedQueue.html#iterator()" target="_blank" rel="noopener">ierator</a>()<br>返回在此队列元素上以恰当顺序进行迭代的迭代器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    ConcurrentLinkedQueue&lt;String&gt; queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;String&gt;();</span><br><span class="line">    queue.offer(<span class="string">"123"</span>);</span><br><span class="line">    queue.offer(<span class="string">"234"</span>);</span><br><span class="line">    Iterator&lt;String&gt; iterator = queue.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fyepyiyx30j305601f3ya.jpg" alt></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="OCD 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="OCD 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OCD</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue使用/" title="ConcurrentLinkedQueue使用">https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue使用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/15/2018-2019/" rel="next" title="2018-2019杂记">
+                <i class="fa fa-chevron-left"></i> 2018-2019杂记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/14/raspi上CP2102使用/" rel="prev" title="raspi 上 CP2102 使用">
+                raspi 上 CP2102 使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
+            
+              <p class="site-author-name" itemprop="name">OCD</p>
+              <p class="site-description motion-element" itemprop="description">Nothing here, trust me</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/OCD0711" title="GitHub &rarr; https://github.com/OCD0711" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:ocd2057@gmail.com" title="E-Mail &rarr; mailto:ocd2057@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/5818658576/profile?topnav=1&wvr=6" title="Weibo &rarr; https://weibo.com/5818658576/profile?topnav=1&wvr=6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://music.163.com/#/user/home?id=253138628" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=253138628" rel="noopener" target="_blank"><i class="fa fa-fw fa-spotify"></i>网易云音乐</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.denua.cn" title="https://www.denua.cn" rel="noopener" target="_blank">denua</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ncgame.cc" title="http://www.ncgame.cc" rel="noopener" target="_blank">ncgame</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#offer-和-poll"><span class="nav-number">2.</span> <span class="nav-text">offer 和 poll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还有个取出元素方法-peek"><span class="nav-number">3.</span> <span class="nav-text">还有个取出元素方法 peek</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove"><span class="nav-number">4.</span> <span class="nav-text">remove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#size-or-isEmpty"><span class="nav-number">5.</span> <span class="nav-text">size or isEmpty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contains"><span class="nav-number">6.</span> <span class="nav-text">contains</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toArray"><span class="nav-number">7.</span> <span class="nav-text">toArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterator"><span class="nav-number">8.</span> <span class="nav-text">iterator</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OCD</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">103k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">3:07</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+  
+</div>
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66023692";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+      <div>
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  // with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      </div>
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '4dc5af3af4cbaf3256e3',
+          clientSecret: 'ba0af07deb8b413c08a37d4f8f031077b43b3ed2',
+          repo: 'ocd0711.github.io',
+          owner: 'OCD0711',
+          admin: ['OCD0711'],
+          id: md5(window.location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.5.0"></script>
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "u8ODajgyDwCkJvebfFfP49M4-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "u8ODajgyDwCkJvebfFfP49M4-gzGzoHsz",
+                'X-LC-Key': "UTMYP5u51XAECGbVz74kLBk7",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+
+<script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+

@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,6 +69,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
 
 
 
@@ -103,10 +107,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Muse',
     version: '6.5.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: false,
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -377,6 +381,34 @@
   
 
   
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
 
   
     <div class="site-search">
@@ -424,34 +456,6 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-            
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
-          
           <div id="content" class="content">
             
 
@@ -462,8 +466,8 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>黑苹果<small>分类</small>
-        </h1>
+        <h2>黑苹果<small>分类</small>
+        </h2>
       </div>
 
       
@@ -472,7 +476,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/" itemprop="url">
               
@@ -480,7 +484,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated" datetime="2018-09-28T13:19:00+08:00" content="2018-09-28">
@@ -498,7 +502,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2018/09/21/2018-9-21-clover-UUID/" itemprop="url">
               
@@ -506,7 +510,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated" datetime="2018-09-21T09:11:00+08:00" content="2018-09-21">
@@ -813,13 +817,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -905,6 +902,13 @@
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
 
     
 	
@@ -941,6 +945,12 @@
     
 
     
+
+    <!-- 页面点击小红心 -->
+    
+     <script type="text/javascript" src="/js/src/clicklove.js"></script>
+    
+
   </div>
 
   
@@ -961,6 +971,8 @@
 
 
 
+
+  
 
 
 
@@ -991,6 +1003,11 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
 
   
 
@@ -1003,13 +1020,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
-
-
 
   
 
@@ -1152,9 +1162,6 @@
 </body>
 </html>
 
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
-
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 
@@ -1165,3 +1172,5 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 
+<!-- 复制版权信息 -->
+<script type="text/javascript" src="/js/src/copy.js"></script>

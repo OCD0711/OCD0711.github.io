@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,6 +69,10 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
 
 
 
@@ -103,10 +107,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Muse',
     version: '6.5.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: false,
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -379,6 +383,9 @@
   
 
   
+    
+
+  
 
   
     <div class="site-search">
@@ -426,9 +433,6 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-            
-
-          
           <div id="content" class="content">
             
 
@@ -465,10 +469,10 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Use Apple Time-Machine on Raspberry Pi with ArchLinux ARM
+          <h2 class="post-title" itemprop="name headline">Use Apple Time-Machine on Raspberry Pi with ArchLinux ARM
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -661,6 +665,17 @@
 
     
 
+    //文末结束标记
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #000000;font-size:20px;">------ The End ------</div>
+    
+</div>
+      
+    </div>
+
     
     
     
@@ -673,9 +688,9 @@
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div></div>
+  <div>不为五斗米折腰------真香</div>
   <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
+    <span><i class="fa fa-qrcode fa-2x" style="line-height:35px;"></i></span>
   </button>
   <div id="QR" style="display: none;">
 
@@ -1090,13 +1105,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -1182,6 +1190,13 @@
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
 
     
 	
@@ -1218,6 +1233,12 @@
     
 
     
+
+    <!-- 页面点击小红心 -->
+    
+     <script type="text/javascript" src="/js/src/clicklove.js"></script>
+    
+
   </div>
 
   
@@ -1238,6 +1259,8 @@
 
 
 
+
+  
 
 
 
@@ -1268,6 +1291,11 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
 
   
 
@@ -1280,13 +1308,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
@@ -1446,9 +1467,6 @@
 </body>
 </html>
 
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
-
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 
@@ -1459,3 +1477,5 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 
+<!-- 复制版权信息 -->
+<script type="text/javascript" src="/js/src/copy.js"></script>

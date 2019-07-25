@@ -105,7 +105,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '6.5.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -135,7 +135,7 @@
 <meta property="og:site_name" content="OCD Blog">
 <meta property="og:description" content="1. 常用命令Hexo 的命令极简单, 安装后只需要记住四个常用的即可. 执行命令需要Git当前处于blog文件夹根目录下.   generate 生成静态文件.  hexo g  server 启动服务器.  hexo s  deploy 部署网站. 部署网站前, 需要预先生成静态文件.  hexo d  clean 清除缓存文件 (db.json) 和已生成的静态文件 (public).  h">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-25T03:47:33.295Z">
+<meta property="og:updated_time" content="2019-07-25T03:52:21.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-Next主题优化">
 <meta name="twitter:description" content="1. 常用命令Hexo 的命令极简单, 安装后只需要记住四个常用的即可. 执行命令需要Git当前处于blog文件夹根目录下.   generate 生成静态文件.  hexo g  server 启动服务器.  hexo s  deploy 部署网站. 部署网站前, 需要预先生成静态文件.  hexo d  clean 清除缓存文件 (db.json) 和已生成的静态文件 (public).  h">
@@ -490,7 +490,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 11:17:44 / 修改时间：11:47:33" itemprop="dateCreated datePublished" datetime="2019-07-25T11:17:44+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-25 11:17:44 / 修改时间：11:52:21" itemprop="dateCreated datePublished" datetime="2019-07-25T11:17:44+08:00">2019-07-25</time>
             
 
             
@@ -533,7 +533,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.8k</span>
+                <span title="本文字数">4.6k</span>
               
 
               
@@ -547,7 +547,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">8 分钟</span>
               
             </div>
           
@@ -644,6 +644,18 @@
 <li>打开位于 themes/next/source/css/_common/components/sidebar/ 下的 sidebar-author.styl 文件, 修改如下</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.site-author-image &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  padding: $site-author-image-padding;</span><br><span class="line">  max-width: $site-author-image-width;</span><br><span class="line">  height: $site-author-image-height;</span><br><span class="line">  border: $site-author-image-border-width solid $site-author-image-border-color;</span><br><span class="line"> // 修改头像边框</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  -webkit-border-radius: 50%;</span><br><span class="line">  -moz-border-radius: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-3-特效-鼠标放置头像上旋转"><a href="#6-3-特效-鼠标放置头像上旋转" class="headerlink" title="6.3 特效:鼠标放置头像上旋转"></a>6.3 特效:鼠标放置头像上旋转</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.site-author-image &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  padding: $site-author-image-padding;</span><br><span class="line">  max-width: $site-author-image-width;</span><br><span class="line">  height: $site-author-image-height;</span><br><span class="line">  border: $site-author-image-border-width solid $site-author-image-border-color;</span><br><span class="line"> // 修改头像边框</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  -webkit-border-radius: 50%;</span><br><span class="line">  -moz-border-radius: 50%;</span><br><span class="line">  // 设置旋转</span><br><span class="line">  transition: 1.4s all;</span><br><span class="line">&#125;</span><br><span class="line">// 可旋转的圆形头像,`hover`动作</span><br><span class="line">.site-author-image:hover &#123;</span><br><span class="line">    -webkit-transform: rotate(360deg);</span><br><span class="line">    -moz-transform: rotate(360deg);</span><br><span class="line">    -ms-transform: rotate(360deg);</span><br><span class="line">    -transform: rotate(360deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-浏览页面的时候显示当前浏览进度"><a href="#7-浏览页面的时候显示当前浏览进度" class="headerlink" title="7. 浏览页面的时候显示当前浏览进度"></a>7. 浏览页面的时候显示当前浏览进度</h1><ul>
+<li>打开 themes/next 下的 _config.yml, 搜索关键字 scrollpercent, 把false改为true</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Scroll percent label in b2t button</span><br><span class="line"> scrollpercent: true</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果想把 top 按钮放在侧边栏, 打开 themes/next 下的 _config.yml, 搜索关键字 b2t, 把 false 改为 true</li>
+</ul>
+
       
     </div>
 
@@ -1061,7 +1073,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用命令"><span class="nav-number">1.</span> <span class="nav-text">1. 常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-更换主题-以-Next-主题为例"><span class="nav-number">2.</span> <span class="nav-text">2. 更换主题, 以 Next 主题为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-站点初始设置"><span class="nav-number">3.</span> <span class="nav-text">3. 站点初始设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置主题风格"><span class="nav-number">4.</span> <span class="nav-text">4. 设置主题风格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-设置菜单项的显示文本和图标"><span class="nav-number">5.</span> <span class="nav-text">5. 设置菜单项的显示文本和图标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-设置菜单项的显示文本"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 设置菜单项的显示文本:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-设定菜单项的图标"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 设定菜单项的图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-设置菜单项对应的文件目录"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 设置菜单项对应的文件目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-创建菜单项对应文件目录-以分类为例"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 创建菜单项对应文件目录, 以分类为例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-编辑刚新建的页面-设置分类"><span class="nav-number">5.5.</span> <span class="nav-text">5.5 编辑刚新建的页面, 设置分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-头像设置"><span class="nav-number">6.</span> <span class="nav-text">6. 头像设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-添加头像"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 添加头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-设置头像边框为圆形框"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 设置头像边框为圆形框</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-常用命令"><span class="nav-number">1.</span> <span class="nav-text">1. 常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-更换主题-以-Next-主题为例"><span class="nav-number">2.</span> <span class="nav-text">2. 更换主题, 以 Next 主题为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-站点初始设置"><span class="nav-number">3.</span> <span class="nav-text">3. 站点初始设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置主题风格"><span class="nav-number">4.</span> <span class="nav-text">4. 设置主题风格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-设置菜单项的显示文本和图标"><span class="nav-number">5.</span> <span class="nav-text">5. 设置菜单项的显示文本和图标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-设置菜单项的显示文本"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 设置菜单项的显示文本:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-设定菜单项的图标"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 设定菜单项的图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-设置菜单项对应的文件目录"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 设置菜单项对应的文件目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-创建菜单项对应文件目录-以分类为例"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 创建菜单项对应文件目录, 以分类为例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-编辑刚新建的页面-设置分类"><span class="nav-number">5.5.</span> <span class="nav-text">5.5 编辑刚新建的页面, 设置分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-头像设置"><span class="nav-number">6.</span> <span class="nav-text">6. 头像设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-添加头像"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 添加头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-设置头像边框为圆形框"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 设置头像边框为圆形框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-特效-鼠标放置头像上旋转"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 特效:鼠标放置头像上旋转</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-浏览页面的时候显示当前浏览进度"><span class="nav-number">7.</span> <span class="nav-text">7. 浏览页面的时候显示当前浏览进度</span></a></li></ol></div>
             
 
           </div>
@@ -1093,7 +1105,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">103k</span>
+    <span title="站点总字数">104k</span>
   
 
   
@@ -1102,7 +1114,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:08</span>
+    <span title="站点阅读时长">3:09</span>
   
 </div>
 
@@ -1157,6 +1169,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     

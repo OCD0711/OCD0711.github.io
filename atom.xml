@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hexo-Next (代码块复制功能)</title>
-    <link href="https://ocd0711.ml/2019/07/25/Hexo-Next%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD/"/>
-    <id>https://ocd0711.ml/2019/07/25/Hexo-Next代码块复制功能/</id>
+    <link href="https://ocd0711.ml/Hexo-Next%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD.html"/>
+    <id>https://ocd0711.ml/Hexo-Next代码块复制功能.html</id>
     <published>2019-07-25T02:25:27.000Z</published>
     <updated>2019-07-25T02:57:49.652Z</updated>
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>nrf51822_程序分析</title>
-    <link href="https://ocd0711.ml/2019/05/20/nrf51822-%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90/"/>
-    <id>https://ocd0711.ml/2019/05/20/nrf51822-程序分析/</id>
+    <link href="https://ocd0711.ml/nrf51822-%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90.html"/>
+    <id>https://ocd0711.ml/nrf51822-程序分析.html</id>
     <published>2019-05-20T01:30:19.000Z</published>
     <updated>2019-07-03T14:15:20.346Z</updated>
     
@@ -63,8 +63,8 @@
   
   <entry>
     <title>使用回忆录</title>
-    <link href="https://ocd0711.ml/2019/02/07/retrofit%E4%BD%BF%E7%94%A8%E5%9B%9E%E5%BF%86%E5%BD%95/"/>
-    <id>https://ocd0711.ml/2019/02/07/retrofit使用回忆录/</id>
+    <link href="https://ocd0711.ml/retrofit%E4%BD%BF%E7%94%A8%E5%9B%9E%E5%BF%86%E5%BD%95.html"/>
+    <id>https://ocd0711.ml/retrofit使用回忆录.html</id>
     <published>2019-02-07T12:16:31.000Z</published>
     <updated>2019-07-03T14:15:20.348Z</updated>
     
@@ -94,8 +94,8 @@
   
   <entry>
     <title>解决mac下menuconfig报错的问题</title>
-    <link href="https://ocd0711.ml/2019/01/22/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bmenuconfig%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://ocd0711.ml/2019/01/22/解决mac下menuconfig报错的问题/</id>
+    <link href="https://ocd0711.ml/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bmenuconfig%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98.html"/>
+    <id>https://ocd0711.ml/解决mac下menuconfig报错的问题.html</id>
     <published>2019-01-22T02:38:05.000Z</published>
     <updated>2019-07-03T14:15:20.348Z</updated>
     
@@ -123,8 +123,8 @@
   
   <entry>
     <title>Android-P破解隐藏私有API禁止调用的限制</title>
-    <link href="https://ocd0711.ml/2019/01/18/Android-P%E7%A0%B4%E8%A7%A3%E9%9A%90%E8%97%8F%E7%A7%81%E6%9C%89API%E7%A6%81%E6%AD%A2%E8%B0%83%E7%94%A8%E7%9A%84%E9%99%90%E5%88%B6/"/>
-    <id>https://ocd0711.ml/2019/01/18/Android-P破解隐藏私有API禁止调用的限制/</id>
+    <link href="https://ocd0711.ml/Android-P%E7%A0%B4%E8%A7%A3%E9%9A%90%E8%97%8F%E7%A7%81%E6%9C%89API%E7%A6%81%E6%AD%A2%E8%B0%83%E7%94%A8%E7%9A%84%E9%99%90%E5%88%B6.html"/>
+    <id>https://ocd0711.ml/Android-P破解隐藏私有API禁止调用的限制.html</id>
     <published>2019-01-18T03:23:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -151,8 +151,8 @@
   
   <entry>
     <title>android开发填坑之广播延迟问题</title>
-    <link href="https://ocd0711.ml/2019/01/17/android%E5%BC%80%E5%8F%91%E5%A1%AB%E5%9D%91%E4%B9%8B%E5%B9%BF%E6%92%AD%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/"/>
-    <id>https://ocd0711.ml/2019/01/17/android开发填坑之广播延迟问题/</id>
+    <link href="https://ocd0711.ml/android%E5%BC%80%E5%8F%91%E5%A1%AB%E5%9D%91%E4%B9%8B%E5%B9%BF%E6%92%AD%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98.html"/>
+    <id>https://ocd0711.ml/android开发填坑之广播延迟问题.html</id>
     <published>2019-01-17T03:44:57.000Z</published>
     <updated>2019-07-03T14:15:20.346Z</updated>
     
@@ -178,8 +178,8 @@
   
   <entry>
     <title>raspi 上 4G 模块使用研究过程</title>
-    <link href="https://ocd0711.ml/2019/01/14/raspi%E4%B8%8A4G%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%A0%94%E7%A9%B6%E8%BF%87%E7%A8%8B/"/>
-    <id>https://ocd0711.ml/2019/01/14/raspi上4G模块使用研究过程/</id>
+    <link href="https://ocd0711.ml/raspi%E4%B8%8A4G%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%A0%94%E7%A9%B6%E8%BF%87%E7%A8%8B.html"/>
+    <id>https://ocd0711.ml/raspi上4G模块使用研究过程.html</id>
     <published>2019-01-14T03:51:15.000Z</published>
     <updated>2019-07-03T14:15:20.347Z</updated>
     
@@ -208,8 +208,8 @@
   
   <entry>
     <title>raspi 上 CP2102 使用</title>
-    <link href="https://ocd0711.ml/2019/01/14/raspi%E4%B8%8ACP2102%E4%BD%BF%E7%94%A8/"/>
-    <id>https://ocd0711.ml/2019/01/14/raspi上CP2102使用/</id>
+    <link href="https://ocd0711.ml/raspi%E4%B8%8ACP2102%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://ocd0711.ml/raspi上CP2102使用.html</id>
     <published>2019-01-14T03:36:46.000Z</published>
     <updated>2019-07-03T14:15:20.347Z</updated>
     
@@ -235,8 +235,8 @@
   
   <entry>
     <title>ConcurrentLinkedQueue使用</title>
-    <link href="https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue%E4%BD%BF%E7%94%A8/"/>
-    <id>https://ocd0711.ml/2018/12/21/ConcurrentLinkedQueue使用/</id>
+    <link href="https://ocd0711.ml/ConcurrentLinkedQueue%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://ocd0711.ml/ConcurrentLinkedQueue使用.html</id>
     <published>2018-12-21T13:01:34.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -263,8 +263,8 @@
   
   <entry>
     <title>2018-2019杂记</title>
-    <link href="https://ocd0711.ml/2018/12/15/2018-2019/"/>
-    <id>https://ocd0711.ml/2018/12/15/2018-2019/</id>
+    <link href="https://ocd0711.ml/2018-2019.html"/>
+    <id>https://ocd0711.ml/2018-2019.html</id>
     <published>2018-12-15T07:21:17.000Z</published>
     <updated>2019-07-03T14:15:20.344Z</updated>
     
@@ -291,8 +291,8 @@
   
   <entry>
     <title>NexT主题中集成gitalk评论系统</title>
-    <link href="https://ocd0711.ml/2018/12/12/NexT%E4%B8%BB%E9%A2%98%E4%B8%AD%E9%9B%86%E6%88%90gitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://ocd0711.ml/2018/12/12/NexT主题中集成gitalk评论系统/</id>
+    <link href="https://ocd0711.ml/NexT%E4%B8%BB%E9%A2%98%E4%B8%AD%E9%9B%86%E6%88%90gitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F.html"/>
+    <id>https://ocd0711.ml/NexT主题中集成gitalk评论系统.html</id>
     <published>2018-12-12T07:37:46.000Z</published>
     <updated>2019-07-25T02:27:52.203Z</updated>
     
@@ -317,8 +317,8 @@
   
   <entry>
     <title>Sony_Headphone_Connect_update_google_assistant</title>
-    <link href="https://ocd0711.ml/2018/11/09/Sony-Headphone-Connect-update-google-assistant/"/>
-    <id>https://ocd0711.ml/2018/11/09/Sony-Headphone-Connect-update-google-assistant/</id>
+    <link href="https://ocd0711.ml/Sony-Headphone-Connect-update-google-assistant.html"/>
+    <id>https://ocd0711.ml/Sony-Headphone-Connect-update-google-assistant.html</id>
     <published>2018-11-09T06:53:03.000Z</published>
     <updated>2019-07-03T14:15:20.346Z</updated>
     
@@ -347,8 +347,8 @@
   
   <entry>
     <title>自编译 AOSP 下载地址</title>
-    <link href="https://ocd0711.ml/2018/11/02/sony-aosp-build/"/>
-    <id>https://ocd0711.ml/2018/11/02/sony-aosp-build/</id>
+    <link href="https://ocd0711.ml/sony-aosp-build.html"/>
+    <id>https://ocd0711.ml/sony-aosp-build.html</id>
     <published>2018-11-01T19:00:01.000Z</published>
     <updated>2019-07-03T14:15:20.348Z</updated>
     
@@ -371,8 +371,8 @@
   
   <entry>
     <title>OpenWRT自动更新软件包脚本</title>
-    <link href="https://ocd0711.ml/2018/10/17/2018-10-17-OpenWRT-update-sh/"/>
-    <id>https://ocd0711.ml/2018/10/17/2018-10-17-OpenWRT-update-sh/</id>
+    <link href="https://ocd0711.ml/2018-10-17-OpenWRT-update-sh.html"/>
+    <id>https://ocd0711.ml/2018-10-17-OpenWRT-update-sh.html</id>
     <published>2018-10-17T03:03:26.000Z</published>
     <updated>2019-07-03T14:15:20.344Z</updated>
     
@@ -397,8 +397,8 @@
   
   <entry>
     <title>Next 主题自动更换背景图片</title>
-    <link href="https://ocd0711.ml/2018/09/29/change-background/"/>
-    <id>https://ocd0711.ml/2018/09/29/change-background/</id>
+    <link href="https://ocd0711.ml/change-background.html"/>
+    <id>https://ocd0711.ml/change-background.html</id>
     <published>2018-09-29T01:44:00.000Z</published>
     <updated>2019-07-03T14:15:20.346Z</updated>
     
@@ -421,8 +421,8 @@
   
   <entry>
     <title>OSX 和 windows 时间不同步解决方法</title>
-    <link href="https://ocd0711.ml/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/"/>
-    <id>https://ocd0711.ml/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/</id>
+    <link href="https://ocd0711.ml/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue.html"/>
+    <id>https://ocd0711.ml/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue.html</id>
     <published>2018-09-28T05:19:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -443,8 +443,8 @@
   
   <entry>
     <title>Hexo-NexT 主题修改页面透明度及页面颜色</title>
-    <link href="https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/"/>
-    <id>https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/</id>
+    <link href="https://ocd0711.ml/2018-9-26-NexT-theme-Page-transparency-color.html"/>
+    <id>https://ocd0711.ml/2018-9-26-NexT-theme-Page-transparency-color.html</id>
     <published>2018-09-26T08:33:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -470,8 +470,8 @@
   
   <entry>
     <title>OpenWrt 自动更新设置和屏蔽广告</title>
-    <link href="https://ocd0711.ml/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/"/>
-    <id>https://ocd0711.ml/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/</id>
+    <link href="https://ocd0711.ml/2018-9-22-OpenWrt-auto-update-and-adblock.html"/>
+    <id>https://ocd0711.ml/2018-9-22-OpenWrt-auto-update-and-adblock.html</id>
     <published>2018-09-22T07:55:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -495,8 +495,8 @@
   
   <entry>
     <title>clover 注入白果三码实现 imessage 正常使用</title>
-    <link href="https://ocd0711.ml/2018/09/21/2018-9-21-clover-UUID/"/>
-    <id>https://ocd0711.ml/2018/09/21/2018-9-21-clover-UUID/</id>
+    <link href="https://ocd0711.ml/2018-9-21-clover-UUID.html"/>
+    <id>https://ocd0711.ml/2018-9-21-clover-UUID.html</id>
     <published>2018-09-21T01:11:00.000Z</published>
     <updated>2019-07-03T14:15:20.345Z</updated>
     
@@ -523,8 +523,8 @@
   
   <entry>
     <title>Build Android on MacOS preparation</title>
-    <link href="https://ocd0711.ml/2018/09/20/2018-9-20-Build-Android-on-MacOS-preparation/"/>
-    <id>https://ocd0711.ml/2018/09/20/2018-9-20-Build-Android-on-MacOS-preparation/</id>
+    <link href="https://ocd0711.ml/2018-9-20-Build-Android-on-MacOS-preparation.html"/>
+    <id>https://ocd0711.ml/2018-9-20-Build-Android-on-MacOS-preparation.html</id>
     <published>2018-09-20T01:26:01.000Z</published>
     <updated>2019-07-03T14:15:20.344Z</updated>
     

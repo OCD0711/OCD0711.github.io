@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="EknedQGJDeXw-ozmOlxmNfLIlNh6iIo2cOr6XV2JQbo">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "520cff11"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/./images/2.ico?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/./images/2.ico?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'DY0G50H99R',
+      apiKey: '3ad7f696dc7901f700f2391d485396bb',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与 ${query} 相关的内容","hits_stats":"${hits}条相关记录，共耗时${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="A Brief ADT Introduction to Lists Stacks and Queues">
+<meta name="keywords" content="Develop,C,Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lists Stacks and Queues">
+<meta property="og:url" content="https://ocd0711.ml/2017-11-30-Lists-Stacks-and-Queues.html">
+<meta property="og:site_name" content="OCD Blog">
+<meta property="og:description" content="A Brief ADT Introduction to Lists Stacks and Queues">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ocd0711.ml/images/stack.png">
+<meta property="og:image" content="https://ocd0711.ml/images/queue.png">
+<meta property="og:updated_time" content="2019-07-08T06:14:48.073Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lists Stacks and Queues">
+<meta name="twitter:description" content="A Brief ADT Introduction to Lists Stacks and Queues">
+<meta name="twitter:image" content="https://ocd0711.ml/images/stack.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="OCD Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://ocd0711.ml/2017-11-30-Lists-Stacks-and-Queues.html">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Lists Stacks and Queues | OCD Blog</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126027123-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126027123-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?106da5dde879abce484d31eb7746a49c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">OCD Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2017-11-30-Lists-Stacks-and-Queues.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OCD">
+      <meta itemprop="description" content="Nothing here, trust me">
+      <meta itemprop="image" content="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OCD Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Lists Stacks and Queues
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-30 09:26:01" itemprop="dateCreated datePublished" datetime="2017-11-30T09:26:01+08:00">2017-11-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-08 14:14:48" itemprop="dateModified" datetime="2019-07-08T14:14:48+08:00">2019-07-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017-11-30-Lists-Stacks-and-Queues.html" class="leancloud_visitors" data-flag-title="Lists Stacks and Queues">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">12k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">22 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>A Brief ADT Introduction to Lists Stacks and Queues</p>
+<a id="more"></a>
+
+<h2 id="1-Lists"><a href="#1-Lists" class="headerlink" title="1. Lists"></a>1. Lists</h2><h3 id="1-1-Lists-ADTs"><a href="#1-1-Lists-ADTs" class="headerlink" title="1.1 Lists ADTs"></a>1.1 Lists ADTs</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _LIST_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _LIST_H</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">PtrToNode</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> PtrToNode List;</span><br><span class="line"><span class="keyword">typedef</span> PtrToNode Position;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span><br><span class="line"></span><br><span class="line"><span class="function">List <span class="title">MakeEmpty</span><span class="params">(List L)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsEmpty</span><span class="params">(List L)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsLast</span><span class="params">(Position P, List L)</span></span>;</span><br><span class="line"><span class="function">Position <span class="title">Find</span><span class="params">( ElementType X, List L)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">( ElementType X, List L)</span></span>;</span><br><span class="line"><span class="function">Position <span class="title">FindPrevious</span><span class="params">(ElementType X, List L)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(ElementType X, List L, Position P)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DeleteList</span><span class="params">(List L)</span></span>;</span><br><span class="line"><span class="function">Position <span class="title">Header</span><span class="params">(List L)</span></span>;</span><br><span class="line"><span class="function">Position <span class="title">First</span><span class="params">(List L)</span></span>;</span><br><span class="line"><span class="function">Position <span class="title">Advancde</span><span class="params">(Position P)</span></span>;</span><br><span class="line"><span class="function">ElementType <span class="title">Retrieve</span><span class="params">(Position P)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* main_h */</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    ElementType Element;</span><br><span class="line">    Position Next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-1-IsEmpty-IsLast"><a href="#1-1-1-IsEmpty-IsLast" class="headerlink" title="1.1.1 IsEmpty / IsLast"></a>1.1.1 IsEmpty / IsLast</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsEmpty</span><span class="params">(List L)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> L-&gt;Next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsLast</span><span class="params">(Position P, List L)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> P-&gt;Next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-2-Find-Delete-FindPrevious-Insert"><a href="#1-1-2-Find-Delete-FindPrevious-Insert" class="headerlink" title="1.1.2 Find / Delete / FindPrevious / Insert"></a>1.1.2 Find / Delete / FindPrevious / Insert</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Position <span class="title">Find</span><span class="params">( ElementType X, List L)</span> </span>&#123;</span><br><span class="line">    Position P;</span><br><span class="line">    </span><br><span class="line">    P = L-&gt;Next;        <span class="comment">// Because there is a head</span></span><br><span class="line">    <span class="keyword">while</span> (P != <span class="literal">NULL</span> &amp;&amp; P-&gt;Element != X) &#123;</span><br><span class="line">        P = P-&gt;Next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">( ElementType X, List L)</span> </span>&#123;</span><br><span class="line">    Position P, TempCell;</span><br><span class="line">    P = FindPrevious(X, L);</span><br><span class="line">    <span class="comment">/* Avoid there is no such Element X */</span></span><br><span class="line">    <span class="keyword">if</span> (!IsLast(P, L)) &#123;</span><br><span class="line">        TempCell = P-&gt;Next;</span><br><span class="line">        P-&gt;Next = TempCell-&gt;Next;</span><br><span class="line">        <span class="built_in">free</span>( TempCell );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Position <span class="title">FindPrevious</span><span class="params">(ElementType X, List L)</span> </span>&#123;</span><br><span class="line">    Position P;</span><br><span class="line">    P = L;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (P-&gt;Next != <span class="literal">NULL</span> &amp;&amp; P-&gt;Next-&gt;Element != X) &#123;</span><br><span class="line">        P = P-&gt;Next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(ElementType X, List L, Position P)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* Insert X behind P */</span></span><br><span class="line">    Position TempCell;</span><br><span class="line">    </span><br><span class="line">    TempCell = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node));</span><br><span class="line">    <span class="keyword">if</span> (TempCell == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Error no memory.\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    TempCell-&gt;Element = X;</span><br><span class="line">    TempCell-&gt;Next = P-&gt;Next;</span><br><span class="line">    P-&gt;Next = TempCell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-Doubly-Linked-Lists"><a href="#1-2-Doubly-Linked-Lists" class="headerlink" title="1.2 Doubly Linked Lists"></a>1.2 Doubly Linked Lists</h3><h3 id="1-3-Circularly-Linked-Lists"><a href="#1-3-Circularly-Linked-Lists" class="headerlink" title="1.3 Circularly Linked Lists"></a>1.3 Circularly Linked Lists</h3><h3 id="1-4-Examples"><a href="#1-4-Examples" class="headerlink" title="1.4 Examples"></a>1.4 Examples</h3><h4 id="The-Polynomial-ADT"><a href="#The-Polynomial-ADT" class="headerlink" title="The Polynomial ADT"></a>The Polynomial <strong>ADT</strong></h4><p>Please refer to my <a href="https://github.com/hellobbn/C-Program/tree/master/C-Programs/P-6" target="_blank" rel="noopener">Github Repo</a> to see add and multiply.</p>
+<h4 id="Radix-Sort"><a href="#Radix-Sort" class="headerlink" title="Radix Sort"></a>Radix Sort</h4><p>Please refer to this <a href="http://austingwalters.com/radix-sort-in-c/" target="_blank" rel="noopener">blog</a> for some information.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">RadixSort</span><span class="params">(<span class="keyword">int</span>* Array, <span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> max = Array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>* temp = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * N);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++ i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (max &lt; Array[i]) &#123;</span><br><span class="line">            max = Array[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (max / ret &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> init[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++ i) &#123;</span><br><span class="line">            init[(Array[i]/ret)%index] ++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; index; ++ i) &#123;</span><br><span class="line">            init[i] += init[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = N - <span class="number">1</span>; i &gt;= <span class="number">0</span>; -- i) &#123;</span><br><span class="line">            temp[--init[(Array[i] / ret) % index]] = Array[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++ i) &#123;</span><br><span class="line">            Array[i] = temp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        ret *= index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">int</span>* A = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++ i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, A + i);</span><br><span class="line">    &#125;</span><br><span class="line">    RadixSort(A, n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++ i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t"</span>, A[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Multilists"><a href="#Multilists" class="headerlink" title="Multilists"></a>Multilists</h4><h3 id="1-5-Cursor-Implementation-of-Linked-Lists"><a href="#1-5-Cursor-Implementation-of-Linked-Lists" class="headerlink" title="1.5 Cursor Implementation of Linked Lists"></a>1.5 Cursor Implementation of Linked Lists</h3><p><strong>In a language where pointers are not available, we use an array of structures to make Linked lists</strong></p>
+<p>We use the following declaration</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* A */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> PtrToNode;</span><br><span class="line"><span class="keyword">typedef</span> PtrToNode Position;</span><br><span class="line"><span class="keyword">typedef</span> PtrToNode List;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    ElementType Element;</span><br><span class="line">    Position Next;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">CursorSpace</span>[ <span class="title">SpaceSize</span> ];</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>/* B - An initialized CursorSpace */</strong></p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Element</th>
+<th>Next</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p><strong>/* Example */</strong></p>
+<p>if the value of L is 5 and the value of M is 3<br>Then L presents the list <em>a, b, e</em> M presents <em>c, d, f</em></p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Element</th>
+<th>Next</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>-</td>
+<td>6</td>
+</tr>
+<tr>
+<td>1</td>
+<td>b</td>
+<td>9</td>
+</tr>
+<tr>
+<td>2</td>
+<td>f</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>header</td>
+<td>7</td>
+</tr>
+<tr>
+<td>4</td>
+<td>-</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>header</td>
+<td>10</td>
+</tr>
+<tr>
+<td>6</td>
+<td>-</td>
+<td>4</td>
+</tr>
+<tr>
+<td>7</td>
+<td>c</td>
+<td>8</td>
+</tr>
+<tr>
+<td>8</td>
+<td>d</td>
+<td>2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>e</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>a</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>//  Unknown Why It is implied like this<br>We keep a list ( the <em>freelist</em> ) of cells that are not in any list.<br>The list will use cell 0 as a header – Shown in <code>section B</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> Position <span class="title">CursorAlloc</span><span class="params">( <span class="keyword">void</span> )</span> </span>&#123;</span><br><span class="line">    Position P;</span><br><span class="line">    </span><br><span class="line">    P = CursorSpace[<span class="number">0</span>].Next;</span><br><span class="line">    Cursor[<span class="number">0</span>].Next = CursorSpace[P].Next;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> P</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> CursorFree( Position P ) &#123;</span><br><span class="line">    CursorSpace[P].Next = Cursor[<span class="number">0</span>].Next;</span><br><span class="line">    CursorSpace[<span class="number">0</span>].Next = P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsEmpty</span><span class="params">( List L )</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> CursorSpace[L].Next == <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Position Find( ElementType X, List L) &#123;</span><br><span class="line">    Position = P;</span><br><span class="line">    </span><br><span class="line">    P = CursorSpace[L].Next;</span><br><span class="line">    <span class="keyword">while</span>(P &amp;&amp; CursorSpace[P].Element != X) &#123;</span><br><span class="line">        P = CursorSpace[P].Next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">( ElementType X, List L)</span> </span>&#123;</span><br><span class="line">    Position P, TempCell;</span><br><span class="line">    </span><br><span class="line">    P = FindPrevious(X, L);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>( !IsLast(P, L) ) &#123;</span><br><span class="line">        TempCell = CursorSpace[P].Next;</span><br><span class="line">        CursorSpace[P].Next = CursorSpace[TempCell].Next;</span><br><span class="line">        CursorFree(TempCell);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-The-Stack-ADT"><a href="#2-The-Stack-ADT" class="headerlink" title="2. The Stack ADT"></a>2. The Stack ADT</h2><ul>
+<li>A stack is a list with the restriction that insertions and deletions can only be performed in one position.</li>
+<li>Stacks are sometimes known as <code>LIFO</code> ( Last in, First Out )</li>
+<li>Stacks use <code>push</code> and <code>pop</code> and only the top element is accessiable</li>
+</ul>
+<p><img src="/images/stack.png" alt="Figure 1"></p>
+<h3 id="2-1-Implementations-of-Stacks"><a href="#2-1-Implementations-of-Stacks" class="headerlink" title="2.1 Implementations of Stacks"></a>2.1 Implementations of Stacks</h3><h4 id="2-1-1-Linked-List-Implementation-of-Stacks"><a href="#2-1-1-Linked-List-Implementation-of-Stacks" class="headerlink" title="2.1.1 Linked List Implementation of Stacks"></a>2.1.1 Linked List Implementation of Stacks</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _Stack_h</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">PtrToNode</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> PtrToNode Stack;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsEmpty</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"><span class="function">Stack <span class="title">CreateStack</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DisposeStack</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MakeEmpty</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">( ElementType X, Stack S )</span></span>;</span><br><span class="line"><span class="function">ElementType <span class="title">Top</span><span class="params">( Stack S )</span></span>;     <span class="comment">//  Output the Top</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pop</span><span class="params">( Stack S)</span></span>;             <span class="comment">//  Only Delete</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    ElementType Element;</span><br><span class="line">    PtrToNode Next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Operations</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsEmpty</span><span class="params">( Stack S )</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S-&gt;Next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Stack <span class="title">CreateStack</span><span class="params">( <span class="keyword">void</span> )</span> </span>&#123;</span><br><span class="line">    Stack S;</span><br><span class="line">    </span><br><span class="line">    S = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>( struct Node ));</span><br><span class="line">    <span class="keyword">if</span>( S == <span class="literal">NULL</span> )</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    MakeEmpty( S )</span><br><span class="line">    <span class="keyword">return</span> S;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MakeEmpty</span><span class="params">( Stack S )</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( S == <span class="literal">NULL</span> )</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"ERROR NO STACK\n"</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">while</span>( !IsEmpty( S ) )</span><br><span class="line">            Pop( S );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">( ElementType X, Stack S )</span> </span>&#123;</span><br><span class="line">    PtrToNode TempCell;</span><br><span class="line">    </span><br><span class="line">    TempCell = <span class="built_in">malloc</span>( <span class="keyword">sizeof</span>( struct Node ) );</span><br><span class="line">    <span class="keyword">if</span>( TempCell == <span class="literal">NULL</span> )</span><br><span class="line">        FatalError(<span class="string">"Out of Space"</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        TempCell-&gt;Element = X;</span><br><span class="line">        TempCell-&gt;Next = S-&gt;Next;</span><br><span class="line">        S-&gt;Next = TempCell;         <span class="comment">//  Head Assumed</span></span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pop</span><span class="params">( Stack S )</span> </span>&#123;</span><br><span class="line">    PtrToNode TempCell;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>( IsEmpty( S ) ) &#123;</span><br><span class="line">        <span class="built_in">printf</span>( <span class="string">"Empty Stack!\n"</span> );</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        TempCell = S-&gt;Next;</span><br><span class="line">        S-&gt;Next = S-&gt;Next-&gt;Next;</span><br><span class="line">        <span class="built_in">free</span>(TempCell);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ElementType <span class="title">Top</span><span class="params">( Stack S )</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( !IsEmpty( S ) ) &#123;</span><br><span class="line">        <span class="keyword">return</span> S-&gt;Next-&gt;Element;</span><br><span class="line">    FatalError(<span class="string">"Empty Stack\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">#### <span class="number">2.1</span><span class="number">.2</span> Array Implementation of Stacks</span><br><span class="line"></span><br><span class="line">This is probably a more popular solution</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _Stack_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _Stack_H</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">StackRecord</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StackRecord</span> *<span class="title">Stack</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsEmpty</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsFull</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"><span class="function">Stack <span class="title">CreatStack</span><span class="params">( <span class="keyword">int</span> MaxElements )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DisposeStack</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MakeEmpty</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">( ElementType X, Stack S )</span></span>;</span><br><span class="line"><span class="function">ElementType <span class="title">Top</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"><span class="function">ElementType <span class="title">TopAndPop</span><span class="params">( Stack S )</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EmptyEOS (-1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MinStackSize (5)</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">StackRecord</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> Capacity;</span><br><span class="line">    <span class="keyword">int</span> TopOfStack;</span><br><span class="line">    ElementType* Array;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Operations</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***** Create Stack *****/</span></span><br><span class="line"></span><br><span class="line"><span class="function">Stack <span class="title">CreateStack</span><span class="params">( <span class="keyword">int</span> MaxElements )</span> </span>&#123;</span><br><span class="line">    Stack S;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>( MaxElements &lt; MinStackSize ) &#123;</span><br><span class="line">        Error(<span class="string">"Stack too small."</span>);</span><br><span class="line">        </span><br><span class="line">    S = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>( struct StackRecord ));</span><br><span class="line">    <span class="keyword">if</span>( S == <span class="literal">NULL</span> ) &#123;</span><br><span class="line">        FatalError(<span class="string">"Out of Space!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    S-&gt;Array = <span class="built_in">malloc</span>( <span class="keyword">sizeof</span>(ElementType) * MaxElements;</span><br><span class="line">    <span class="keyword">if</span>( S-&gt;Array == <span class="literal">NULL</span> ) &#123;</span><br><span class="line">        FatalError(<span class="string">"Out of space!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    S-&gt;Capacity = MaxElements;</span><br><span class="line">    MakeEmpty( S );</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> S;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">void</span> DisposeStack( Stack S ) &#123;</span><br><span class="line">        <span class="keyword">if</span>( S != <span class="literal">NULL</span> ) &#123;</span><br><span class="line">            <span class="built_in">free</span>( S-&gt;Array );</span><br><span class="line">            <span class="built_in">free</span>( S );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> IsEmpty( Stack S ) &#123;</span><br><span class="line">        <span class="keyword">return</span> S-&gt;TopOfStack == EmptyTOS;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">void</span> MakeEmpty( Stack S ) &#123;</span><br><span class="line">        S-&gt;TopOfStack = EmptyTOS;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">void</span> Push( ElementType X, Stack S ) &#123;</span><br><span class="line">        <span class="keyword">if</span>( IsFull( S ) ) &#123;</span><br><span class="line">            Error(<span class="string">"Full Stack"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            S-&gt;Array[++(S-&gt;TopOfStack)] = X;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ElementType Top( Stack S ) &#123;</span><br><span class="line">        <span class="keyword">if</span>( !IsEmpty( S ) ) &#123;</span><br><span class="line">            <span class="keyword">return</span> S-&gt;Array[S-&gt;TopOfStack];</span><br><span class="line">        &#125;</span><br><span class="line">        Error(<span class="string">"Empty Stack"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">void</span> Pop( Stack S ) &#123;</span><br><span class="line">        <span class="keyword">if</span>( IsEmpty( S ) ) &#123;</span><br><span class="line">            Error(<span class="string">"Empty Stack"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            S-&gt;TopOfStack --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-2-Applications"><a href="#2-2-2-Applications" class="headerlink" title="2.2.2 Applications"></a>2.2.2 Applications</h3><h4 id="2-2-2-1-Balancing-Symbols"><a href="#2-2-2-1-Balancing-Symbols" class="headerlink" title="2.2.2.1 Balancing Symbols"></a>2.2.2.1 Balancing Symbols</h4><p> refer to <a href="https://github.com/hellobbn/C-Program/tree/master/C-Programs/P-7" target="_blank" rel="noopener">here</a> to get a sample code</p>
+<h4 id="2-2-2-2-Postfix-Expressions"><a href="#2-2-2-2-Postfix-Expressions" class="headerlink" title="2.2.2.2 Postfix Expressions"></a>2.2.2.2 Postfix Expressions</h4><p>refer to <a href="https://github.com/hellobbn/C-Program/tree/master/C-Programs/P-1" target="_blank" rel="noopener">here</a> to get a sample Code</p>
+<h4 id="2-2-2-3-Function-Calls"><a href="#2-2-2-3-Function-Calls" class="headerlink" title="2.2.2.3 Function Calls"></a>2.2.2.3 Function Calls</h4><p>The algorithm to check balanced symbols suggests a way to implement function calls.</p>
+<h2 id="3-The-Queue-ADTs"><a href="#3-The-Queue-ADTs" class="headerlink" title="3. The Queue ADTs"></a>3. The Queue ADTs</h2><p>Like stacks, <em>queues</em> are lists.<br><strong>insertion</strong> are done at one end, <strong>deletion</strong> is performed at the other end.</p>
+<h3 id="3-4-1-Queue-Models"><a href="#3-4-1-Queue-Models" class="headerlink" title="3.4.1 Queue Models"></a>3.4.1 Queue Models</h3><p>The basic operations on a queue are  <em>Enqueue</em> and <em>Dequeue</em></p>
+<h3 id="3-4-2-Array-Implementation-of-Queues"><a href="#3-4-2-Array-Implementation-of-Queues" class="headerlink" title="3.4.2 Array Implementation of Queues"></a>3.4.2 Array Implementation of Queues</h3><p>As with stacks, any implementation is legal for queues. Like stacks, both the linked lists and array implementation give fast <strong>O(1)</strong> running times for every operation.  </p>
+<p>Here we will discuss Array implementation of queues.</p>
+<p><img src="/images/queue.png" alt="Queues"></p>
+<ul>
+<li>For each queue data structure, we keep an array <strong>Queue[]</strong> </li>
+<li>Keep the positions <code>Front</code> and <code>Rear</code></li>
+<li>We also keep track of the number of elements that are actually in the queue <code>Size</code></li>
+<li>To <strong>Enqueue</strong> an element X, we increment <code>Size</code> and <code>Rear</code>, then set <code>Queue[Rear] = X</code></li>
+<li>To <strong>Dequeue</strong> an element, we set the return value to <code>Queue[Front]</code>, decrement <code>Size</code> </li>
+</ul>
+<p><strong>Attention</strong> </p>
+<ol>
+<li>It’s important to check the queue for emptiness </li>
+<li>Some programmers use different ways of representing the front and end of a queue.</li>
+</ol>
+<h3 id="3-4-3-Queue-definitions"><a href="#3-4-3-Queue-definitions" class="headerlink" title="3.4.3 Queue definitions"></a>3.4.3 Queue definitions</h3><h4 id="3-4-3-1-Define-a-Queue"><a href="#3-4-3-1-Define-a-Queue" class="headerlink" title="3.4.3.1 Define a Queue"></a>3.4.3.1 Define a Queue</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ElementType int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _Queue_h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _Queue_h</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">QueueRecord</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QueueRecord</span>* <span class="title">Queue</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsEmpty</span><span class="params">( Queue Q )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsFull</span><span class="params">( Queue Q )</span></span>;</span><br><span class="line"><span class="function">Queue <span class="title">CreateQueue</span><span class="params">( <span class="keyword">int</span> MaxElements )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DisposeQueue</span><span class="params">( Queue Q )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MakeEmpty</span><span class="params">( Queue Q )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Enqueue</span><span class="params">( ElementType X, Queue Q )</span></span>;</span><br><span class="line"><span class="function">ElementType <span class="title">Front</span><span class="params">( Queue Q )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dequeue</span><span class="params">( Queue Q )</span></span>;</span><br><span class="line"><span class="function">ElementType <span class="title">FrontAndDequeue</span><span class="params">( Queue Q )</span></span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span>	<span class="comment">/* _Queue_h */</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">QueueRecord</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> Capacity;</span><br><span class="line">	<span class="keyword">int</span> Front;</span><br><span class="line">	<span class="keyword">int</span> Rear;</span><br><span class="line">	<span class="keyword">int</span> Size;</span><br><span class="line">	ElementType *Array;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-3-2-Operations"><a href="#3-4-3-2-Operations" class="headerlink" title="3.4.3.2 Operations"></a>3.4.3.2 Operations</h4><p><strong>IsEmpty, MakeEmpty, Enqueue</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsEmpty</span><span class="params">( Queue Q )</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Q-&gt;Size == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MakeEmpty</span><span class="params">( Queue Q )</span> </span>&#123;</span><br><span class="line">	Q-&gt;Size = <span class="number">0</span>;</span><br><span class="line">	Q-&gt;Front = <span class="number">1</span>;</span><br><span class="line">	Q-&gt;Rear = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">Succ</span><span class="params">( <span class="keyword">int</span> Value, Queue Q )</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (++Value == Queue-&gt;Capacity) &#123;</span><br><span class="line">		Value = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> Value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Enqueue</span><span class="params">( ElementType X, Queue Q )</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (IsFull( Q )) &#123;</span><br><span class="line">		Error(<span class="string">"Error Full Queue"</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		Q-&gt;Size++;</span><br><span class="line">		Q-&gt;Rear = Succ(Q-&gt;Rear, Q);</span><br><span class="line">		Q-&gt;Array[Q-&gt;Rear] = X;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-4-Applications-of-Queues"><a href="#3-4-4-Applications-of-Queues" class="headerlink" title="3.4.4 Applications of Queues"></a>3.4.4 Applications of Queues</h3><ul>
+<li>Calls to large companies are generally placed in a queue when all operations are busy</li>
+<li>In large universities when resources are limited</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="OCD 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="OCD 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>OCD</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://ocd0711.ml/2017-11-30-Lists-Stacks-and-Queues.html" title="Lists Stacks and Queues">https://ocd0711.ml/2017-11-30-Lists-Stacks-and-Queues.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Develop/" rel="tag"># Develop</a>
+          
+            <a href="/tags/C/" rel="tag"># C</a>
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-11-26-Function.html" rel="next" title="Python-Functions">
+                <i class="fa fa-chevron-left"></i> Python-Functions
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-11-26-Algorithm-Analysis.html" rel="prev" title="Algorithm Analysis">
+                Algorithm Analysis <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://github.com/OCD0711/MyPostImages/raw/master/006tNbRwgy1fvf099p9a5j30ih0wun01.jpg" alt="OCD">
+            
+              <p class="site-author-name" itemprop="name">OCD</p>
+              <p class="site-description motion-element" itemprop="description">Nothing here, trust me</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/OCD0711" title="GitHub &rarr; https://github.com/OCD0711" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:ocd2057@gmail.com" title="E-Mail &rarr; mailto:ocd2057@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/5818658576/profile?topnav=1&wvr=6" title="Weibo &rarr; https://weibo.com/5818658576/profile?topnav=1&wvr=6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://music.163.com/#/user/home?id=253138628" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=253138628" rel="noopener" target="_blank"><i class="fa fa-fw fa-spotify"></i>网易云音乐</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.denua.cn" title="https://www.denua.cn" rel="noopener" target="_blank">denua</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ncgame.cc" title="http://www.ncgame.cc" rel="noopener" target="_blank">ncgame</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Lists"><span class="nav-number">1.</span> <span class="nav-text">1. Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Lists-ADTs"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Lists ADTs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-IsEmpty-IsLast"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 IsEmpty / IsLast</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-Find-Delete-FindPrevious-Insert"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 Find / Delete / FindPrevious / Insert</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Doubly-Linked-Lists"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Doubly Linked Lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Circularly-Linked-Lists"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Circularly Linked Lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-Examples"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Polynomial-ADT"><span class="nav-number">1.4.1.</span> <span class="nav-text">The Polynomial ADT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Radix-Sort"><span class="nav-number">1.4.2.</span> <span class="nav-text">Radix Sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Multilists"><span class="nav-number">1.4.3.</span> <span class="nav-text">Multilists</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-Cursor-Implementation-of-Linked-Lists"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 Cursor Implementation of Linked Lists</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-The-Stack-ADT"><span class="nav-number">2.</span> <span class="nav-text">2. The Stack ADT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Implementations-of-Stacks"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Implementations of Stacks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-Linked-List-Implementation-of-Stacks"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 Linked List Implementation of Stacks</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Applications"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.2 Applications</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-1-Balancing-Symbols"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.2.1 Balancing Symbols</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-2-Postfix-Expressions"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2.2 Postfix Expressions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-3-Function-Calls"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.2.3 Function Calls</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-The-Queue-ADTs"><span class="nav-number">3.</span> <span class="nav-text">3. The Queue ADTs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-1-Queue-Models"><span class="nav-number">3.1.</span> <span class="nav-text">3.4.1 Queue Models</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2-Array-Implementation-of-Queues"><span class="nav-number">3.2.</span> <span class="nav-text">3.4.2 Array Implementation of Queues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-3-Queue-definitions"><span class="nav-number">3.3.</span> <span class="nav-text">3.4.3 Queue definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-3-1-Define-a-Queue"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.4.3.1 Define a Queue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-3-2-Operations"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.4.3.2 Operations</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-4-Applications-of-Queues"><span class="nav-number">3.4.</span> <span class="nav-text">3.4.4 Applications of Queues</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OCD</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">99k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">3:01</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+  
+</div>
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66023692";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+      <div>
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  // with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      </div>
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '4dc5af3af4cbaf3256e3',
+          clientSecret: 'ba0af07deb8b413c08a37d4f8f031077b43b3ed2',
+          repo: 'ocd0711.github.io',
+          owner: 'OCD0711',
+          admin: ['OCD0711'],
+          id: md5(window.location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.5.0"></script>
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "u8ODajgyDwCkJvebfFfP49M4-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "u8ODajgyDwCkJvebfFfP49M4-gzGzoHsz",
+                'X-LC-Key': "UTMYP5u51XAECGbVz74kLBk7",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+
+<script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+

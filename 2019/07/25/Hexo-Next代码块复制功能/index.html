@@ -127,18 +127,18 @@
 
 
 
-  <meta name="description" content="由于NexT主题默认的背景是不透明的，如果我们设置的有canvas_nest和canvas_three等3D动画效果，则会被文章界面遮住，本文主要讲述如何修改Hexo站点的页面透明度。 主要是通过修改CSS样式来实现 文章部分  文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.style  12345678// Post &amp;am">
-<meta name="keywords" content="NexT">
+  <meta name="description" content="为了提高博客代码块的用户体验，仅仅代码高亮还不行，最好还能一键复制代码。故此文将讲述Hexo NexT主题博客的代码块复制功能配置。  下载 clipboard.js三方插件 clipboardjs ，相关介绍和兼容性我就不赘述了，去它主页或github上看。 下载地址：  clipboard.js  clipboard.min.js   方法1. 保存文件 clipboard.js / clip">
+<meta name="keywords" content="Next,Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-NexT 主题修改页面透明度及页面颜色">
-<meta property="og:url" content="https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/index.html">
+<meta property="og:title" content="Hexo-Next (代码块复制功能)">
+<meta property="og:url" content="https://ocd0711.ml/2019/07/25/Hexo-Next代码块复制功能/index.html">
 <meta property="og:site_name" content="OCD Blog">
-<meta property="og:description" content="由于NexT主题默认的背景是不透明的，如果我们设置的有canvas_nest和canvas_three等3D动画效果，则会被文章界面遮住，本文主要讲述如何修改Hexo站点的页面透明度。 主要是通过修改CSS样式来实现 文章部分  文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.style  12345678// Post &amp;am">
+<meta property="og:description" content="为了提高博客代码块的用户体验，仅仅代码高亮还不行，最好还能一键复制代码。故此文将讲述Hexo NexT主题博客的代码块复制功能配置。  下载 clipboard.js三方插件 clipboardjs ，相关介绍和兼容性我就不赘述了，去它主页或github上看。 下载地址：  clipboard.js  clipboard.min.js   方法1. 保存文件 clipboard.js / clip">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-03T14:15:20.345Z">
+<meta property="og:updated_time" content="2019-07-25T02:38:48.256Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-NexT 主题修改页面透明度及页面颜色">
-<meta name="twitter:description" content="由于NexT主题默认的背景是不透明的，如果我们设置的有canvas_nest和canvas_three等3D动画效果，则会被文章界面遮住，本文主要讲述如何修改Hexo站点的页面透明度。 主要是通过修改CSS样式来实现 文章部分  文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.style  12345678// Post &amp;am">
+<meta name="twitter:title" content="Hexo-Next (代码块复制功能)">
+<meta name="twitter:description" content="为了提高博客代码块的用户体验，仅仅代码高亮还不行，最好还能一键复制代码。故此文将讲述Hexo NexT主题博客的代码块复制功能配置。  下载 clipboard.js三方插件 clipboardjs ，相关介绍和兼容性我就不赘述了，去它主页或github上看。 下载地址：  clipboard.js  clipboard.min.js   方法1. 保存文件 clipboard.js / clip">
 
 
 
@@ -147,7 +147,7 @@
 
 
 
-  <link rel="canonical" href="https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/">
+  <link rel="canonical" href="https://ocd0711.ml/2019/07/25/Hexo-Next代码块复制功能/">
 
 
 
@@ -157,7 +157,7 @@
   };
 </script>
 
-  <title>Hexo-NexT 主题修改页面透明度及页面颜色 | OCD Blog</title>
+  <title>Hexo-Next (代码块复制功能) | OCD Blog</title>
   
 
 
@@ -448,7 +448,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/">
+    <link itemprop="mainEntityOfPage" href="https://ocd0711.ml/2019/07/25/Hexo-Next代码块复制功能/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OCD">
@@ -465,7 +465,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo-NexT 主题修改页面透明度及页面颜色
+          <h1 class="post-title" itemprop="name headline">Hexo-Next (代码块复制功能)
               
             
           </h1>
@@ -490,47 +490,17 @@
                 
               
 
-              <time title="创建时间：2018-09-26 16:33:00" itemprop="dateCreated datePublished" datetime="2018-09-26T16:33:00+08:00">2018-09-26</time>
+              <time title="创建时间：2019-07-25 10:25:27 / 修改时间：10:38:48" itemprop="dateCreated datePublished" datetime="2019-07-25T10:25:27+08:00">2019-07-25</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-03 22:15:20" itemprop="dateModified" datetime="2019-07-03T22:15:20+08:00">2019-07-03</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -538,7 +508,7 @@
 
           
           
-             <span id="/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/" class="leancloud_visitors" data-flag-title="Hexo-NexT 主题修改页面透明度及页面颜色">
+             <span id="/2019/07/25/Hexo-Next代码块复制功能/" class="leancloud_visitors" data-flag-title="Hexo-Next (代码块复制功能)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -563,7 +533,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.7k</span>
+                <span title="本文字数">2.4k</span>
               
 
               
@@ -577,7 +547,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -597,43 +567,29 @@
       
 
       
-        <p>由于NexT主题默认的背景是不透明的，如果我们设置的有canvas_nest和canvas_three等3D动画效果，则会被文章界面遮住，本文主要讲述如何修改Hexo站点的页面透明度。</p>
-<p>主要是通过修改CSS样式来实现</p>
-<h2 id="文章部分"><a href="#文章部分" class="headerlink" title="文章部分"></a>文章部分</h2><hr>
-<blockquote>
-<p>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.style</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Post &amp; Comments blocks.</span><br><span class="line">.post-block &#123;</span><br><span class="line">  padding: $content-desktop-padding;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(255,255,255,0.7);</span><br><span class="line">  box-shadow: $box-shadow-inner;</span><br><span class="line">  border-radius: $border-radius-inner;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>为了提高博客代码块的用户体验，仅仅代码高亮还不行，最好还能一键复制代码。故此文将讲述Hexo NexT主题博客的代码块复制功能配置。</p>
+<hr>
+<h1 id="下载-clipboard-js"><a href="#下载-clipboard-js" class="headerlink" title="下载 clipboard.js"></a>下载 clipboard.js</h1><p>三方插件 clipboardjs ，相关介绍和兼容性我就不赘述了，去它<a href="https://clipboardjs.com" target="_blank" rel="noopener">主页</a>或<a href="https://github.com/zenorocha/clipboard.js" target="_blank" rel="noopener">github</a>上看。</p>
+<p><strong>下载地址：</strong></p>
+<ul>
+<li><p><a href="https://raw.githubusercontent.com/zenorocha/clipboard.js/master/dist/clipboard.js" target="_blank" rel="noopener">clipboard.js</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/zenorocha/clipboard.js/master/dist/clipboard.min.js" target="_blank" rel="noopener">clipboard.min.js</a></p>
+</li>
+</ul>
+<p>方法1. 保存文件 <code>clipboard.js / clipboard.min.js</code>, 目录如下:<br><code>.\themes\next\source\js\src</code></p>
+<p>方法2. npm install clipboard –save</p>
+<h1 id="clipboardjs-使用"><a href="#clipboardjs-使用" class="headerlink" title="clipboardjs 使用"></a>clipboardjs 使用</h1><p>也是在 <code>.\themes\next\source\js\src</code> 目录下，创建 <code>clipboard-use.js</code>，文件内容如下: </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/*页面载入完成后，创建复制按钮*/</span></span><br><span class="line">  !<span class="function"><span class="keyword">function</span> (<span class="params">e, t, a</span>) </span>&#123; </span><br><span class="line">    <span class="comment">/* code */</span></span><br><span class="line">    <span class="keyword">var</span> initCopyCode = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> copyHtml = <span class="string">''</span>;</span><br><span class="line">      copyHtml += <span class="string">'&lt;button class="btn-copy" data-clipboard-snippet=""&gt;'</span>;</span><br><span class="line">      <span class="comment">//fa fa-globe可以去字体库替换自己想要的图标</span></span><br><span class="line">copyHtml += <span class="string">'  &lt;i class="fa fa-clipboard"&gt;&lt;/i&gt;&lt;span&gt;copy&lt;/span&gt;'</span>;</span><br><span class="line">      copyHtml += <span class="string">'&lt;/button&gt;'</span>;</span><br><span class="line">      $(<span class="string">".highlight .code pre"</span>).before(copyHtml);</span><br><span class="line">      <span class="keyword">new</span> ClipboardJS(<span class="string">'.btn-copy'</span>, &#123;</span><br><span class="line">          target: <span class="function"><span class="keyword">function</span>(<span class="params">trigger</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> trigger.nextElementSibling;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    initCopyCode();</span><br><span class="line">  &#125;(<span class="built_in">window</span>, <span class="built_in">document</span>);</span><br></pre></td></tr></table></figure>
 
-<h2 id="阅读全文按钮"><a href="#阅读全文按钮" class="headerlink" title="阅读全文按钮"></a>阅读全文按钮</h2><hr>
-<blockquote>
-<p>文件位置 ~Hexo根目录/themes/next/source/css/_variables/Pisces.style</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Button</span><br><span class="line">  $btn-default-radius           = 2px</span><br><span class="line">- $btn-default-bg               = white</span><br><span class="line">+ $btn-default-bg               = rgba(255,255,255,0.5)</span><br><span class="line">  $btn-default-color            = $text-color</span><br><span class="line">  $btn-default-border-color     = $text-color</span><br><span class="line">  $btn-default-hover-color      = white</span><br><span class="line">  $btn-default-hover-bg         = $black-deep</span><br></pre></td></tr></table></figure>
+<p>在 <code>.\themes\next\source\css\_custom\custom.styl</code> 样式文件中添加下面代码: </p>
+<figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码块复制按钮</span></span><br><span class="line">.highlight&#123;</span><br><span class="line">  <span class="comment">//方便copy代码按钮（btn-copy）的定位</span></span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-copy</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#eee</span>;</span><br><span class="line">    <span class="attribute">background-image</span>: linear-gradient(<span class="number">#fcfcfc</span>,<span class="number">#eee</span>);</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#d5d5d5</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">    -webkit-user-select: <span class="attribute">none</span>;</span><br><span class="line">    -moz-user-select: <span class="attribute">none</span>;</span><br><span class="line">    -ms-user-select: <span class="attribute">none</span>;</span><br><span class="line">    user-select: <span class="attribute">none</span>;</span><br><span class="line">    -webkit-appearance: <span class="attribute">none</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    -webkit-transition: opacity .3s ease-in-out;</span><br><span class="line">    -o-transition: opacity .3s ease-in-out;</span><br><span class="line">    transition: opacity .3s ease-in-out;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-copy</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.highlight</span>:hover .btn-copy&#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="分页部分"><a href="#分页部分" class="headerlink" title="分页部分"></a>分页部分</h2><hr>
-<blockquote>
-<p>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.style</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// Pagination.</span><br><span class="line">.pagination &#123;</span><br><span class="line">  .prev, .next, .page-number &#123;</span><br><span class="line">    margin-bottom: initial;</span><br><span class="line">    top: initial;</span><br><span class="line">  &#125;</span><br><span class="line">  margin: sboffset 0 0;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(255,255,255,0.7);</span><br><span class="line">  box-shadow: $box-shadow;</span><br><span class="line">  border-radius: $border-radius;</span><br><span class="line">  padding: 10px 0 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>在 <code>.\themes\next\layout\_layout.swig</code> 文件中，添加引用 (注：在 swig 末尾或 body 结束标签（<code>&lt;/body&gt;</code>）之前添加): </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 代码块复制功能 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/clipboard.min.js&quot;&gt;&lt;/script&gt;  </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/clipboard-use.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="评论区部分"><a href="#评论区部分" class="headerlink" title="评论区部分"></a>评论区部分</h2><hr>
-<blockquote>
-<p>~Hexo根目录/themes/next/source/css/_schemes/Gemini/index.style</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// Comments blocks.</span><br><span class="line">.comments &#123;</span><br><span class="line">  padding: $content-desktop-padding;</span><br><span class="line">  margin: initial;</span><br><span class="line">  margin-top: sboffset;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(255,255,255,0.7);</span><br><span class="line">  box-shadow: $box-shadow;</span><br><span class="line">  border-radius: $border-radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><p>懂代码的也可以将 clipboard.min.js 和 clipboard-use.js 合并为一个文件, 再在 <code>.\themes\next\layout\_layout.swig</code> 文件中使用. 当然 clipboard.min.js 也可以直接用三方cdn的方式引入也行. </p>
 
-<h2 id="侧栏菜单界面"><a href="#侧栏菜单界面" class="headerlink" title="侧栏菜单界面"></a>侧栏菜单界面</h2><hr>
-<blockquote>
-<p>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Pisces/_layout.style</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">.header-inner &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  padding: 0;</span><br><span class="line">  width: $sidebar-desktop;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(255,255,255,0.7);</span><br><span class="line">  box-shadow: $box-shadow-inner;</span><br><span class="line">  border-radius: $border-radius-inner;</span><br><span class="line"></span><br><span class="line">  +desktop-large() &#123;</span><br><span class="line">    .container &amp; &#123; width: $sidebar-desktop; &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  +tablet() &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: auto;</span><br><span class="line">    border-radius: initial;</span><br><span class="line">  &#125;</span><br><span class="line">  +mobile() &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: auto;</span><br><span class="line">    border-radius: initial;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="个人资料界面"><a href="#个人资料界面" class="headerlink" title="个人资料界面"></a>个人资料界面</h2><hr>
-<blockquote>
-<p>文件位置 ~Hexo根目录/themes/next/source/css/_schemes/Pisces/_sidebar.style</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.sidebar-inner &#123;</span><br><span class="line">//padding: 20px 10px 0;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  width: $sidebar-desktop;</span><br><span class="line">  color: $text-color;</span><br><span class="line">- background: white;</span><br><span class="line">+ background: rgba(255,255,255,0.7);</span><br><span class="line">  box-shadow: $box-shadow;</span><br><span class="line">  border-radius: $border-radius;</span><br><span class="line">  if (hexo-config(&apos;motion.enable&apos;) and hexo-config(&apos;motion.transition.sidebar&apos;)) &#123; opacity: 0; &#125;</span><br><span class="line"></span><br><span class="line">  &amp;.affix &#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">    top: $sidebar-offset;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -695,7 +651,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/" title="Hexo-NexT 主题修改页面透明度及页面颜色">https://ocd0711.ml/2018/09/26/2018-9-26-NexT-theme-Page-transparency-color/</a>
+    <a href="https://ocd0711.ml/2019/07/25/Hexo-Next代码块复制功能/" title="Hexo-Next (代码块复制功能)">https://ocd0711.ml/2019/07/25/Hexo-Next代码块复制功能/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -708,7 +664,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/NexT/" rel="tag"># NexT</a>
+            <a href="/tags/Next/" rel="tag"># Next</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
         </div>
       
@@ -721,8 +679,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/22/2018-9-22-OpenWrt-auto-update-and-adblock/" rel="next" title="OpenWrt 自动更新设置和屏蔽广告">
-                <i class="fa fa-chevron-left"></i> OpenWrt 自动更新设置和屏蔽广告
+              <a href="/2019/05/20/nrf51822-程序分析/" rel="next" title="nrf51822_程序分析">
+                <i class="fa fa-chevron-left"></i> nrf51822_程序分析
               </a>
             
           </div>
@@ -730,10 +688,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/28/2018-9-27-OSX-windows-Fixed-time-out-of-sync-issue/" rel="prev" title="OSX 和 windows 时间不同步解决方法">
-                OSX 和 windows 时间不同步解决方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1053,7 +1007,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章部分"><span class="nav-number">1.</span> <span class="nav-text">文章部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读全文按钮"><span class="nav-number">2.</span> <span class="nav-text">阅读全文按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页部分"><span class="nav-number">3.</span> <span class="nav-text">分页部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评论区部分"><span class="nav-number">4.</span> <span class="nav-text">评论区部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#侧栏菜单界面"><span class="nav-number">5.</span> <span class="nav-text">侧栏菜单界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人资料界面"><span class="nav-number">6.</span> <span class="nav-text">个人资料界面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载-clipboard-js"><span class="nav-number">1.</span> <span class="nav-text">下载 clipboard.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#clipboardjs-使用"><span class="nav-number">2.</span> <span class="nav-text">clipboardjs 使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">3.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a></li></ol></div>
             
 
           </div>
